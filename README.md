@@ -25,7 +25,9 @@ The repository is organized into _branches_. The live production version of the 
 After changing to the new branch and making all the code changes you want, you can commit those changes to your branch:
 
 `git add --all` Stages changes to your local repository
-`git commit -m "<commit-msg>" Commits the changes to your local repository
+
+`git commit -m "<commit-msg>"` Commits the changes to your local repository
+
 `git push origin <branch-name>` Syncs your local repository to the remote repository
 
 ## Pull requests
