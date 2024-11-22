@@ -1,0 +1,49 @@
+<div id="navbar">
+    <!-- on hold
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-white" style="font-size:28px">Italiano</a>
+   <a href="indexEN.html" class="w3-bar-item w3-button w3-hover-white" style="font-size:28px">English</a>-->
+   <a href="https://www.youtube.com/@ScienzadiClasse-fm6df" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-youtube" style="font-size:24px"></i></a>
+   <a href="https://www.twitch.tv/scienzadiclasse" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-twitch" style="font-size:24px"></i></a>
+   <a href="https://www.instagram.com/scienzadiclasse/" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-instagram" style="font-size:24px"></i></a>
+   <a href="https://www.facebook.com/profile.php?id=100094782115818" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-facebook" style="font-size:24px"></i></a>
+   <a href="https://open.spotify.com/show/7JSij05RVCmrLL5xc0Vey7" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-spotify" style="font-size:24px"></i></a>
+   <a href="https://t.me/scienzadiclasse" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-telegram" style="font-size:24px"></i></a>
+</div>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>
+    <a href="https://www.youtube.com/@ScienzadiClasse-fm6df" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-youtube" style="font-size:24px"></i></a>
+    <a href="https://www.twitch.tv/scienzadiclasse" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-twitch" style="font-size:24px"></i></a>
+    <a href="https://www.instagram.com/scienzadiclasse/" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-instagram" style="font-size:24px"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=100094782115818" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-facebook" style="font-size:24px"></i></a>
+    <a href="https://open.spotify.com/show/7JSij05RVCmrLL5xc0Vey7" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-spotify" style="font-size:24px"></i></a>
+    <a href="https://t.me/scienzadiclasse" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px"><i class="fa fa-telegram" style="font-size:24px"></i></a>
+    <!-- on hold <a href="indexFR.html" onclick="w3_close()" class="w3-bar-item w3-button w3-white" style="font-size:20px">FR</a>
+  <a href="index.html" class="w3-bar-item w3-button w3-hover-white" style="font-size:20px">EN</a> -->
+  </span>
+</header>
+
+<script>
+  //THIS IS ALL LANGUAGE BAR
+  // When the user scrolls the page, execute myFunction
+  window.onscroll = function() {myFunction()};
+
+  // Get the navbar
+  var navbar = document.getElementById("navbar");
+
+  // Get the offset position of the navbar
+  var sticky = navbar.offsetTop;
+
+  // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+
+  //END LANGUAGE BAR
+</script>
