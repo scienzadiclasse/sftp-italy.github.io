@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Presentazione di Scienza di Classe"
+date:   2024-10-03
+subtitle: "La nascita del collettivo"
+categories: annunci
+---
+
+Costituitosi nella prima metà del 2023, Scienza di Classe è un collettivo di scienziate e scienziati, di studentesse e studenti, attivi sia nelle scienze esatte e naturali sia in quelle sociali. Scienza di Classe si è da subito data come obiettivo una maggiore democraticità e democratizzazione del sapere scientifico, contrastando quella che viene presentata come la neutralità della scienza. Scienza di Classe vuole invece mostrare il portato ideologico nascosto dietro questa presunta neutralità, nonché l’impatto sociale che ha la scienza oggi. Il discorso scientifico odierno è pressoché polarizzato: da una parte troviamo gli scientisti acritici, ossia gli intellettuali attivi sui giornali mainstream e nelle televisioni, che pretendono di avere una conoscenza assoluta della verità; dall’altro lato troviamo invece i critici della scienza ad ogni costo, personaggi irrazionali che popolano perlopiù il web e i social.   
+
+Dopo una fase iniziale di costruzione, principalmente online, a partire da giugno 2023 Scienza di Classe ha organizzato una serie di eventi live, spaziando dalla storia del [rapporto fra scienza e società](https://www.youtube.com/watch?v=wOuspjzjMtw) attraverso il richiamo dei [movimenti radicali per la scienza](https://www.youtube.com/watch?v=5NSatpDaUb8), fino ad arrivare ad approfondimenti specifici sulla [sanità](https://www.youtube.com/watch?v=qUNvW3rOHhc), su [donne e scienza](https://www.youtube.com/watch?v=tOtphtmfDoY) e sulla [intelligenza artificiale](https://www.youtube.com/watch?v=sZjRqmmwldc) (quest’ultimo in collaborazione con [Jacobin Italia](https://jacobinitalia.it)). Scienza di Classe ha anche supportato [Antropocene.org](https://antropocene.org) nell’intervista a [John Bellamy Foster](https://www.youtube.com/watch?v=td8VJ7YHqmQ) di febbraio 2024 e ha in programma altre interviste con scienziati critici di alto livello. Con questi video, Scienza di Classe mira ad offrire un approfondimento equilibrato nei modi ma molto radicale nel suo approccio teorico; offrendo una spiegazione più approfondita di tematiche attuali di grande interesse per la collettività. 
+
+In aggiunta a questa attività di video live, adesso disponibili anche in [podcast](https://open.spotify.com/show/7JSij05RVCmrLL5xc0Vey7), Scienza di Classe ha anche curato l’introduzione della nuova edizione di “Sfruttamento, inquinamento, guerra” di Jean Fallot, per i tipi di [Ortothes](https://www.orthotes.com/). Infine, Scienze di Classe ha anche iniziato un percorso di presentazioni dal vivo, come quella svoltasi a Firenze a maggio 2024.   
+
+A partire da questo intervento e con il rimando al proprio [Manifesto](https://www.researchgroundhogs.org/wp-content/uploads/2024/10/primo-documento-scienza-di-classe.pdf), Scienza di Classe inizia la propria collaborazione con le [sentinelle della ricerca pubblica](https://www.researchgroundhogs.org).
