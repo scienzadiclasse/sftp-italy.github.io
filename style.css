@@ -281,5 +281,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 
 .post-header {
-    padding-top: 50px;
+    padding: 50px;
+}
+
+.post-content {
+    padding: 50px;
 }
