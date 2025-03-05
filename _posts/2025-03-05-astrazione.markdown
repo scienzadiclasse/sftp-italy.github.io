@@ -128,11 +128,7 @@ Occorre sottolineare che ridurre la scienza ad attività economica non rappresen
 
 28. Karl Marx, _Capital: Volume One_ (New York: Penguin Books, 1976), 799. [↑](#footnote-ref-28)
 
-29. Qui il termine “sfruttamento” è usato in senso psicologico e non in senso economico.
-
-    Inizio modulo
-
-    Fine modulo [↑](#footnote-ref-29)
+29. Qui il termine “sfruttamento” è usato in senso psicologico e non in senso economico.[↑](#footnote-ref-29)
 
 30. World Bank, “Innovating through Science and Technology,” _World Development Report 2008: Agriculture for Development_ (October 2007), <https://elibrary.worldbank.org/doi/abs/10.1596/978-0-8213-6807-7_ch7>; Philip Barrett et al.,“Why Basic Science Matters for Economic Growth,” _IMF Blog_, October 6, 2021, <https://blogs.imf.org/2021/10/06/why-basic-science-matters-for-economic-growth/>. [↑](#footnote-ref-30)
 

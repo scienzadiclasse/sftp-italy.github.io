@@ -279,3 +279,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     font-size: 0.8em;
     margin-top: 0.3em;
 }
+
+.post-header {
+    padding-top: 50px;
+}
