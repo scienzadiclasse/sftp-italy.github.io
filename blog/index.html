@@ -14,7 +14,7 @@ locale: it_IT
 			{{ post.excerpt | strip_html | truncatewords: 15 }}
             {% endif %} 
 		• <span class="post-meta">
-		Pubblicato {{ post.author }} il {{ post.date | date: '%d/%m/%Y' }}
+		Pubblicato {% if post.author %} da {{ post.author }} {% endif %} il {{ post.date | date: '%d/%m/%Y' }}
 	</span></p>
 		
 </article>
