@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Lotte di potere materiali e culturali"
-date: 2025-03-23
+date: 2025-04-30
 subtitle: "Teoria e pratica per l’organizzazione del laboratorio, capitolo 2"
 categories: annunci
 author: Iraj Eshghi, tradotto da Patrizio
@@ -71,28 +71,28 @@ Nel 2020-2021 ho visto migliaia di ricercatrici e ricercatori costringere la pi�
 
 ****
 
-1. Salvador Vidal-Ortiz, “Dismantling Whiteness in Academe”, Insider Higher Ed 10 novembre 2017, https://www.insidehighered.com/advice/2017/11/10/how-whiteness-structuring-interactions-higher-education-essay [↑](#footnote-ref-1)
+1. Salvador Vidal-Ortiz, “Dismantling Whiteness in Academy”, Insider Higher Ed 10 novembre 2017, [https://www.insidehighered.com/advice/2017/11/10/how-whiteness-structuring-interactions-higher-education-essay](https://www.insidehighered.com/advice/2017/11/10/how-whiteness-structuring-interactions-higher-education-essay) [↑](#footnote-ref-1)
 
-2. Michelle Yang, “UC academic student workers demand housing support, equitable job opportunities”, Daily Bruin, 25 maggio 2022, https://dailybruin.com/2022/05/25/uc-academic-student-workers-demand-housing-support-equitable-job-opportunities, & Scott Jaschick “What Academic Labor Wants”, Inside Higher Ed, 12 luglio 2021, https://www.insidehighered.com/news/2021/07/12/summit-academic-unions-envisions-broad-changes-higher-education [↑](#footnote-ref-2)
+2. Michelle Yang, “UC academic student workers demand housing support, equitable job opportunities”, Daily Bruin, 25 maggio 2022, [https://dailybruin.com/2022/05/25/uc-academic-student-workers-demand-housing-support-equitable-job-opportunities](https://dailybruin.com/2022/05/25/uc-academic-student-workers-demand-housing-support-equitable-job-opportunities), & Scott Jaschick “What Academic Labor Wants”, Inside Higher Ed, 12 luglio 2021, [https://www.insidehighered.com/news/2021/07/12/summit-academic-unions-envisions-broad-changes-higher-education](https://www.insidehighered.com/news/2021/07/12/summit-academic-unions-envisions-broad-changes-higher-education) [↑](#footnote-ref-2)
 
 3. Sarah Shandera et al. “RASE: Modeling cumulative disadvantage due to marginalized group status in academia”, PLoS ONE, 16 dicembre 2021 [↑](#footnote-ref-3)
 
 4. SWC-UAW Local 2170, SENS-UAW Local 7902, FGSW-CWA [↑](#footnote-ref-4)
 
-5. Gli altri membri fondatori erano Paul McNulty, Cristina Mondino, Marco Muzio e Kate Storey-Fisher. La maggior parte del lavoro fondativo è stato svolto da Marco (compresa la stesura della maggior parte del nostro statuto), che in qualche modo è riuscito anche a scrivere e difendere la sua tesi nello stesso anno. (https://physics.nyu.edu/gphorce/). [↑](#footnote-ref-5)
+5. Gli altri membri fondatori erano Paul McNulty, Cristina Mondino, Marco Muzio e Kate Storey-Fisher. La maggior parte del lavoro fondativo è stato svolto da Marco (compresa la stesura della maggior parte del nostro statuto), che in qualche modo è riuscito anche a scrivere e difendere la sua tesi nello stesso anno. [https://physics.nyu.edu/gphorce/](https://physics.nyu.edu/gphorce/). [↑](#footnote-ref-5)
 
-6. Un resoconto dettagliato delle modifiche apportate al contratto è disponibile all’indirizzo https://makingabetternyu.org/2021/05/15/tentative-agreement-with-nyu-reached-membership-to-vote/. Questi sono stati i cambiamenti finali che hanno avuto luogo dopo la conclusione di tutte le attività di organizzazione e contrattazione. [↑](#footnote-ref-6)
+6. Un resoconto dettagliato delle modifiche apportate al contratto è disponibile all’indirizzo [https://makingabetternyu.org/2021/05/15/tentative-agreement-with-nyu-reached-membership-to-vote/](https://makingabetternyu.org/2021/05/15/tentative-agreement-with-nyu-reached-membership-to-vote/). Questi sono stati i cambiamenti finali che hanno avuto luogo dopo la conclusione di tutte le attività di organizzazione e contrattazione. [↑](#footnote-ref-6)
 
-7. Lau Guzman, “NYU Grad Student Union Votes In Favor of Authorizing a Strike”, NYU Local, 13 aprile 2021, https://nyulocal.com/nyu-grad-student-union-votes-in-favor-of-authorizing-a-strike-18f627137ea5. Il tasso di partecipazione del 70% è una stima: le schede votate per lo sciopero sono state 1386, pari a circa il 70% degli iscritti al GSOC, circa 2000 lavoratori laureati. [↑](#footnote-ref-7)
+7. Lau Guzman, “NYU Grad Student Union Votes In Favor of Authorizing a Strike”, NYU Local, 13 aprile 2021, [https://nyulocal.com/nyu-grad-student-union-votes-in-favor-of-authorizing-a-strike-18f627137ea5](https://nyulocal.com/nyu-grad-student-union-votes-in-favor-of-authorizing-a-strike-18f627137ea5). Il tasso di partecipazione del 70% è una stima: le schede votate per lo sciopero sono state 1386, pari a circa il 70% degli iscritti al GSOC, circa 2000 lavoratori e lavoratrici laureati. [↑](#footnote-ref-7)
 
-8. Emma Goldberg, “‘They’re Trying to Bully Us’: N.Y.U. Graduate Students Are Back on Strike”, New York Times, 30 aprile 2020, https://www.nytimes.com/2021/04/30/nyregion/nyu-strike.html [↑](#footnote-ref-8)
+8. Emma Goldberg, “‘They’re Trying to Bully Us’: N.Y.U. Graduate Students Are Back on Strike”, New York Times, 30 aprile 2020, [https://www.nytimes.com/2021/04/30/nyregion/nyu-strike.html](https://www.nytimes.com/2021/04/30/nyregion/nyu-strike.html) [↑](#footnote-ref-8)
 
-9. In fisica, il principale sforzo organizzativo che ne è derivato a livello nazionale è stato Particles for Justice. https://www.particlesforjustice.org/ [↑](#footnote-ref-9)
+9. In fisica, il principale sforzo organizzativo che ne è derivato a livello nazionale è stato Particles for Justice. [https://www.particlesforjustice.org/](https://www.particlesforjustice.org/) [↑](#footnote-ref-9)
 
-10. National Science Foundation, “Women, Minorities, and Persons with Disabilities in Science and Engineering”. https://www.nsf.gov/statistics/2017/nsf17310/digest/fod-women/physics.cfm [↑](#footnote-ref-10)
+10. National Science Foundation, “Women, Minorities, and Persons with Disabilities in Science and Engineering”. [https://www.nsf.gov/statistics/2017/nsf17310/digest/fod-women/physics.cfm](https://www.nsf.gov/statistics/2017/nsf17310/digest/fod-women/physics.cfm) [↑](#footnote-ref-10)
 
 11. Nicholas Young and Marcos Caballero, “Physics Graduate Record Exam does not help applicants ‘stand out’”, Physical Review Education Research, 23 giugno 2021 [↑](#footnote-ref-11)
 
-12. Dichiarazione di NYU GSAS “FUNDING AND FEE WAIVER EXTENSIONS FOR CONTINUING PHD STUDENTS”: gsas.nyu.edu/coronavirus-information/funding-and-fee-waiver-extensions-for-continuing-phd-students.html [↑](#footnote-ref-12)
+12. Dichiarazione di NYU GSAS “FUNDING AND FEE WAIVER EXTENSIONS FOR CONTINUING PHD STUDENTS”. [gsas.nyu.edu/coronavirus-information/funding-and-fee-waiver-extensions-for-continuing-phd-students.html](gsas.nyu.edu/coronavirus-information/funding-and-fee-waiver-extensions-for-continuing-phd-students.html) [↑](#footnote-ref-12)
 
-13. La NYU non ha accettato di cacciare la polizia dal campus in toto, ma ha accettato di considerarla un problema di salute e sicurezza e di nominare una commissione per esaminarla. Questa potrebbe sembrare una vittoria monca, ma lo sembrerà meno se si tiene a mente che il semplice riconoscimento della presenza della polizia come problema di salute e sicurezza per i lavoratori era considerato inaccettabile all’inizio dei negoziati. [↑](#footnote-ref-13)
+13. La NYU non ha accettato di cacciare la polizia dal campus in toto, ma ha accettato di considerarla un problema di salute e sicurezza e di nominare una commissione per esaminarla. Questa potrebbe sembrare una vittoria monca, ma lo sembrerà meno se si tiene a mente che il semplice riconoscimento della presenza della polizia come problema di salute e sicurezza per i lavoratori e lavoratrici era considerato inaccettabile all’inizio dei negoziati. [↑](#footnote-ref-13)
