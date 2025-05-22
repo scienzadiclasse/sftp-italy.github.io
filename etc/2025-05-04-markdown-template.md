@@ -6,7 +6,12 @@ subtitle: "Il sottotitolo del mio articolo"
 categories: annunci
 author: X Y, tradotto da W Z
 ---
+
+# Hello world
+
 Lorem ipsum dolor sit amet<sup>[\[1\]](#footnote-1)</sup>.
+
+Fare sempre riferimento alla [Markdown Bible](https://www.markdownguide.org/basic-syntax/)
 
 Così scrivo in _corsivo_, così invece in *grassetto*, così in ~~sbarrato~~, così infine in `monospace`.
 
@@ -19,6 +24,7 @@ Tutte le note vanno così dichiarate, incrementalmente <sup>[\[2\]](#footnote-2)
 Tutti i files articolo dovrebbero:
   * iniziare con il prefisso `YYYY-MM-DD-`, data della conversione in Markdown dopo approvazione bozza;
   * terminare con l'estensione `.md` o equivalentemente `.markdown`.
+
 
 ## Intestazione di secondo livello
 
