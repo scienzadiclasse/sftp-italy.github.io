@@ -52,14 +52,35 @@ Now _clone_ that repository in your local system. Adapt the following URL to you
 git clone https://github.com/<your-username>/sftp-italy.github.io.git
 ```
 
-This will create a directory on your local system named `sftp-italy.github.io`. Navigate to the new folder
+This will create a directory on your local system named `sftp-italy.github.io`.
+Navigate to the new folder.
 
 ```
 cd sftp-italy.github.io
 ```
 
+Your remote repository is dubbed `origin`, by default. Let's add also the official repository as a second _remote_:
+```
+git remote add production git@github.com:scienzadiclasse/sftp-italy.github.io.git
+```
+You may want sometimes to receive back new contributions from that remote to your own remote.
+```
+git checkout main
+git merge --ff-only production/main
+```
+
 ## Contributing to the blog
 
+Copy the [article template](https://github.com/scienzadiclasse/sftp-italy.github.io/blob/main/etc/2025-05-04-hello-markdown.md) inside the post directory.
+Let's say that your article has a `<title>`, short, without spaces, hyphen (`-`) separated.
+
+```
+cp etc/2025-05-04-hello-markdown.md _posts/<publish-date>-<title>.markdown
+```
+
+Where `<publish-date>` is written with `YY-MM-DD` standard. Notice that you'll also have to change it within the upper table of your article.
+
+Markdown has a beautiful [official guide](https://www.markdownguide.org/getting-started/). Read it.
 
 
 ## Making changes
