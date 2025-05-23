@@ -5,4 +5,4 @@
 #
 
 jekyll:
-	docker buildx build -f ./Dockerfile -t pbertoni/jekyll .
+	docker buildx build -f ./ubuntu.Dockerfile -t pbertoni/jekyll .

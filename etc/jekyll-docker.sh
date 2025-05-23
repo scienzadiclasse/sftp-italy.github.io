@@ -3,17 +3,25 @@
 # Authors: Patrizio Bertoni patrizio.bertoni.89@gmail.com
 #
 
-which docker || {
-	echo "install docker first"
+which docker > /dev/null || {
+	echo "install docker first, exiting"
 	exit 1
 }
+
+siteDir=$(realpath ./$(dirname "${BASH_SOURCE[0]}")/..)
 
 imgProvider=jekyll
 imgProvider=pbertoni
 imgTag=${imgProvider}/jekyll
-docker pull ${imgTag}
 
-siteDir=$(realpath ./$(dirname "${BASH_SOURCE[0]}")/..)
+docker pull ${imgTag} || {
+	pushd ${siteDir}/etc > /dev/null
+	make || {
+		echo "can't build image, exiting"
+		exit 2
+	}
+	popd > /dev/null
+}
 
 set -x
 docker run -it --rm -p 4000:4000 -w /work -v ${siteDir}:/work ${imgTag} bash etc/jekyll-booter.sh

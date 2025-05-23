@@ -23,6 +23,11 @@ function jb_install() {
 
 	gem install bundler -v 2.5.22
 
+	# bundle clean --force
+	# rm -rf vendor/bundle
+	# export LDFLAGS="-L/usr/lib64 -fno-builtin"
+	# export CFLAGS="-fno-builtin"
+
 	bundle install
 }
 

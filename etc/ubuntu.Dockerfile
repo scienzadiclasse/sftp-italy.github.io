@@ -24,11 +24,4 @@ RUN tar -C /opt -xf /opt/sass.tar.gz
 
 ENV PATH="${PATH}:/opt/dart-sass/"
 
-# These needs a mounted Jekyll website
-# variable evalutation does not work ??
-# RUN rm -f Gemfile.lock && gem install bundler -v ${BUNDLER_VERSION} && bundle install
-#`RUN rm -f Gemfile.lock
-# RUN gem install bundler -v 2.5.22
-# RUN bundle install
-
 EXPOSE 4000
