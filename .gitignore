@@ -3,3 +3,6 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+# NOO !!!! https://stackoverflow.com/a/68618147/1315480
+# Gemfile.lock
