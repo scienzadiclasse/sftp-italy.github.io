@@ -8,14 +8,15 @@ which docker > /dev/null || {
 	exit 1
 }
 
-siteDir=$(realpath ./$(dirname "${BASH_SOURCE[0]}")/..)
+thisDir=$(dirname "${BASH_SOURCE[0]}")
+siteDir=$(realpath ./${thisDir}/..)
 
 imgProvider=jekyll
 imgProvider=pbertoni
 imgTag=${imgProvider}/jekyll
 
 docker pull ${imgTag} || {
-	pushd ${siteDir}/etc > /dev/null
+	pushd ${thisDir} > /dev/null
 	make || {
 		echo "can't build image, exiting"
 		exit 2
@@ -23,6 +24,15 @@ docker pull ${imgTag} || {
 	popd > /dev/null
 }
 
+{
+	echo "siteDir=${siteDir}"
+	echo "imgTag=${imgTag}"
+} > "${thisDir}/.env"
+
 set -x
-docker run -it --rm -p 4000:4000 -w /work -v ${siteDir}:/work ${imgTag} bash etc/jekyll-booter.sh
+# docker run -it --rm -p 4000:4000 -w /work -v ${siteDir}:/work ${imgTag} bash etc/jekyll-booter.sh
 { set +x; } 2> /dev/null
+
+pushd ${thisDir} > /dev/null
+docker compose up
+popd > /dev/null
