@@ -1,0 +1,17 @@
+#
+# Authors: Patrizio Bertoni patrizio.bertoni.89@gmail.com
+#
+
+services:
+  jekyll:
+    image: ${imgTag}
+    ports:
+      - "4000:4000"
+    volumes:
+      - ${siteDir}:/work
+    working_dir: /work
+    entrypoint: bash
+    command: etc/jekyll-booter.sh
+    tty: true
+    stdin_open: true
+    restart: "no"

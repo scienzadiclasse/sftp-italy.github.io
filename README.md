@@ -120,3 +120,12 @@ You can create a pull request through the GitHub GUI and set the _source branch_
 Adapt the following URL to your needs: [https://github.com/scienzadiclasse/sftp-italy.github.io/compare/main...<your-username>:sftp-italy.github.io:<your-branch>](https://github.com/scienzadiclasse/sftp-italy.github.io/compare/main...<your-username>:sftp-italy.github.io:<your-branch>).
 
 Should you get stuck, just email [patrizio.bertoni.89@gmail.com](patrizio.bertoni.89@gmail.com).
+
+## Misc resources
+
+  1. [https://jekyllrb.com/docs/posts/](https://jekyllrb.com/docs/posts/)
+
+
+## Notes
+
+Whoa, to justify text: [Private Link](https://gemini.google.com/u/1/app/eba218a120dca4a6)
