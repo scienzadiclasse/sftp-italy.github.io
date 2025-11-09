@@ -289,13 +289,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     text-align: justify;
     font-size: clamp(12px,3vw,22px);
   }
-/* Sidebar default */
-#mySidebar {
-    width: 320px; /* desktop */
-    position: fixed !important;
-    height: 100%;
-    z-index: 3;
-}
 
 /* =========================
    Sidebar responsive e overlay
