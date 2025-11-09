@@ -4,7 +4,7 @@ html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body {
     margin: 0;
-    font-size: clamp(12px, 3vw, 22px);
+    font-size: clamp(15px, 3vw, 22px);
 }
 article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}summary{display:list-item}
 audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
