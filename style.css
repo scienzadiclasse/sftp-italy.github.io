@@ -289,23 +289,24 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     text-align: justify;
     font-size: clamp(12px,3vw,22px);
   }
-/* Sidebar più stretta su mobile e senza coprire gli articoli */
+/* Sidebar responsive più stretta e contenuto visibile */
 @media only screen and (max-width: 600px) {
 
-    /* Riduce la larghezza della sidebar */
-    #mySidebar {
-        width: 230px !important;  /* puoi mettere 220 o 240 se vuoi */
-        left: 0 !important;
-    }
+  /* Sidebar più stretta */
+  #mySidebar {
+    width: 200px !important; /* larghezza più stretta su mobile */
+  }
 
-    /* Sposta l’overlay così non copre il contenuto */
-    #myOverlay {
-        left: 230px !important;
-    }
+  /* Contenuto principale con margine adeguato */
+  #main, .w3-main, article {
+    margin-left: 0 !important; /* niente margine fisso, così il testo inizia subito */
+    padding-left: 10px !important; /* piccolo padding per non attaccarsi al bordo */
+    padding-right: 10px !important;
+  }
 
-    /* Evita che il contenuto inizi sotto la sidebar */
-    #main, .w3-main, article {
-        margin-left: 230px !important;
-    }
+  /* Overlay che copre tutto */
+  #myOverlay {
+    left: 0 !important;
+  }
 }
 
