@@ -292,7 +292,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 .post-header {
     padding: 30px;
-    font-size: clamp(20px, 5vw, 35px);
 }
 
 .post-content {
