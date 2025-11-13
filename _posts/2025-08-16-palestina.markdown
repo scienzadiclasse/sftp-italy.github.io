@@ -39,7 +39,7 @@ Per fare un esempio, il collettivo Just Mathematics porta avanti una campagna ch
 Una scienza militante richiede che si stabilisca questo tipo di collaborazioni reciprocamente vantaggiose. Come ribadito nella sezione precedente, la grande attenzione che il movimento per una Palestina libera dedica alle grosse aziende tecnologiche comporta che scienziate e scienziati abbiano risorse importanti da offrire alle nostre compagne e ai nostri compagni che operano negli spazi di mobilitazione. Nel nostro caso, la Muslim Justice League non aveva bisogno di lezioni sul modo in cui la matematica viene messa al servizio dell’NSA nelle sue applicazioni crittografiche; ciò di cui aveva bisogno era semplicemente il nostro aiuto per accedere al convegno (oltre che per destreggiarsi tra le oscure norme sociali di uso in questi eventi). Allo stesso modo, potrebbe capitare che i contatti che noi abbiamo nei nostri ambienti universitari, oppure all’interno delle aziende tecnologiche complici del genocidio, facciano molto comodo ad altre/i attiviste/i locali. È solo prendendo parte alla lotta per la liberazione palestinese che possiamo capire quale sia il contributo che noi possiamo dare.
 
 
-### Passo 3: Mettere la scienza al servizio della Palestina
+## Passo 3: Mettere la scienza al servizio della Palestina
 
 Il nostro prossimo compito è immaginare collettivamente modi in cui il nostro lavoro di studiose e studiosi può agevolare la lotta per la giustizia in Palestina. Lo scienziato o la scienziata militanti dovrebbe in particolare pensare a come legare il proprio lavoro a tattiche politiche che vadano oltre le modalità di impegno giudicate convenzionali dagli standard palestinesi, quale è appunto il BDS.
 
