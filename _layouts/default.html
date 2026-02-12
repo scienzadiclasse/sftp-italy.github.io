@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <title>{{ page.title }}</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="/img/smol_logo.png">
+
+<head>
+  <title>{{ page.title }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="/img/smol_logo.png">
 
   <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:description" content="{{ page.description }}" />
-    <meta property="og:image" content="/img/smol_logo.png" />
-    <meta property="og:url" content="https://scienzadiclasse.github.io/sftp-italy.github.io/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="{{ page.title }}" />
-    <meta property="og:locale" content="{{ page.locale }}" />
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:image" content="{{ page.image | default: '/img/smol_logo.png' }}" />
+  <meta property="og:url" content="https://scienzadiclasse.github.io/sftp-italy.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ page.title }}" />
+  <meta property="og:locale" content="{{ page.locale }}" />
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ page.title }}" />
-    <meta name="twitter:description" content="{{ page.description }}" />
-    <meta name="twitter:image" content="/img/smol_logo.png" />
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ page.title }}" />
+  <meta name="twitter:description" content="{{ page.description }}" />
+  <meta name="twitter:image" content="/img/smol_logo.png" />
 
-  </head>
-  <style>
-    body,h1,h2,h3,h4,h5 {font-family: "Dosis", sans-serif}
-  </style>
-  <body>
+</head>
+<style>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Dosis", sans-serif
+  }
+</style>
 
-    <!-- Sidebar/menu -->
-    {% include sidebar.html %}
-    {% include navbar.html %}
+<body>
+
+  <!-- Sidebar/menu -->
+  {% include sidebar.html %}
+  {% include navbar.html %}
 
 
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:340px;margin-right:5px;margin-top:80px;">
+    {% if page.image %}
+    <img src="{{ page.image }}" alt="{{ page.title }}" style="max-width: 100%; margin-bottom: 20px;">
+    {% endif %}
+    {{ content }}
+  </div>
 
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-left:340px;margin-right:5px">
-      {{ content }}
-    </div>
+  <!-- W3.CSS Container -->
 
-    <!-- W3.CSS Container -->
+  {% include footer.html %}
 
-    {% include footer.html %}
+  <script>
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+  </script>
 
-    <script>
-      // Modal Image Gallery
-      function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-        var captionText = document.getElementById("caption");
-        captionText.innerHTML = element.alt;
-      }
-    </script>
+</body>
 
-  </body>
 </html>

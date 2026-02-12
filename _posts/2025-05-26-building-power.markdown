@@ -2,6 +2,7 @@
 layout: post
 title: "Incrementare il potere nelle STEM richiede il perseguimento di obiettivi sia generali che locali"
 date: 2025-05-26
+image: "/assets/images/banner3.png"
 subtitle: "Teoria e pratica per l’organizzazione del laboratorio, capitolo 3"
 categories: annunci
 author: Shua Sanchez, tradotto da Agnese

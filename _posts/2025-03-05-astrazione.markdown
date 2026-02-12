@@ -2,6 +2,7 @@
 layout: post
 title:  "L’astrazione del laboratorio."
 date:   2025-03-05
+image: "/assets/images/banner3.png"
 subtitle: "Ovvero come ho imparato a diventare un ingranaggio e a riprodurre il sistema"
 categories: annunci
 author: Calvin Wu, tradotto da Laura Porta
