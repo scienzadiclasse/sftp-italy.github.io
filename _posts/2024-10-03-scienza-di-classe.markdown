@@ -2,6 +2,7 @@
 layout: post
 title:  "Presentazione di Scienza di Classe"
 date:   2024-10-03
+image: "/assets/images/banner3.png"
 subtitle: "La nascita del collettivo"
 categories: annunci
 ---

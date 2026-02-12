@@ -2,6 +2,7 @@
 layout: post
 title: "Lotte di potere materiali e culturali"
 date: 2025-04-30
+image: "/assets/images/banner3.png"
 subtitle: "Teoria e pratica per l’organizzazione del laboratorio, capitolo 2"
 categories: annunci
 author: Iraj Eshghi, tradotto da Patrizio
