@@ -2,12 +2,12 @@
 layout: post
 title:  "La scienza è un campo di battaglia"
 date:   2025-11-14
-image: "assets/images/Campodibattaglia"
+image: "assets/images/Campodibattaglia.png"
 subtitle: "Editoriale di inaugurazione del blog"
 categories: annunci
 author: Redazione Science for the People - Italia
 ---
-![Immagine copertina](assets/images/Campodibattaglia)
+![Immagine copertina](assets/images/Campodibattaglia.png)
 Nel 2023 usciva nelle sale il film “Oppenheimer” sulla vicenda del noto “padre della bomba atomica”. Il successo riscosso dalla pellicola deriva anche dal fatto che i temi proposti sono probabilmente ancora più rilevanti nel dibattito pubblico odierno oggi di quanto non lo fossero all’epoca.
 Infatti, Sono state proprio le esplosioni in Giappone a rendere pubblico il dibattito sull’utilizzo delle armi di distruzione di massa, in precedenza relegato a piccole cerchie ristrette di scienziati e militari votati alla segretezza. Oggi i genocidi sono trasmessi in diretta social e i leader dei paesi atomici non hanno alcuna vergogna nell’agitare lo spettro della distruzione della specie umana come parte della normale dialettica tra potenze. Ma non sono solo le tensioni tra potenze a minacciare l’umanità: il capitalismo, a questo stadio del suo sviluppo, distrugge le condizioni ecologiche della vita, impone regimi autocratici e repressivi, approfondisce le oppressioni di genere, razza e classe
 In questo quadro, la scienza e la tecnologia rivestono un ruolo ambivalente: strumenti di emancipazione e progresso o dispositivi di dominio e distruzione, a seconda degli interessi che servono di prim’ordine.  Per fare un esempio drammaticamente recente, La velocità e la precisione con cui missili colpiscono obiettivi civili hanno raggiunto livelli impressionanti. L’utilizzo dell’intelligenza artificiale per identificare e massacrare civili in Palestina e la “guerra dei droni” in Ucraina sono esempi di come un’ampia gamma di tecnologie “pacifiche” trovino applicazioni militari in cui la macchina e l’algoritmo diventano freddi e ottusi intermediari tra vittima e carnefice. 
