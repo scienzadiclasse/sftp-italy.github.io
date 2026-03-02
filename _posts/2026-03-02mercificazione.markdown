@@ -109,5 +109,50 @@ Se da un lato gli sviluppi tecnologici sono decisamente positivi perché fornisc
 In conclusione, lo sviluppo delle terapie geniche rappresenta il coronamento di un modello teorico e di ricerca che, pur discostandosi nei contenuti dall’eugenetica da cui discende, ne conserva l’impostazione elitista e suprematista. 
 Ciò è osservabile innanzitutto sul piano economico, per meccanismi di finanziamento che privilegiano il profitto anche a scapito della realizzazione stessa dei progetti di ricerca, ma è riscontrabile anche sul piano della narrazione delle stesse, preoccupata di affermare la potenza della scienza di fronte all’opinione pubblica e noncurante di problematizzare i propri presupposti, i propri metodi, i propri risultati..
 
+****
+[^1]: Peter J. Russell, Genetica Molecolare quarta edizione, ©2014 Pearson Italia.
+[^2]: Nguengang Wakap, S. et al. Estimating cumulative point prevalence of rare diseases: analysis of the Orphanet database. Eur J Hum Genet 28, 165–173 (2020).
+[^3]: Adorno, W. Theodor; Horkheimer, Max. 1966. Dialettica dell'Illuminismo. Torino, Einaudi
+[^4]: (https://www.treccani.it/enciclopedia/eugenetica/)
+[^5]: [Björkman, Maria, e Sven Widmalm. 2010. «Selling Eugenics: The Case of Sweden». Notes and Records of the Royal Society 64(4):379–400](https://royalsocietypublishing.org/rsnr/article-abstract/64/4/379/67618/Selling-eugenics-the-case-of-Sweden?redirectedFrom=fulltext)
+[^6]: [Steriliseringsfrågan i Sverige 1935 - 1975 Historisk belysning - Kartläggning - Intervjuer - Regeringen.se pdf.](https://www.regeringen.se/rattsliga-dokument/statens-offentliga-utredningar/2000/03/sou-200020/)
+[^7]: Richard Dawkins, The Selfish Gene, Oxford University Press, 1976, p.21, [tra. it., Il gene egoista, Zanichelli, Bologna 1979].
+[^8]: Il primo libro critico verso il determinismo biologico è Exploding the Gene Myth, di Ruth Hubbard e Elijah Wald. Nel testo si mostra come il modello gene-malattia scada nell’idea che fenomeni  devianza sociale, alcolismo e comportamenti violenti siano geneticamente determinati e come le scarse conoscenze genetiche non possano dimostrare le correlazioni tra geni e questo tipo di comportamenti.
+[^9]: Wray, N. R., Wijmenga, C., Sullivan, P. F., Yang, J. & Visscher, P. M. Common Disease Is More Complex Than Implied by the Core Gene Omnigenic Model. Cell 173, 1573–1580 (2018).
+[^10]: Ludwig von Bertalanffy, Teoria generale dei sistemi: fondamenti, sviluppo e applicazioni, Studio Arnoldo Mondadori Editore, Milano 1983.
+[^11]: Savencu, O., Lișcu, H.-D. & Verga, N. Systems Theory in Oncology: A Narrative Review of an Integrative Framework for Understanding Cancer Complexity. Physiologia 5, 48 (2025).
+[^12]: Daniel J. Kelves, In the Name of Eugenetics: Genetics and the Uses of Human Heredity, Knopf, 1985.
+[^13]: Richard Lewontin, Il sogno del genoma umano e altre illusioni della scienza, Laterza, Roma-Bari 2004.
+[^14]: [Michele De Luca e Giulio Cossu. «Cost and Availability of Novel Cell and Gene Therapies: Can We Avoid a Catastrophic Second Valley of Death?» EMBO Reports 24, fasc. 2 (6 febbraio 2023): e56661.](https://link.springer.com/article/10.15252/embr.202256661)
+[^15]: [Ann-Marie Craig e Mo Malek. «Market Structure and Conduct in the Pharmaceutical Industry». Pharmacology & Therapeutics 66, fasc. 2 (gennaio 1995): 301–37.](https://www.sciencedirect.com/science/article/abs/pii/016372589500002X?via%3Dihub)
+[^16]: Mariana Mazzucato, Lo Stato innovatore Sfatare il mito del pubblico contro il privato, Economica Laterza, 2020.
+[^17]: Vandana Shiva, Protect or plunder? understanding intellectual property rights, Zed Books, 2001
+[^18]: Marcia Angell, Farma&Co. Industria farmaceutica: storie straordinarie di ordinaria corruzione, Il Saggiatore, Milano 2006.
+[^19]: Hughes JP, Rees S, Kalindjian SB, Philpott KL. Principles of early drug discovery. Br J Pharmacol. 2011 Mar;162(6):1239-49. doi: 10.1111/j.1476-5381.2010.01127.x. PMID: 21091654; PMCID: PMC3058157.
+[^20]: [NIH — Office of Budget —Appropriations History by Institute/Center (1938 to Present)](https://officeofbudget.od.nih.gov/approp_hist.html)
+[^21]: [David Beran, Margaret Ewen, e Richard Laing. «Constraints and Challenges in Access to Insulin: A Global Perspective». The Lancet Diabetes & Endocrinology 4, fasc. 3 (marzo 2016): 275–85.](https://linkinghub.elsevier.com/retrieve/pii/S2213858715005215)
+[^22]:[ David Beran, Edwin A. M. Gale, e John S. Yudkin. «The Insulin Market Reaches 100». Diabetologia 65, fasc. 6 (giugno 2022): 931–35.](https://link.springer.com/article/10.1007/s00125-022-05680-y)
+[^23]: [olgensma | European Medicines Agency (EMA)](https://www.ema.europa.eu/en/medicines/human/EPAR/zolgensma)
+[^24]: [AveXis receives FDA approval for Zolgensma®, the first and only gene therapy for pediatric patients with spinal muscular atrophy (SMA) | Novartis](https://www.novartis.com/news/media-releases/avexis-receives-fda-approval-zolgensma-first-and-only-gene-therapy-pediatric-patients-spinal-muscular-atrophy-sma)
+[^25]: [Charity and NIH funding related to Zolgensma - Knowledge Ecology International](https://www.keionline.org/charity-nih-funding-related-to-zolgensma)
+[^26]: [Novartis successfully completes acquisition of AveXis, Inc. | Novartis](https://www.novartis.com/news/media-releases/novartis-successfully-completes-acquisition-avexis-inc)
+[^27]: [Michele De Luca e Giulio Cossu. «Cost and Availability of Novel Cell and Gene Therapies: Can We Avoid a Catastrophic Second Valley of Death?» EMBO Reports 24, fasc. 2 (6 febbraio 2023): e56661](https://link.springer.com/article/10.15252/embr.202256661)
+[^28]: [Strimvelis | European Medicines Agency (EMA)](https://www.ema.europa.eu/en/medicines/human/EPAR/strimvelis)
+[^29]: [Orchard Therapeutics Extends Runway into 2024, Focusing HSC Gene Therapy Platform Exclusively on Severe Neurometabolic Diseases and Research Platform | Orchard Therapeutics](https://ir.orchard-tx.com/news-releases/news-release-details/orchard-therapeutics-extends-runway-2024-focusing-hsc-gene/)
+[^30]: [Holoclar | European Medicines Agency (EMA)](https://www.ema.europa.eu/en/medicines/human/EPAR/holoclar)
+[^31]: Nature. 2017 November 16; 551(7680): 327–332. doi:10.1038/nature24487.
+[^32]:[Comunicato-stampa-via-libera-a-acquisizione-Holostem_ok.pdf](https://www.eneatechbiomedical.it/wp-content/uploads/2024/08/Comunicato-stampa-via-libera-a-acquisizione-Holostem_ok.pdf)
+[^33]: (https://www.fondazionetelethon.it/storie-e-news/news/dalla-fondazione/la-ricerca-di-fondazione-telethon-sbarca-in-usa-via-libera-dalla-fda-alla-terapia-genica-per-la-sindrome-di-wiskott-aldrich-was/)
+[^34]: [Ca, Jayashankar, Venkata Bharat Kumar P, Venkataramana Kandi, Girish N, Sanjana K, Divya Dharshini, Satya Vijaya Chandana Batchu, e Prakash Bhanu. 2024. «Neglected Tropical Diseases: A Comprehensive Review». Cureus.](https://doi.org/10.7759/cureus.53933)
+[^35]: Patel, V., D. Chisholm., T. Dua, R. Laxminarayan, and M. E. Medina-Mora, editors. 2015. Mental, Neurological, and Substance Use Disorders. Disease Control Priorities, third edition, volume 4. Washington, DC: World Bank. doi:10.1596/978-1-4648-0426-7. License: Creative Commons Attribution CC BY 3.0 IGO
+[^36]: Li, Z. et al. From Code to Life: The AI‐Driven Revolution in Genome Editing. Advanced Science 12, e17029 (2025).
+[^37]: Li, S. et al. Automated high-throughput genome editing platform with an AI learning in situ prediction model. Nat Commun 13, 7386 (2022).
+[^38]: Dixit, S., Kumar, A., Srinivasan, K., Vincent, P. M. D. R. & Ramu Krishnan, N. Advancing genome editing with artificial intelligence: opportunities, challenges, and future directions. Front. Bioeng. Biotechnol. 11, 1335901 (2024).
+[^39]: [Guest, O. et al. Against the Uncritical Adoption of ‘AI’ Technologies in Academia.](https://doi.org/10.5281/ZENODO.17065099)
+[^40]: Jobin, A., Ienca, M. & Vayena, E. The global landscape of AI ethics guidelines. Nat Mach Intell 1, 389–399 (2019).
+[^41]: Marsico, F. & Amigo, M. Ethical and security challenges in AI for forensic genetics: From bias to adversarial attacks. Forensic Science International: Genetics 76, 103225 (2025).
+[^42]: [Aliyeva, A. AI in biomedical science: innovations, challenges, and ethical perspectives. Explor Digit Health Technol 101144 (2025)](https://doi.org/10.37349/edht.2025.101144)
+
+
 
 
