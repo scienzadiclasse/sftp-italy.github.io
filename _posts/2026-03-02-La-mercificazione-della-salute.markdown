@@ -82,7 +82,7 @@ Tre casi sono emblematici:
 
  Questi tre esempi possono possono essere illuminanti nel mostrare come la struttura della ricerca biomedica sia viziata da un modello economico ben delineato, che ne limita sviluppo e potenzialità.
 
- ## Quali farmaci per quali persone?
+## Quali farmaci per quali persone?
 
 In opposizione alle rarissime malattie genetiche e al loro enorme valore di mercato, le cui terapie presentano prezzi elevati, troviamo le malattie tropicali neglette (NTDs): un totale di 17 malattie che affliggono più di un miliardo di persone in modo paradossale, dato che sarebbero facili sia da prevenire che da curare a bassissimo costo [^34].
 
