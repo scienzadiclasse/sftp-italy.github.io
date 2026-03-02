@@ -131,9 +131,9 @@ Ciò è osservabile innanzitutto sul piano economico, per meccanismi di finanzia
 [^19]: Hughes JP, Rees S, Kalindjian SB, Philpott KL. Principles of early drug discovery. Br J Pharmacol. 2011 Mar;162(6):1239-49. doi: 10.1111/j.1476-5381.2010.01127.x. PMID: 21091654; PMCID: PMC3058157.
 [^20]: [NIH — Office of Budget —Appropriations History by Institute/Center (1938 to Present)](https://officeofbudget.od.nih.gov/approp_hist.html)
 [^21]: [David Beran, Margaret Ewen, e Richard Laing. «Constraints and Challenges in Access to Insulin: A Global Perspective». The Lancet Diabetes & Endocrinology 4, fasc. 3 (marzo 2016): 275–85.](https://linkinghub.elsevier.com/retrieve/pii/S2213858715005215)
-[^22]:[ David Beran, Edwin A. M. Gale, e John S. Yudkin. «The Insulin Market Reaches 100». Diabetologia 65, fasc. 6 (giugno 2022): 931–35.](https://link.springer.com/article/10.1007/s00125-022-05680-y)
-[^23]: [olgensma | European Medicines Agency (EMA)](https://www.ema.europa.eu/en/medicines/human/EPAR/zolgensma)
-[^24]: [AveXis receives FDA approval for Zolgensma®, the first and only gene therapy for pediatric patients with spinal muscular atrophy (SMA) | Novartis](https://www.novartis.com/news/media-releases/avexis-receives-fda-approval-zolgensma-first-and-only-gene-therapy-pediatric-patients-spinal-muscular-atrophy-sma)
+[^22]:[David Beran, Edwin A. M. Gale, e John S. Yudkin. «The Insulin Market Reaches 100». Diabetologia 65, fasc. 6 (giugno 2022): 931–35.](https://link.springer.com/article/10.1007/s00125-022-05680-y)
+[^23]:[Zolgensma European Medicines Agency (EMA)](https://www.ema.europa.eu/en/medicines/human/EPAR/zolgensma)
+[^24]:[AveXis receives FDA approval for Zolgensma®, the first and only gene therapy for pediatric patients with spinal muscular atrophy (SMA) Novartis](https://www.novartis.com/news/media-releases/avexis-receives-fda-approval-zolgensma-first-and-only-gene-therapy-pediatric-patients-spinal-muscular-atrophy-sma)
 [^25]: [Charity and NIH funding related to Zolgensma - Knowledge Ecology International](https://www.keionline.org/charity-nih-funding-related-to-zolgensma)
 [^26]: [Novartis successfully completes acquisition of AveXis, Inc. | Novartis](https://www.novartis.com/news/media-releases/novartis-successfully-completes-acquisition-avexis-inc)
 [^27]: [Michele De Luca e Giulio Cossu. «Cost and Availability of Novel Cell and Gene Therapies: Can We Avoid a Catastrophic Second Valley of Death?» EMBO Reports 24, fasc. 2 (6 febbraio 2023): e56661](https://link.springer.com/article/10.15252/embr.202256661)
