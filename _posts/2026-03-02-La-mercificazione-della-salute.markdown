@@ -20,7 +20,7 @@ Una riflessione critica su bioetica, epistemologia e giustizia sociale è indisp
 
 ## Le terapie geniche, costosissime e destinate a malattie rarissime, riflettono una mentalità eugenetica diffusa nella comunità scientifica e trovano consenso nel fronte politico reazionario
 
-## Cosa sono le malattie genetiche
+## Cosa sono le malattie genetiche[^1]
 
 Le malattie genetiche sono patologie che si verificano nel momento in cui una mutazione nel DNA modifica il processo di sintesi o la struttura funzionale di una proteina, alterandone la funzione. 
 Nel mondo si stima ci siano tra 263 e 446 milioni di casi[^2] di malattie genetiche e tra queste si definiscono rare quelle con un’incidenza inferiore a un caso ogni 2000 persone.
