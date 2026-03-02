@@ -1,3 +1,5 @@
+---
+
 layout: post
 title: "La mercificazione della salute"
 date: 2026-03-02
@@ -5,6 +7,8 @@ image: "/assets/images/banner3.png"
 subtitle: "Le terapie geniche nella società capitalista"
 categories: annunci
 author: Lorenzo Boscarini
+
+---
 
 Le terapie geniche, presentate come cure rivoluzionarie per malattie rarissime, pongono interrogativi etici, sociali ed economici. 
 La loro storia è influenzata da un approccio eugenetico e determinista che mai del tutto è stato superato nella comunità scientifica. 
