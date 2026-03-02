@@ -3,7 +3,7 @@
 layout: post
 title: "La mercificazione della salute"
 date: 2026-03-02
-image: "/assets/images/banner3.png"
+image: "/assets/images/genoma2.png"
 subtitle: "Le terapie geniche nella società capitalista"
 categories: annunci
 author: Lorenzo Boscarini
