@@ -9,16 +9,7 @@ categories: annunci
 author: Lorenzo Boscarini
 
 ---
-
-Le terapie geniche, presentate come cure rivoluzionarie per malattie rarissime, pongono interrogativi etici, sociali ed economici. 
-La loro storia è influenzata da un approccio eugenetico e determinista che mai del tutto è stato superato nella comunità scientifica. 
-I costi esorbitanti delle terapie e i modelli industriali oligopolistici evidenziano come logiche capitaliste di profitto siano avverse alla salute collettiva. 
-Le ATMPs (Advanced Therapy Medical Products) diventano così terreno di scontro tra ricerca pubblica, interessi privati e bisogni dei pazienti. 
-Una riflessione critica su bioetica, epistemologia e giustizia sociale è indispensabile per ridefinire il futuro della ricerca biomedica.
-
 # Mercificazione della salute: le terapie geniche nella società capitalita
-
-## Le terapie geniche, costosissime e destinate a malattie rarissime, riflettono una mentalità eugenetica diffusa nella comunità scientifica e trovano consenso nel fronte politico reazionario
 
 ## Cosa sono le malattie genetiche[^1]
 
@@ -107,7 +98,7 @@ Una concezione biologica basata sul determinismo genetico ha trovato supporto in
 Se da un lato gli sviluppi tecnologici sono decisamente positivi perché forniscono dati più affidabili, farmaci più efficaci e altri vantaggi, dall’altro manca completamente un dibattito relativo agli interessi economici che soffocano, imbrigliano e spesso annientano le ricerche nell’ambito delle patologie rare.
 
 In conclusione, lo sviluppo delle terapie geniche rappresenta il coronamento di un modello teorico e di ricerca che, pur discostandosi nei contenuti dall’eugenetica da cui discende, ne conserva l’impostazione elitista e suprematista. 
-Ciò è osservabile innanzitutto sul piano economico, per meccanismi di finanziamento che privilegiano il profitto anche a scapito della realizzazione stessa dei progetti di ricerca, ma è riscontrabile anche sul piano della narrazione delle stesse, preoccupata di affermare la potenza della scienza di fronte all’opinione pubblica e noncurante di problematizzare i propri presupposti, i propri metodi, i propri risultati..
+Ciò è osservabile innanzitutto sul piano economico, per meccanismi di finanziamento che privilegiano il profitto anche a scapito della realizzazione stessa dei progetti di ricerca, ma è riscontrabile anche sul piano della narrazione delle stesse, preoccupata di affermare la potenza della scienza di fronte all’opinione pubblica e noncurante di problematizzare i propri presupposti, i propri metodi, i propri risultati.
 
 ****
 [^1]: Peter J. Russell, Genetica Molecolare quarta edizione, ©2014 Pearson Italia.
