@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: "La mercificazione della salute"
+title: "Mercificazione della salute: le terapie geniche nella società capitalista"
 date: 2026-03-02
 image: "/assets/images/genoma3.png"
 subtitle: "Le terapie geniche nella società capitalista"
@@ -9,9 +9,6 @@ categories: annunci
 author: Lorenzo Boscarini
 
 ---
-# Mercificazione della salute: le terapie geniche nella società capitalita
-##Le terapie geniche nella società capitalista
-
 ## Cosa sono le malattie genetiche[^1]
 
 Le malattie genetiche sono patologie che si verificano nel momento in cui una mutazione nel DNA modifica il processo di sintesi o la struttura funzionale di una proteina, alterandone la funzione. 
