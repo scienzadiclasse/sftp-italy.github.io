@@ -124,7 +124,7 @@ Ciò è osservabile innanzitutto sul piano economico, per meccanismi di finanzia
 [^23]:[Zolgensma European Medicines Agency (EMA)](https://www.ema.europa.eu/en/medicines/human/EPAR/zolgensma)
 [^24]:[AveXis receives FDA approval for Zolgensma®, the first and only gene therapy for pediatric patients with spinal muscular atrophy (SMA) Novartis](https://www.novartis.com/news/media-releases/avexis-receives-fda-approval-zolgensma-first-and-only-gene-therapy-pediatric-patients-spinal-muscular-atrophy-sma)
 [^25]: [Charity and NIH funding related to Zolgensma - Knowledge Ecology International](https://www.keionline.org/charity-nih-funding-related-to-zolgensma)
-[^26]: [Novartis successfully completes acquisition of AveXis, Inc. | Novartis](https://www.novartis.com/news/media-releases/novartis-successfully-completes-acquisition-avexis-inc)
+[^26]: [Novartis successfully completes acquisition of AveXis](https://www.novartis.com/news/media-releases/novartis-successfully-completes-acquisition-avexis-inc)
 [^27]: [Michele De Luca e Giulio Cossu. «Cost and Availability of Novel Cell and Gene Therapies: Can We Avoid a Catastrophic Second Valley of Death?» EMBO Reports 24, fasc. 2 (6 febbraio 2023): e56661](https://link.springer.com/article/10.15252/embr.202256661)
 [^28]: [Strimvelis European Medicines Agency (EMA)](https://www.ema.europa.eu/en/medicines/human/EPAR/strimvelis)
 [^29]: [Orchard Therapeutics Extends Runway into 2024, Focusing HSC Gene Therapy Platform Exclusively on Severe Neurometabolic Diseases and Research Platform Orchard Therapeutics](https://ir.orchard-tx.com/news-releases/news-release-details/orchard-therapeutics-extends-runway-2024-focusing-hsc-gene/)
