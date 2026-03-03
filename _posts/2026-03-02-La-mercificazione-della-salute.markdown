@@ -10,6 +10,7 @@ author: Lorenzo Boscarini
 
 ---
 # Mercificazione della salute: le terapie geniche nella società capitalita
+##Le terapie geniche nella società capitalista
 
 ## Cosa sono le malattie genetiche[^1]
 
