@@ -3,7 +3,7 @@
   role="navigation"
   aria-label="Navigazione principale"
   style="
-    position:fixed; top:0; left:0; height:100%; z-index:10;
+    position:fixed; top:0; left:0; height:100%; z-index:9999;
     display:flex; flex-direction:column; overflow-y:auto;
     width:min(300px, 75vw);
     background:#1e1e1e;
@@ -135,7 +135,10 @@
 function w3_open() {
   var sidebar = document.getElementById('mySidebar');
   var overlay = document.getElementById('myOverlay');
-  if (sidebar) sidebar.classList.add('sidebar-open');
+  if (sidebar) {
+    sidebar.classList.add('sidebar-open');
+    sidebar.style.transform = 'translateX(0)';
+  }
   if (overlay) overlay.style.display = 'block';
   var btn = document.getElementById('hamburger-btn');
   if (btn) btn.setAttribute('aria-expanded', 'true');
@@ -145,7 +148,10 @@ function w3_open() {
 function w3_close() {
   var sidebar = document.getElementById('mySidebar');
   var overlay = document.getElementById('myOverlay');
-  if (sidebar) sidebar.classList.remove('sidebar-open');
+  if (sidebar) {
+    sidebar.classList.remove('sidebar-open');
+    sidebar.style.transform = 'translateX(-100%)';
+  }
   if (overlay) overlay.style.display = 'none';
   var btn = document.getElementById('hamburger-btn');
   if (btn) btn.setAttribute('aria-expanded', 'false');
