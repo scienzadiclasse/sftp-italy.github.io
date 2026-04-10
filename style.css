@@ -376,14 +376,23 @@ img {
    ====================================================== */
 
 .w3-sidebar {
-  /* Su mobile non supera l'82% dello schermo */
-  width: min(var(--sidebar-w), 82vw) !important;
+  /* NON mettere display qui: W3.CSS gestisce show/hide su mobile
+     tramite display:none/.w3-collapse — !important lo sovrascrive
+     e causa la sidebar sempre aperta e impossibile da chiudere */
+  width: min(var(--sidebar-w), 75vw) !important;
   max-width: var(--sidebar-w);
   background: var(--dark) !important;
-  box-shadow: 3px 0 20px rgba(0,0,0,0.18);
+  box-shadow: 3px 0 20px rgba(0,0,0,0.25);
   border-right: 3px solid var(--red);
-  display: flex !important;
-  flex-direction: column;
+  /* flex solo su desktop — il JS usa display:'flex' su mobile */
+}
+
+/* Desktop: sempre visibile come colonna flex */
+@media (min-width: 993px) {
+  .w3-sidebar {
+    display: flex !important;
+    flex-direction: column;
+  }
 }
 
 .sidebar-logo {
