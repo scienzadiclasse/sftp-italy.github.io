@@ -1,26 +1,58 @@
-<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:320px;font-weight:bold;" id="mySidebar"><br>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:28px">Close Menu</a>
-  <div class="w3-container">
-      
-    <h3 class="w3-padding-64"><b>SftP<br>ITALY</b></h3>
+<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" id="mySidebar" style="z-index:3;width:320px;" role="navigation" aria-label="Navigazione principale">
+  <button
+    onclick="w3_close()"
+    class="w3-button w3-hide-large"
+    style="width:100%;font-size:1.1rem;padding:14px 16px;background:rgba(0,0,0,0.15);color:#fff;text-align:left;border-bottom:1px solid rgba(255,255,255,0.15);"
+    aria-label="Chiudi menu"
+  >
+    <i class="fa fa-times" style="margin-right:8px;"></i> Chiudi Menu
+  </button>
+
+  <div style="padding: 32px 24px 20px;">
+    <a href="/" class="sidebar-logo" aria-label="SFTP Italia - Home">
+      SftP<br>ITALY
+    </a>
+    <div class="sidebar-tagline">Scienza di Classe</div>
   </div>
-  <div class="w3-bar-block">
-    <a href="/#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px">Home</a>
-        <!-- <a href="https://www.instagram.com/sftp.canada/" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px">Instagram <i class="fa fa-instagram" style="font-size:24px"></i></a>
-    <a href="https://linktr.ee/sftp.canada" target="blank" onclick="w3_close()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px">Linktree <i class="fa fa-tree" style="font-size:24px"></i></a> -->
-    <a href="/manifesto" target="blank" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px">Il nostro Manifesto  <i class="fa fa-file-text" style="font-size:24px"></i></a>
-    <a href="https://magazine.scienceforthepeople.org/" target="blank" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px">SftP Magazine <i class="fa fa-book"></i></a>
-    <a href="/#partecipa" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px">Partecipa </a>
-    <a href="/#scrivici" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px">Scrivici</a>
-    <a href="/blog" class="w3-bar-item w3-button w3-hover-white" style="font-size:24px">Blog</a>
+
+  <div style="height:1px;background:rgba(255,255,255,0.2);margin:0 24px 8px;"></div>
+
+  <nav class="w3-bar-block" style="padding: 8px 0;">
+    <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
+      <i class="fa fa-home" style="width:22px;margin-right:8px;opacity:0.75;"></i>Home
+    </a>
+    <a href="/manifesto" target="_blank" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
+      <i class="fa fa-file-text-o" style="width:22px;margin-right:8px;opacity:0.75;"></i>Il nostro Manifesto
+    </a>
+    <a href="https://magazine.scienceforthepeople.org/" target="_blank" rel="noopener" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
+      <i class="fa fa-book" style="width:22px;margin-right:8px;opacity:0.75;"></i>SftP Magazine
+    </a>
+    <a href="/blog" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
+      <i class="fa fa-pencil-square-o" style="width:22px;margin-right:8px;opacity:0.75;"></i>Blog
+    </a>
+    <a href="/#partecipa" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
+      <i class="fa fa-users" style="width:22px;margin-right:8px;opacity:0.75;"></i>Partecipa
+    </a>
+    <a href="/#scrivici" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
+      <i class="fa fa-envelope-o" style="width:22px;margin-right:8px;opacity:0.75;"></i>Scrivici
+    </a>
+  </nav>
+
+  <div style="position:absolute;bottom:28px;left:0;right:0;padding:0 24px;">
+    <div style="height:1px;background:rgba(255,255,255,0.2);margin-bottom:20px;"></div>
+    <div style="display:flex;gap:12px;justify-content:center;">
+      <a href="https://www.youtube.com/@SFTPItalia" target="_blank" rel="noopener" aria-label="YouTube" style="color:rgba(255,255,255,0.65);font-size:1.1rem;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><i class="fa fa-youtube"></i></a>
+      <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener" aria-label="Instagram" style="color:rgba(255,255,255,0.65);font-size:1.1rem;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><i class="fa fa-instagram"></i></a>
+      <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" aria-label="Telegram" style="color:rgba(255,255,255,0.65);font-size:1.1rem;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><i class="fa fa-telegram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100094782115818" target="_blank" rel="noopener" aria-label="Facebook" style="color:rgba(255,255,255,0.65);font-size:1.1rem;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><i class="fa fa-facebook"></i></a>
+    </div>
   </div>
 </nav>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<!-- Overlay for mobile -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer;" title="Chiudi menu" id="myOverlay"></div>
 
 <script>
-  // Script to open and close sidebar
   function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
