@@ -3,25 +3,34 @@
   id="mySidebar"
   role="navigation"
   aria-label="Navigazione principale"
-  style="z-index:3;"
+  style="z-index:3; flex-direction:column;"
 >
-  <!-- Chiudi (solo mobile) -->
-  <button
-    onclick="w3_close()"
-    class="w3-hide-large"
-    aria-label="Chiudi menu"
-    style="
-      width:100%; background:rgba(255,255,255,0.05); border:none;
-      color:rgba(255,255,255,0.7); font-family:var(--font-sans,'Dosis',sans-serif);
-      font-size:0.85rem; font-weight:600; letter-spacing:0.08em;
-      padding:14px 20px; text-align:left; cursor:pointer;
-      border-bottom:1px solid rgba(255,255,255,0.07);
-      display:flex; align-items:center; gap:10px;
-      min-height:44px;
-    "
-  >
-    <i class="fa fa-times" aria-hidden="true"></i> CHIUDI MENU
-  </button>
+  <!-- Barra superiore mobile: titolo + pulsante chiudi -->
+  <div class="w3-hide-large" style="
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 16px;
+    height:56px;
+    background:rgba(255,255,255,0.04);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    flex-shrink:0;
+  ">
+    <span style="font-family:var(--font-sans,'Dosis',sans-serif);font-size:1rem;font-weight:700;color:#fff;letter-spacing:0.06em;">
+      SftP <span style="color:var(--red,#D42B1E);">ITALY</span>
+    </span>
+    <button
+      onclick="w3_close()"
+      aria-label="Chiudi menu"
+      style="
+        background:var(--red,#D42B1E); border:none; color:#fff;
+        width:40px; height:40px; border-radius:50%;
+        font-size:1.2rem; cursor:pointer; display:flex;
+        align-items:center; justify-content:center;
+        flex-shrink:0;
+      "
+    >
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
 
   <!-- Logo / Brand -->
   <div style="padding:36px 24px 24px;">
@@ -80,13 +89,18 @@
   </div>
 </nav>
 
-<!-- Overlay mobile -->
+<!-- Overlay mobile: tap per chiudere -->
 <div
-  class="w3-overlay w3-hide-large"
-  onclick="w3_close()"
-  style="cursor:pointer;"
-  title="Chiudi menu"
   id="myOverlay"
+  onclick="w3_close()"
+  style="
+    display:none; position:fixed; top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.55);
+    z-index:2; cursor:pointer;
+  "
+  title="Chiudi menu"
+  aria-hidden="true"
 ></div>
 
 <style>
@@ -112,7 +126,8 @@
 function w3_open() {
   var sidebar = document.getElementById('mySidebar');
   var overlay = document.getElementById('myOverlay');
-  if (sidebar) sidebar.style.display = 'block';
+  // Usare 'flex' perché il sidebar ha flex-direction:column
+  if (sidebar) sidebar.style.display = 'flex';
   if (overlay) overlay.style.display = 'block';
   var btn = document.getElementById('hamburger-btn');
   if (btn) btn.setAttribute('aria-expanded', 'true');
