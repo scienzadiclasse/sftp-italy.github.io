@@ -1,9 +1,18 @@
 <nav
-  class="w3-sidebar w3-collapse w3-top"
   id="mySidebar"
   role="navigation"
   aria-label="Navigazione principale"
-  style="z-index:3; flex-direction:column;"
+  style="
+    position:fixed; top:0; left:0; height:100%; z-index:10;
+    display:flex; flex-direction:column; overflow-y:auto;
+    width:min(300px, 75vw);
+    background:#1e1e1e;
+    border-right:3px solid #D42B1E;
+    box-shadow:3px 0 20px rgba(0,0,0,0.35);
+    transform:translateX(-100%);
+    transition:transform 0.3s ease;
+    will-change:transform;
+  "
 >
   <!-- Barra superiore mobile: titolo + pulsante chiudi -->
   <div class="w3-hide-large" style="
@@ -126,19 +135,20 @@
 function w3_open() {
   var sidebar = document.getElementById('mySidebar');
   var overlay = document.getElementById('myOverlay');
-  // Usare 'flex' perché il sidebar ha flex-direction:column
-  if (sidebar) sidebar.style.display = 'flex';
+  if (sidebar) sidebar.classList.add('sidebar-open');
   if (overlay) overlay.style.display = 'block';
   var btn = document.getElementById('hamburger-btn');
   if (btn) btn.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
 }
 
 function w3_close() {
   var sidebar = document.getElementById('mySidebar');
   var overlay = document.getElementById('myOverlay');
-  if (sidebar) sidebar.style.display = 'none';
+  if (sidebar) sidebar.classList.remove('sidebar-open');
   if (overlay) overlay.style.display = 'none';
   var btn = document.getElementById('hamburger-btn');
   if (btn) btn.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
 }
 </script>

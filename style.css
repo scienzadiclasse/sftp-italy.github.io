@@ -359,8 +359,13 @@ img {
 
 .site-main {
   min-height: 100vh;
-  margin-left: var(--sidebar-w);
   transition: margin-left .4s;
+}
+
+@media (min-width: 993px) {
+  .site-main {
+    margin-left: var(--sidebar-w);
+  }
 }
 
 /* Wrapper per pagine generiche (non-post) */
@@ -375,23 +380,16 @@ img {
    SIDEBAR
    ====================================================== */
 
-.w3-sidebar {
-  /* NON mettere display qui: W3.CSS gestisce show/hide su mobile
-     tramite display:none/.w3-collapse — !important lo sovrascrive
-     e causa la sidebar sempre aperta e impossibile da chiudere */
-  width: min(var(--sidebar-w), 75vw) !important;
-  max-width: var(--sidebar-w);
-  background: var(--dark) !important;
-  box-shadow: 3px 0 20px rgba(0,0,0,0.25);
-  border-right: 3px solid var(--red);
-  /* flex solo su desktop — il JS usa display:'flex' su mobile */
+/* Sidebar: visibile su desktop (transform:0), nascosta su mobile (transform:-100%) */
+/* Su mobile si apre aggiungendo la classe .sidebar-open via JS */
+#mySidebar.sidebar-open {
+  transform: translateX(0) !important;
 }
 
-/* Desktop: sempre visibile come colonna flex */
+/* Desktop: sidebar sempre visibile */
 @media (min-width: 993px) {
-  .w3-sidebar {
-    display: flex !important;
-    flex-direction: column;
+  #mySidebar {
+    transform: translateX(0) !important;
   }
 }
 
