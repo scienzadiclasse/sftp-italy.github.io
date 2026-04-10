@@ -1,65 +1,129 @@
-<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" id="mySidebar" style="z-index:3;width:320px;" role="navigation" aria-label="Navigazione principale">
+<nav
+  class="w3-sidebar w3-collapse w3-top"
+  id="mySidebar"
+  role="navigation"
+  aria-label="Navigazione principale"
+  style="z-index:3;"
+>
+  <!-- Chiudi (solo mobile) -->
   <button
     onclick="w3_close()"
-    class="w3-button w3-hide-large"
-    style="width:100%;font-size:1.1rem;padding:14px 16px;background:rgba(0,0,0,0.15);color:#fff;text-align:left;border-bottom:1px solid rgba(255,255,255,0.15);"
+    class="w3-hide-large"
     aria-label="Chiudi menu"
+    style="
+      width:100%; background:rgba(255,255,255,0.05); border:none;
+      color:rgba(255,255,255,0.7); font-family:var(--font-sans,'Dosis',sans-serif);
+      font-size:0.85rem; font-weight:600; letter-spacing:0.08em;
+      padding:14px 20px; text-align:left; cursor:pointer;
+      border-bottom:1px solid rgba(255,255,255,0.07);
+      display:flex; align-items:center; gap:10px;
+      min-height:44px;
+    "
   >
-    <i class="fa fa-times" style="margin-right:8px;"></i> Chiudi Menu
+    <i class="fa fa-times" aria-hidden="true"></i> CHIUDI MENU
   </button>
 
-  <div style="padding: 32px 24px 20px;">
-    <a href="/" class="sidebar-logo" aria-label="SFTP Italia - Home">
-      SftP<br>ITALY
+  <!-- Logo / Brand -->
+  <div style="padding:36px 24px 24px;">
+    <a href="/" class="sidebar-logo" aria-label="SftP Italia — Home">
+      SftP <span>ITALY</span>
     </a>
     <div class="sidebar-tagline">Scienza di Classe</div>
   </div>
 
-  <div style="height:1px;background:rgba(255,255,255,0.2);margin:0 24px 8px;"></div>
+  <!-- Divisore -->
+  <div style="height:1px; background:rgba(255,255,255,0.08); margin:0 20px 6px;"></div>
 
-  <nav class="w3-bar-block" style="padding: 8px 0;">
-    <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
-      <i class="fa fa-home" style="width:22px;margin-right:8px;opacity:0.75;"></i>Home
+  <!-- Voci di menu -->
+  <div class="w3-bar-block" role="menubar" style="padding:4px 0; flex:1;">
+    <a href="/" onclick="w3_close()" role="menuitem" class="w3-bar-item w3-button w3-hover-white"
+       style="padding:13px 24px;">
+      <i class="fa fa-home" style="width:20px;margin-right:10px;opacity:0.55;" aria-hidden="true"></i>Home
     </a>
-    <a href="/manifesto" target="_blank" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
-      <i class="fa fa-file-text-o" style="width:22px;margin-right:8px;opacity:0.75;"></i>Il nostro Manifesto
+    <a href="/manifesto" target="_blank" onclick="w3_close()" role="menuitem" class="w3-bar-item w3-button w3-hover-white"
+       style="padding:13px 24px;">
+      <i class="fa fa-file-text-o" style="width:20px;margin-right:10px;opacity:0.55;" aria-hidden="true"></i>Il nostro Manifesto
     </a>
-    <a href="https://magazine.scienceforthepeople.org/" target="_blank" rel="noopener" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
-      <i class="fa fa-book" style="width:22px;margin-right:8px;opacity:0.75;"></i>SftP Magazine
+    <a href="https://magazine.scienceforthepeople.org/" target="_blank" rel="noopener" onclick="w3_close()" role="menuitem" class="w3-bar-item w3-button w3-hover-white"
+       style="padding:13px 24px;">
+      <i class="fa fa-book" style="width:20px;margin-right:10px;opacity:0.55;" aria-hidden="true"></i>SftP Magazine
     </a>
-    <a href="/blog" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
-      <i class="fa fa-pencil-square-o" style="width:22px;margin-right:8px;opacity:0.75;"></i>Blog
+    <a href="/blog" onclick="w3_close()" role="menuitem" class="w3-bar-item w3-button w3-hover-white"
+       style="padding:13px 24px;">
+      <i class="fa fa-pencil-square-o" style="width:20px;margin-right:10px;opacity:0.55;" aria-hidden="true"></i>Blog
     </a>
-    <a href="/#partecipa" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
-      <i class="fa fa-users" style="width:22px;margin-right:8px;opacity:0.75;"></i>Partecipa
+    <a href="/#partecipa" onclick="w3_close()" role="menuitem" class="w3-bar-item w3-button w3-hover-white"
+       style="padding:13px 24px;">
+      <i class="fa fa-users" style="width:20px;margin-right:10px;opacity:0.55;" aria-hidden="true"></i>Partecipa
     </a>
-    <a href="/#scrivici" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size:1rem;padding:14px 24px;font-weight:600;letter-spacing:0.02em;">
-      <i class="fa fa-envelope-o" style="width:22px;margin-right:8px;opacity:0.75;"></i>Scrivici
+    <a href="/#scrivici" onclick="w3_close()" role="menuitem" class="w3-bar-item w3-button w3-hover-white"
+       style="padding:13px 24px;">
+      <i class="fa fa-envelope-o" style="width:20px;margin-right:10px;opacity:0.55;" aria-hidden="true"></i>Scrivici
     </a>
-  </nav>
+  </div>
 
-  <div style="position:absolute;bottom:28px;left:0;right:0;padding:0 24px;">
-    <div style="height:1px;background:rgba(255,255,255,0.2);margin-bottom:20px;"></div>
-    <div style="display:flex;gap:12px;justify-content:center;">
-      <a href="https://www.youtube.com/@SFTPItalia" target="_blank" rel="noopener" aria-label="YouTube" style="color:rgba(255,255,255,0.65);font-size:1.1rem;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><i class="fa fa-youtube"></i></a>
-      <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener" aria-label="Instagram" style="color:rgba(255,255,255,0.65);font-size:1.1rem;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><i class="fa fa-instagram"></i></a>
-      <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" aria-label="Telegram" style="color:rgba(255,255,255,0.65);font-size:1.1rem;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><i class="fa fa-telegram"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=100094782115818" target="_blank" rel="noopener" aria-label="Facebook" style="color:rgba(255,255,255,0.65);font-size:1.1rem;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><i class="fa fa-facebook"></i></a>
+  <!-- Social in fondo -->
+  <div style="padding:20px 24px 32px;">
+    <div style="height:1px; background:rgba(255,255,255,0.08); margin-bottom:18px;"></div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a href="https://www.youtube.com/@SFTPItalia" target="_blank" rel="noopener" aria-label="YouTube"
+         class="sidebar-social-link"><i class="fa fa-youtube"></i></a>
+      <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener" aria-label="Instagram"
+         class="sidebar-social-link"><i class="fa fa-instagram"></i></a>
+      <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" aria-label="Telegram"
+         class="sidebar-social-link"><i class="fa fa-telegram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100094782115818" target="_blank" rel="noopener" aria-label="Facebook"
+         class="sidebar-social-link"><i class="fa fa-facebook"></i></a>
+      <a href="https://open.spotify.com/show/7JSij05RVCmrLL5xc0Vey7" target="_blank" rel="noopener" aria-label="Spotify"
+         class="sidebar-social-link"><i class="fa fa-spotify"></i></a>
     </div>
   </div>
 </nav>
 
-<!-- Overlay for mobile -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer;" title="Chiudi menu" id="myOverlay"></div>
+<!-- Overlay mobile -->
+<div
+  class="w3-overlay w3-hide-large"
+  onclick="w3_close()"
+  style="cursor:pointer;"
+  title="Chiudi menu"
+  id="myOverlay"
+></div>
+
+<style>
+.sidebar-social-link {
+  color: rgba(255,255,255,0.45);
+  font-size: 1rem;
+  width: 34px; height: 34px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  transition: color .2s, background .2s, border-color .2s, transform .2s;
+}
+.sidebar-social-link:hover {
+  color: #fff;
+  background: var(--red, #D42B1E);
+  border-color: var(--red, #D42B1E);
+  transform: translateY(-2px);
+}
+</style>
 
 <script>
-  function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-  }
+function w3_open() {
+  var sidebar = document.getElementById('mySidebar');
+  var overlay = document.getElementById('myOverlay');
+  if (sidebar) sidebar.style.display = 'block';
+  if (overlay) overlay.style.display = 'block';
+  var btn = document.getElementById('hamburger-btn');
+  if (btn) btn.setAttribute('aria-expanded', 'true');
+}
 
-  function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-  }
+function w3_close() {
+  var sidebar = document.getElementById('mySidebar');
+  var overlay = document.getElementById('myOverlay');
+  if (sidebar) sidebar.style.display = 'none';
+  if (overlay) overlay.style.display = 'none';
+  var btn = document.getElementById('hamburger-btn');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+}
 </script>

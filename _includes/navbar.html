@@ -1,56 +1,120 @@
-<div id="navbar" role="banner">
-  <a href="https://www.youtube.com/@SFTPItalia" target="_blank" rel="noopener" class="w3-bar-item w3-button" aria-label="YouTube" title="YouTube">
+<!-- Barra social (desktop) -->
+<div id="navbar" role="complementary" aria-label="Social media links">
+  <a href="https://www.youtube.com/@SFTPItalia" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
     <i class="fa fa-youtube" aria-hidden="true"></i>
   </a>
-  <a href="https://www.twitch.tv/scienzadiclasse" target="_blank" rel="noopener" class="w3-bar-item w3-button" aria-label="Twitch" title="Twitch">
+  <a href="https://www.twitch.tv/scienzadiclasse" target="_blank" rel="noopener" aria-label="Twitch" title="Twitch">
     <i class="fa fa-twitch" aria-hidden="true"></i>
   </a>
-  <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener" class="w3-bar-item w3-button" aria-label="Instagram" title="Instagram">
+  <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
     <i class="fa fa-instagram" aria-hidden="true"></i>
   </a>
-  <a href="https://www.facebook.com/profile.php?id=100094782115818" target="_blank" rel="noopener" class="w3-bar-item w3-button" aria-label="Facebook" title="Facebook">
+  <a href="https://www.facebook.com/profile.php?id=100094782115818" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
     <i class="fa fa-facebook" aria-hidden="true"></i>
   </a>
-  <a href="https://open.spotify.com/show/7JSij05RVCmrLL5xc0Vey7" target="_blank" rel="noopener" class="w3-bar-item w3-button" aria-label="Spotify" title="Spotify">
+  <a href="https://open.spotify.com/show/7JSij05RVCmrLL5xc0Vey7" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
     <i class="fa fa-spotify" aria-hidden="true"></i>
   </a>
-  <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" class="w3-bar-item w3-button" aria-label="Telegram" title="Telegram">
+  <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
     <i class="fa fa-telegram" aria-hidden="true"></i>
   </a>
 </div>
 
-<!-- Mobile top bar -->
-<header class="w3-container w3-top w3-hide-large w3-red w3-padding" style="height:52px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,0.2);">
-  <button class="w3-button w3-red" onclick="w3_open()" aria-label="Apri menu" style="font-size:1.4rem;padding:4px 10px;">
+<!-- Header mobile fisso (nascosto su desktop) -->
+<header
+  class="w3-top w3-hide-large"
+  role="banner"
+  style="
+    height: 56px;
+    background: var(--dark, #1e1e1e);
+    border-bottom: 3px solid var(--red, #D42B1E);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    z-index: 4;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  "
+>
+  <!-- Hamburger -->
+  <button
+    onclick="w3_open()"
+    aria-label="Apri menu"
+    aria-expanded="false"
+    aria-controls="mySidebar"
+    id="hamburger-btn"
+    style="
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.3rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 6px;
+      min-width: 44px; min-height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    "
+  >
     <i class="fa fa-bars" aria-hidden="true"></i>
   </button>
-  <a href="/" style="font-family:'Dosis',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;letter-spacing:0.05em;text-decoration:none;">
-    SftP ITALY
+
+  <!-- Nome sito centrato -->
+  <a
+    href="/"
+    style="
+      font-family: var(--font-sans, 'Dosis', sans-serif);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    "
+    aria-label="SftP Italia — Home"
+  >
+    SftP <span style="color: var(--red, #D42B1E);">ITALY</span>
   </a>
-  <div style="display:flex;gap:4px;">
-    <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener" class="w3-button w3-red" aria-label="Instagram" style="padding:6px 9px;font-size:1.05rem;">
+
+  <!-- Social rapidi a destra -->
+  <div style="display:flex; gap:2px;">
+    <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener"
+       aria-label="Instagram"
+       style="color:rgba(255,255,255,0.7); padding:8px; font-size:1.05rem; min-width:44px; min-height:44px; display:flex; align-items:center; justify-content:center;">
       <i class="fa fa-instagram" aria-hidden="true"></i>
     </a>
-    <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" class="w3-button w3-red" aria-label="Telegram" style="padding:6px 9px;font-size:1.05rem;">
+    <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener"
+       aria-label="Telegram"
+       style="color:rgba(255,255,255,0.7); padding:8px; font-size:1.05rem; min-width:44px; min-height:44px; display:flex; align-items:center; justify-content:center;">
       <i class="fa fa-telegram" aria-hidden="true"></i>
     </a>
   </div>
 </header>
 
 <script>
-  (function() {
-    var navbar = document.getElementById("navbar");
-    if (!navbar) return;
-    var sticky = navbar.offsetTop;
+(function () {
+  var navbar = document.getElementById('navbar');
+  if (!navbar) return;
+  var sticky = navbar.offsetTop;
+  var btn = document.getElementById('hamburger-btn');
 
-    function handleScroll() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky");
-      } else {
-        navbar.classList.remove("sticky");
-      }
+  window.addEventListener('scroll', function () {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add('sticky');
+    } else {
+      navbar.classList.remove('sticky');
     }
+  }, { passive: true });
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-  })();
+  // Accessibilità: aggiorna aria-expanded
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+    });
+  }
+})();
 </script>
