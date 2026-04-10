@@ -12,14 +12,15 @@ description: "Articoli su scienza, politica e società. Analisi critiche e divul
 
 <div class="blog-grid">
 {% for post in site.posts %}
-<article class="blog-card">
+<article class="blog-card {% if forloop.first %}blog-card--featured{% endif %}">
+
   {% if post.image %}
   <a href="{{ post.url }}" class="blog-card-image-link" tabindex="-1" aria-hidden="true">
     <img
       src="{{ post.image }}"
       alt="{{ post.title }}"
       class="blog-card-image"
-      loading="lazy"
+      loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
       decoding="async"
     >
   </a>
@@ -42,7 +43,7 @@ description: "Articoli su scienza, politica e società. Analisi critiche e divul
       {% if post.subtitle %}
         {{ post.subtitle }}
       {% else %}
-        {{ post.excerpt | strip_html | truncatewords: 30 }}
+        {{ post.excerpt | strip_html | truncatewords: 28 }}
       {% endif %}
     </p>
 
@@ -64,6 +65,54 @@ description: "Articoli su scienza, politica e società. Analisi critiche e divul
       </a>
     </div>
   </div>
+
 </article>
 {% endfor %}
 </div>
+
+<script>
+(function () {
+  'use strict';
+
+  // Intersection Observer: fade-in staggered per le card
+  var cards = document.querySelectorAll('.blog-card');
+
+  if (!cards.length) return;
+
+  // Se il browser non supporta IntersectionObserver, mostra subito tutto
+  if (!('IntersectionObserver' in window)) {
+    cards.forEach(function (c) { c.classList.add('is-visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var card = entry.target;
+        var delay = parseInt(card.dataset.delay || 0, 10);
+        setTimeout(function () {
+          card.classList.add('is-visible');
+        }, delay);
+        observer.unobserve(card);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  // Raggruppa per righe: calcola l'ordine nella griglia per il ritardo
+  cards.forEach(function (card, i) {
+    // Featured card: nessun ritardo, compare subito
+    if (card.classList.contains('blog-card--featured')) {
+      card.dataset.delay = 0;
+    } else {
+      // Indice nella griglia (escludendo featured = 2 colonne)
+      var gridIndex = i - 1; // la featured occupa le 2 colonne
+      var col = gridIndex % 2; // 0 = sinistra, 1 = destra
+      card.dataset.delay = col * 120; // sinistra 0ms, destra 120ms
+    }
+    observer.observe(card);
+  });
+})();
+</script>

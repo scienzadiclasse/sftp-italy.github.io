@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Fonts: Dosis (titoli/UI) + Lora (corpo) -->
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/style.css">
@@ -66,7 +66,7 @@
   {% include navbar.html %}
 
   <!-- Main content -->
-  <div class="w3-main site-main" style="margin-left:320px;">
+  <div class="w3-main site-main">
 
     {% if page.layout == 'post' %}
       {{ content }}
