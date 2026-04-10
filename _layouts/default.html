@@ -68,7 +68,7 @@
   <!-- Main content -->
   <div class="w3-main site-main">
 
-    {% if page.layout == 'post' %}
+    {% if page.layout == 'post' or page.full_width %}
       {{ content }}
     {% else %}
       <div class="site-content">

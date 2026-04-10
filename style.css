@@ -376,7 +376,9 @@ img {
    ====================================================== */
 
 .w3-sidebar {
-  width: var(--sidebar-w) !important;
+  /* Su mobile non supera l'82% dello schermo */
+  width: min(var(--sidebar-w), 82vw) !important;
+  max-width: var(--sidebar-w);
   background: var(--dark) !important;
   box-shadow: 3px 0 20px rgba(0,0,0,0.18);
   border-right: 3px solid var(--red);
@@ -467,7 +469,7 @@ img {
 .blog-page-header {
   background: var(--dark);
   color: #fff;
-  padding: 48px 36px 40px;
+  padding: 52px 48px 44px;
   border-bottom: 3px solid var(--red);
   position: relative;
   overflow: hidden;
@@ -511,24 +513,25 @@ img {
    BLOG — GRIGLIA E CARDS
    ====================================================== */
 
+/* Griglia: lista verticale (stile editorial Jacobin) */
 .blog-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--grey-light);
+  display: flex;
+  flex-direction: column;
   border-top: 1px solid var(--grey-light);
 }
 
-/* --- Card base --- */
+/* --- Card base — layout ORIZZONTALE su desktop --- */
 .blog-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;      /* immagine sinistra, testo destra */
   background: var(--bg);
+  border-bottom: 1px solid var(--grey-light);
   overflow: hidden;
   /* Stato iniziale per animazione scroll */
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .55s var(--ease-out), transform .55s var(--ease-out);
+  transform: translateY(20px);
+  transition: opacity .5s var(--ease-out), transform .5s var(--ease-out),
+              background .2s;
 }
 
 .blog-card.is-visible {
@@ -536,87 +539,90 @@ img {
   transform: translateY(0);
 }
 
-/* Hover */
 .blog-card:hover {
-  background: #fafafa;
+  background: var(--bg-alt);
 }
 
-.blog-card-inner {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: transform .3s var(--ease-out);
-}
-
-.blog-card:hover .blog-card-inner {
-  transform: translateY(-3px);
-}
-
-/* ---- CARD FEATURED (primo articolo — occupa 2 colonne) ---- */
-.blog-card--featured {
-  grid-column: 1 / -1;
-  flex-direction: row;
-  border-bottom: 3px solid var(--red);
-}
-
-.blog-card--featured .blog-card-image-link {
-  width: 55%;
-  flex-shrink: 0;
-}
-
-.blog-card--featured .blog-card-image {
-  height: 100%;
-  object-fit: contain;
-}
-
-.blog-card--featured .blog-card-body {
-  width: 45%;
-  padding: 40px 36px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-left: 1px solid var(--grey-light);
-}
-
-.blog-card--featured .blog-card-title {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  line-height: 1.15;
-}
-
-.blog-card--featured .blog-card-excerpt {
-  font-size: 0.95rem;
-  max-width: 50ch;
-}
-
-/* ---- IMMAGINE CARD (nessun ritaglio) ---- */
+/* ---- IMMAGINE: colonna sinistra fissa, adattata al contenuto ---- */
 .blog-card-image-link {
   display: block;
-  width: 100%;
+  flex-shrink: 0;
+  width: 230px;            /* larghezza fissa thumbnail */
   overflow: hidden;
-  background: var(--bg-alt);
+  background: var(--dark); /* sfondo neutro scuro per qualunque formato */
   line-height: 0;
-  /* Aspect ratio 3:2 — mostra l'immagine intera senza ritagliarla */
-  aspect-ratio: 3 / 2;
+  align-self: stretch;     /* si estende all'altezza del testo */
 }
 
 .blog-card-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* immagine intera, nessun ritaglio */
+  object-fit: cover;       /* riempie l'area, crop minimo e centrato */
+  object-position: center;
   display: block;
   transition: transform .55s var(--ease-out);
 }
 
 .blog-card:hover .blog-card-image {
-  transform: scale(1.04);
+  transform: scale(1.05);
+}
+
+/* ---- CARD FEATURED (primo articolo) ---- */
+.blog-card--featured {
+  flex-direction: column;          /* immagine sopra, testo sotto */
+  border-bottom: 3px solid var(--red);
+  position: relative;
+}
+
+.blog-card--featured .blog-card-image-link {
+  width: 100%;
+  height: 380px;           /* hero image alta */
+  align-self: auto;
+}
+
+.blog-card--featured .blog-card-image {
+  height: 100%;
+  object-fit: contain;     /* articolo in evidenza: immagine intera, no crop */
+  object-position: center;
+  background: var(--dark);
+}
+
+.blog-card--featured .blog-card-body {
+  padding: 28px 36px 32px;
+}
+
+.blog-card--featured .blog-card-title {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  line-height: 1.15;
+}
+
+.blog-card--featured .blog-card-excerpt {
+  font-size: 1rem;
+}
+
+/* Etichetta "IN EVIDENZA" sul featured */
+.blog-card--featured::before {
+  content: 'IN EVIDENZA';
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 4px 10px;
+  z-index: 1;
 }
 
 /* ---- BODY CARD ---- */
 .blog-card-body {
   flex: 1;
-  padding: 22px 24px 20px;
+  padding: 24px 28px 22px;
   display: flex;
   flex-direction: column;
+  min-width: 0; /* evita overflow testo in flexbox */
 }
 
 /* Etichetta categoria (stile Jacobin: rosso, maiuscolo, sopra il titolo) */
@@ -1030,12 +1036,16 @@ img {
    RESPONSIVE — MOBILE FIRST
    ====================================================== */
 
-/* Tablet (992px e sotto — senza sidebar) */
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+/* --- Tablet/mobile: senza sidebar (≤992px) --- */
 @media (max-width: 992px) {
   .w3-main.site-main,
   .site-main {
     margin-left: 0 !important;
-    padding-top: 56px; /* altezza mobile header */
+    padding-top: 56px;
   }
 
   .site-content {
@@ -1043,7 +1053,7 @@ img {
   }
 
   .blog-page-header {
-    padding: 36px 18px 28px;
+    padding: 36px 20px 28px;
   }
 
   .blog-page-header::before {
@@ -1051,29 +1061,14 @@ img {
     right: -10px;
   }
 
-  /* Grid a 2 colonne anche su tablet */
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Featured: verticale su tablet */
-  .blog-card--featured {
-    flex-direction: column;
+  /* Card orizzontale: thumbnail più piccola su tablet */
+  .blog-card-image-link {
+    width: 180px;
   }
 
   .blog-card--featured .blog-card-image-link {
     width: 100%;
-  }
-
-  .blog-card--featured .blog-card-body {
-    width: 100%;
-    padding: 24px 20px;
-    border-left: none;
-    border-top: 1px solid var(--grey-light);
-  }
-
-  .blog-card--featured .blog-card-title {
-    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    height: 280px;
   }
 
   .footer-inner {
@@ -1086,14 +1081,29 @@ img {
   }
 }
 
-/* Mobile (640px e sotto — 1 colonna) */
+/* --- Mobile (≤640px): card verticale --- */
 @media (max-width: 640px) {
-  body {
-    font-size: 15px;
+  body { font-size: 15px; }
+
+  /* Sidebar: mai più larga dell'82vw (già in .w3-sidebar via min()) */
+
+  /* Card: da orizzontale a verticale */
+  .blog-card {
+    flex-direction: column;
   }
 
-  .blog-grid {
-    grid-template-columns: 1fr;
+  .blog-card-image-link {
+    width: 100%;
+    height: 200px;         /* altezza fissa, oggetto copre senza barre */
+    align-self: auto;
+  }
+
+  .blog-card-image {
+    height: 100%;          /* riempie i 200px */
+  }
+
+  .blog-card--featured .blog-card-image-link {
+    height: 220px;
   }
 
   .blog-card-body {
@@ -1101,44 +1111,36 @@ img {
   }
 
   .blog-card-title {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .blog-card-footer {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
   }
 
-  .post-hero-image {
-    max-height: 260px;
-  }
-
-  .site-content {
-    padding: 20px 14px 48px;
-  }
-
-  .post-title {
-    font-size: clamp(1.4rem, 7vw, 2rem);
-  }
-
-  .blog-page-title {
-    font-size: 1.7rem;
+  .blog-page-header {
+    padding: 28px 16px 22px;
   }
 
   .blog-page-header::before { display: none; }
 
-  .footer-social a {
-    width: 40px; height: 40px;
-    font-size: 1.05rem;
-  }
+  .blog-page-title { font-size: 1.6rem; }
+
+  .post-hero-image { max-height: 240px; }
+
+  .site-content { padding: 18px 14px 48px; }
+
+  .post-title { font-size: clamp(1.35rem, 6.5vw, 1.9rem); }
+
+  .footer-social a { width: 40px; height: 40px; font-size: 1rem; }
 }
 
-/* Piccoli schermi (400px) */
+/* --- Telefoni molto piccoli (≤400px) --- */
 @media (max-width: 400px) {
-  .blog-card-body {
-    padding: 14px 12px 12px;
-  }
+  .blog-card-body { padding: 13px 12px 12px; }
+  .blog-page-header { padding: 22px 14px 18px; }
 }
 
 /* ======================================================
