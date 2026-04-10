@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+{% if page.image %}
+<div class="post-hero">
+  <img
+    src="{{ page.image }}"
+    alt="{{ page.title }}"
+    class="post-hero-image"
+    loading="eager"
+    decoding="async"
+  >
+</div>
+{% endif %}
+
+<article class="site-content" itemscope itemtype="https://schema.org/BlogPosting">
+
+  <header>
+    {% if page.categories %}
+    <div class="blog-card-tags" style="margin-bottom:12px;">
+      {% for cat in page.categories %}
+      <span class="blog-tag">{{ cat }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
+
+    {% if page.subtitle %}
+    <p class="post-subtitle" itemprop="description">{{ page.subtitle }}</p>
+    {% endif %}
+
+    <div class="post-meta" itemprop="author publisher" itemscope itemtype="https://schema.org/Person">
+      {% if page.author %}
+      <span>
+        <i class="fa fa-user-o" aria-hidden="true"></i>
+        <span itemprop="name">{{ page.author }}</span>
+      </span>
+      {% endif %}
+      <span>
+        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: '%d %B %Y' }}
+        </time>
+      </span>
+      {% assign words = content | number_of_words %}
+      {% if words > 200 %}
+      <span>
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        {{ words | divided_by: 200 | plus: 1 }} min di lettura
+      </span>
+      {% endif %}
+    </div>
+  </header>
+
+  <div itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <footer style="margin-top:3em;padding-top:1.5em;border-top:1px solid #e0e0e0;">
+    <a href="/blog" style="font-family:'Dosis',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#EF4430;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+      <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Tutti gli articoli
+    </a>
+  </footer>
+
+</article>
