@@ -287,15 +287,16 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 /* --- Variabili --- */
 :root {
-  --red:        #D42B1E;
-  --red-dark:   #a81e14;
-  --red-light:  #fde8e6;
-  --black:      #111111;
-  --dark:       #1e1e1e;
+  --red:        #D40035;
+  --red-dark:   #a8002a;
+  --red-accent: #FA4224;
+  --red-light:  #fde6ec;
+  --black:      #000000;
+  --dark:       #111111;
   --grey:       #5a5a5a;
   --grey-light: #e8e8e8;
   --bg:         #ffffff;
-  --bg-alt:     #f7f7f5;
+  --bg-alt:     #f7f5f5;
   --sidebar-w:  300px;
   --font-sans:  'Dosis', 'Segoe UI', Arial, sans-serif;
   --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
@@ -334,17 +335,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
-  color: #1a1a1a;
+  color: var(--black);
 }
 
 a {
-  color: #EF4430;
+  color: var(--red);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #c73220;
+  color: var(--red-dark);
 }
 
 img {
@@ -1368,9 +1369,9 @@ img {
 }
 
 .home-social-icon:hover {
-  background: var(--red);
+  background: var(--red-accent);
   color: #fff;
-  border-color: var(--red);
+  border-color: var(--red-accent);
   transform: translateY(-2px);
 }
 
