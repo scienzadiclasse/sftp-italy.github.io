@@ -454,7 +454,7 @@ img {
   justify-content: space-between;
   padding: 0 12px;
   height: 44px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 2px solid var(--red);
   overflow: visible;
 }
 

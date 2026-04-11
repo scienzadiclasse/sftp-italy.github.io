@@ -1,39 +1,40 @@
-<!-- Barra navigazione desktop: hamburger sx + brand+social dx -->
+<!-- Barra navigazione desktop: hamburger sx | brand centro | social dx -->
 <div id="navbar" role="navigation" aria-label="Menu e social">
 
-  <!-- Hamburger + etichetta (desktop) -->
-  <button
-    id="desktop-menu-btn"
-    aria-label="Apri menu"
-    aria-expanded="false"
-    aria-controls="mySidebar"
-    onclick="w3_toggle()"
-  >
-    <i class="fa fa-bars" aria-hidden="true"></i>
-    <span>MENU</span>
-  </button>
+  <!-- Sinistra: hamburger -->
+  <div style="flex:1; display:flex; align-items:center;">
+    <button
+      id="desktop-menu-btn"
+      aria-label="Apri menu"
+      aria-expanded="false"
+      aria-controls="mySidebar"
+      onclick="w3_toggle()"
+    >
+      <i class="fa fa-bars" aria-hidden="true"></i>
+      <span>MENU</span>
+    </button>
+  </div>
 
-  <!-- Spacer -->
-  <div style="flex:1;"></div>
+  <!-- Centro: brand completo -->
+  <a href="/" style="
+    font-family:var(--font-sans,'Dosis',sans-serif);
+    color:#fff; text-decoration:none;
+    display:flex; align-items:center; gap:10px;
+  ">
+    <img src="/img/logo.jpg" alt="Science for the People Italia"
+         style="width:32px;height:32px;border-radius:50%;object-fit:contain;background:#fff;border:2px solid var(--red,#D42B1E);flex-shrink:0;">
+    <div style="display:flex;flex-direction:column;line-height:1.15;">
+      <span style="font-size:0.82rem;font-weight:700;letter-spacing:0.05em;white-space:nowrap;">
+        Science for the People <span style="color:var(--red,#D42B1E);">Italia</span>
+      </span>
+      <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.45);font-style:italic;">
+        Scienza di Classe
+      </span>
+    </div>
+  </a>
 
-  <!-- Brand + separatore + social icons (tutti a destra) -->
-  <div style="display:flex; align-items:center; gap:0;">
-    <a href="/" style="
-      font-family:var(--font-sans,'Dosis',sans-serif);
-      font-size:0.88rem; font-weight:700; letter-spacing:0.07em;
-      color:rgba(255,255,255,0.9); text-decoration:none;
-      display:flex; align-items:center; gap:8px;
-      padding: 0 14px 0 6px;
-      border-right: 1px solid rgba(255,255,255,0.12);
-      margin-right: 4px;
-    ">
-      <img src="/img/logo.jpg" alt=""
-           style="width:26px;height:26px;border-radius:50%;object-fit:contain;background:#fff;border:1.5px solid var(--red,#D42B1E);flex-shrink:0;">
-      SftP <span style="color:var(--red,#D42B1E);">Italia</span>
-    </a>
-
-  <!-- Social icons desktop -->
-  <div style="display:flex; align-items:center;">
+  <!-- Destra: social icons -->
+  <div style="flex:1; display:flex; align-items:center; justify-content:flex-end;">
     <a href="https://www.youtube.com/@SFTPItalia" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
       <i class="fa fa-youtube" aria-hidden="true"></i>
     </a>
@@ -52,7 +53,6 @@
     <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
       <i class="fa fa-telegram" aria-hidden="true"></i>
     </a>
-  </div>
   </div>
 </div>
 
