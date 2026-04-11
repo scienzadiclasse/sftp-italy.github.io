@@ -62,15 +62,60 @@ layout: default
     <a href="/blog" style="font-family:var(--font-sans);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
       <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Tutti gli articoli
     </a>
-    <div style="display:flex;gap:10px;font-size:0.85rem;color:#bbb;">
-      <span style="font-family:var(--font-sans);font-size:0.72rem;letter-spacing:0.05em;">Condividi:</span>
-      <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title | uri_escape }}" target="_blank" rel="noopener" aria-label="Condividi su Telegram" style="color:#bbb;transition:color .2s;" onmouseover="this.style.color='#0088cc'" onmouseout="this.style.color='#bbb'">
+    <div style="display:flex;gap:14px;align-items:center;">
+      <span style="font-family:var(--font-sans);font-size:0.72rem;letter-spacing:0.05em;color:#bbb;">Condividi:</span>
+      <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title | uri_escape }}"
+         target="_blank" rel="noopener" aria-label="Condividi su Telegram"
+         style="color:#bbb;font-size:1.15rem;transition:color .2s;" onmouseover="this.style.color='#0088cc'" onmouseout="this.style.color='#bbb'">
         <i class="fa fa-telegram"></i>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="noopener" aria-label="Condividi su Facebook" style="color:#bbb;transition:color .2s;" onmouseover="this.style.color='#1877f2'" onmouseout="this.style.color='#bbb'">
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
+         target="_blank" rel="noopener" aria-label="Condividi su Facebook"
+         style="color:#bbb;font-size:1.15rem;transition:color .2s;" onmouseover="this.style.color='#1877f2'" onmouseout="this.style.color='#bbb'">
         <i class="fa fa-facebook"></i>
+      </a>
+      <a href="#" onclick="shareInstagram('{{ page.url | absolute_url }}','{{ page.title | escape }}');return false;"
+         aria-label="Condividi su Instagram"
+         title="Condividi su Instagram (copia link)"
+         style="color:#bbb;font-size:1.15rem;transition:color .2s;" onmouseover="this.style.color='#e1306c'" onmouseout="this.style.color='#bbb'">
+        <i class="fa fa-instagram"></i>
       </a>
     </div>
   </footer>
 
 </article>
+
+<!-- Toast "link copiato" per Instagram -->
+<div id="insta-toast" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--dark,#1e1e1e);color:#fff;padding:10px 20px;border-radius:24px;font-family:var(--font-sans,'Dosis',sans-serif);font-size:0.82rem;letter-spacing:0.04em;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;z-index:9999;border:1px solid rgba(255,255,255,0.12);">
+  <i class="fa fa-check" style="color:#4caf50;margin-right:6px;"></i> Link copiato — incollalo su Instagram!
+</div>
+
+<script>
+function shareInstagram(url, title) {
+  if (navigator.share) {
+    navigator.share({ url: url, title: title }).catch(function(){});
+  } else {
+    var cb = navigator.clipboard;
+    if (cb) {
+      cb.writeText(url).then(function () { showInstaToast(); }).catch(function () { fallbackCopy(url); });
+    } else {
+      fallbackCopy(url);
+    }
+  }
+}
+function fallbackCopy(url) {
+  var ta = document.createElement('textarea');
+  ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); showInstaToast(); } catch(e) {}
+  document.body.removeChild(ta);
+}
+function showInstaToast() {
+  var t = document.getElementById('insta-toast');
+  if (!t) return;
+  t.style.opacity = '1'; t.style.transform = 'translateX(-50%) translateY(0)';
+  setTimeout(function () {
+    t.style.opacity = '0'; t.style.transform = 'translateX(-50%) translateY(12px)';
+  }, 2800);
+}
+</script>
