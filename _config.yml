@@ -18,9 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: SFTP Italia | Scienza di Classe
-email: your-email@example.com
-description: Il sito di SFTP Italia.
+title: Science for the People Italia | Scienza di Classe
+email: scienzadiclasse@gmail.com
+description: Science for the People Italia — scienza al servizio delle oppresse e degli oppressi. Analisi critiche, divulgazione radicale.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
@@ -35,8 +35,8 @@ defaults:
     scope:
       path: ""
     values:
-      title: SFTP Italia | Scienza di Classe
-      description: Il sito di SFTP Italia.
+      title: Science for the People Italia | Scienza di Classe
+      description: Science for the People Italia — scienza al servizio delle oppresse e degli oppressi.
 
 # Exclude from processing.
 # The following items will not be processed, by default.
