@@ -2,7 +2,7 @@
 layout: post
 title: "Conoscenza e prassi"
 date: 2026-05-05
-image: "/assets/images/conoscenzaeprassi.png"
+image: "/assets/images/conoscenzaeprassi2.png"
 subtitle: "La verità come problema politico"
 categories: annunci
 author: Lupo Coletto
