@@ -4,7 +4,7 @@ title: "Verso una scienza militante per la Palestina"
 date: 2025-08-16
 image: "/assets/images/banner3.png"
 subtitle: "Volume 26, Numero 3: Palestina"
-categories: annunci
+categories: blog
 author: Tarik Aougab, tradotto da Sergio
 ---
 

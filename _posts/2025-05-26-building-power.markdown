@@ -4,7 +4,7 @@ title: "Incrementare il potere nelle STEM richiede il perseguimento di obiettivi
 date: 2025-05-26
 image: "/assets/images/banner3.png"
 subtitle: "Teoria e pratica per l’organizzazione del laboratorio, capitolo 3"
-categories: annunci
+categories: blog
 author: Shua Sanchez, tradotto da Agnese
 ---
 Nel maggio 2018, più di duemila ricercatrici e ricercatori dell'Università di Washington hanno aderito a quello che è stato lo sciopero più grande nello Stato di Washington degli ultimi tre anni. Circa la metà delle persone che vi hanno partecipato erano laureate nel campo delle discipline STEM, mentre l’altra metà rappresentava tutte le altre discipline accademiche. Prima dello sciopero, una vertenza durata 4 mesi aveva assicurato la vittoria su molte, anche se non tutte, le priorità contrattuali e, alla fine, il 92% degli/lle iscritti/e al sindacato ha votato per rifiutare “l’ultima offerta” fatta dall’amministrazione e iniziare lo sciopero. Nel passaggio da questa “ultima” offerta al contratto effettivamente siglato dopo lo sciopero, sono stati aggiunti 1,3 milioni di dollari ulteriori di compensazione diretta oltre a numerosi altri benefit migliorativi come la tutela gratuita della salute mentale, l’aumento di sussidi per la cura dei figli, nuovi benefit a tutela della salute di lavoratrici e lavoratori trans, un nuovo programma anti-molestie gestito da lavoratori e lavoratrici e la garanzia contrattuale che non sarebbero state introdotte nuove tasse universitarie.

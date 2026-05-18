@@ -5,7 +5,7 @@ title: "Mercificazione della salute: le terapie geniche nella società capitalis
 date: 2026-03-02
 image: "/assets/images/genoma3.png"
 subtitle: "Le terapie geniche nella società capitalista"
-categories: annunci
+categories: blog
 author: Lorenzo Boscarini
 
 ---

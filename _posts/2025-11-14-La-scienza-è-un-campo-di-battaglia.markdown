@@ -4,7 +4,7 @@ title:  "La scienza è un campo di battaglia"
 date:   2025-11-14
 image: "/assets/images/Campodibattaglia-v2.png"
 subtitle: "Editoriale di inaugurazione del blog"
-categories: annunci
+categories: blog
 author: Redazione Science for the People - Italia
 ---
 
