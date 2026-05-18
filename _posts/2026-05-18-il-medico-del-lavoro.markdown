@@ -3,6 +3,7 @@ layout: post
 title: "Il medico del lavoro: una professione che cambia"
 date: 2026-05-18
 categories: salute lavoro
+author: Alberto Baldasseroni
 ---
 
 Se c'è una cosa che attrae e preoccupa nello stesso tempo è il cambiamento. Nella nostra esistenza quotidiana sappiamo che gestire con sufficiente equilibrio questi due sentimenti è la chiave di volta per vivere senza eccessive apprensioni questo fenomeno. Ma quando ciò si verifica nel campo della professione scelta al tempo della formazione scolastica allora non è semplice mantenere questo equilibrio.
