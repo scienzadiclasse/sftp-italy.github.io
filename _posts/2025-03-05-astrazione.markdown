@@ -4,7 +4,7 @@ title:  "L’astrazione del laboratorio."
 date:   2025-03-05
 image: "/assets/images/banner3.png"
 subtitle: "Ovvero come ho imparato a diventare un ingranaggio e a riprodurre il sistema"
-categories: annunci
+categories: blog
 author: Calvin Wu, tradotto da Laura Porta
 ---
 Considerando come la scienza è stata praticata negli ultimi quattro secoli, era solo questione di tempo prima che gli scienziati iniziassero a utilizzare l’osannata metodologia quantitativa per misurare il proprio “successo”. Nel 2005, il fisico Jorge Hirsch propose l’h-index per quantificare l’impatto di un autore scientifico<sup>[\[1\]](#footnote-1)</sup>. Da allora, l’uso dell’indice si è diffuso in maniera pervasiva — esattamente come successe con l’impact factor per le riviste scientifiche intorno al 1975<sup>[\[2\]](#footnote-2)</sup>. Queste ed altre metriche, sempre usate per misurare e confrontare, hanno dominato la vita accademica da quel momento. “Public or perish” ripete il tuo supervisore. Ma non basta, la pubblicazione deve avere un certo impatto. Così, succede che sei all’inizio della tua carriera accademica – alla ricerca di una posizione migliore, un laboratorio di alto livello dove svolgere il postdoc, un’istituzione prestigiosa dove ottenere la cattedra - e ogni due anni circa, la tua produttività, mascherata da impatto, viene valutata e confrontata con quella dei tuoi colleghi.

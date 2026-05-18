@@ -4,7 +4,7 @@ title:  "Presentazione di Scienza di Classe"
 date:   2024-10-03
 image: "/assets/images/banner3.png"
 subtitle: "La nascita del collettivo"
-categories: annunci
+categories: blog
 ---
 
 Costituitosi nella prima metà del 2023, Scienza di Classe è un collettivo di scienziate e scienziati, di studentesse e studenti, attivi sia nelle scienze esatte e naturali sia in quelle sociali. Scienza di Classe si è da subito data come obiettivo una maggiore democraticità e democratizzazione del sapere scientifico, contrastando quella che viene presentata come la neutralità della scienza. Scienza di Classe vuole invece mostrare il portato ideologico nascosto dietro questa presunta neutralità, nonché l’impatto sociale che ha la scienza oggi. Il discorso scientifico odierno è pressoché polarizzato: da una parte troviamo gli scientisti acritici, ossia gli intellettuali attivi sui giornali mainstream e nelle televisioni, che pretendono di avere una conoscenza assoluta della verità; dall’altro lato troviamo invece i critici della scienza ad ogni costo, personaggi irrazionali che popolano perlopiù il web e i social.   

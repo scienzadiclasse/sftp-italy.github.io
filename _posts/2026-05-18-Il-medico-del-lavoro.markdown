@@ -4,7 +4,7 @@ title: "Il medico del lavoro: una professione che cambia"
 date: 2026-05-18
 image: "/assets/images/medico-del-lavoro.png"
 subtitle: "Una storia della professione dalla nascita agli anni recenti"
-categories: annunci
+categories: blog
 author: Redazione Science for the People - Italia
 ---
 

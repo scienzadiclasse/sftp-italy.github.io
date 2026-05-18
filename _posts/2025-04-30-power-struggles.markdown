@@ -4,7 +4,7 @@ title: "Lotte di potere materiali e culturali"
 date: 2025-04-30
 image: "/assets/images/banner3.png"
 subtitle: "Teoria e pratica per l’organizzazione del laboratorio, capitolo 2"
-categories: annunci
+categories: blog
 author: Iraj Eshghi, tradotto da Patrizio
 ---
 Il mondo della ricerca scientifica è sottoposto a una forte spinta a cambiare. Negli ultimi anni, diversi gruppi storicamente marginalizzati hanno sollecitato una maggiore apertura delle istituzioni accademiche, affinché le discipline scientifiche diventino più accessibili a una popolazione studentesca più ampia che comprende afrodiscendenti, donne, persone più avanti negli anni e individui provenienti dalla classe operaia.[^1] Tradizionalmente, il processo di diversificazione è stato favorito mediante strategie mirate, quali politiche di discriminazione positiva o l’assegnazione di borse di studio dedicate. In risposta alle critiche più recenti sulla persistente carenza di diversità, numerosi atenei hanno istituito una pletora di comitati incaricati di promuovere uguaglianza e inclusione. Tuttavia, al di là di tali iniziative – che comprendono anche l’organizzazione di seminari e l’assunzione di qualche docente nera/o a fini meramente simbolici – il mondo accademico, nella sua globalità, ha esitato ad adottare misure più incisive e trasformative.
