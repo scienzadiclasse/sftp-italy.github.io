@@ -22,6 +22,10 @@
     <span class="sftp-brand-logo">
       <img src="/img/SftPItalia_logo.png" alt="Science for the People Italia">
     </span>
+    <span class="sftp-brand-text">
+      <span class="sftp-brand-title">Science for the People <span class="sftp-brand-italia">Italia</span></span>
+      <span class="sftp-brand-sub">Scienza di Classe</span>
+    </span>
   </a>
 
   <nav class="sftp-nav" aria-label="Navigazione principale">
@@ -118,20 +122,21 @@
     padding: 0 !important;
   }
   #sftp-topbar .sftp-brand-logo {
-    width: 72px !important;
-    height: 72px !important;
+    width: 52px !important;
+    height: 52px !important;
     flex-shrink: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: transparent !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    background: #fff !important;
     border: none !important;
-    border-radius: 0 !important;
-    overflow: visible !important;
+    position: relative !important;
   }
   #sftp-topbar .sftp-brand-logo img {
-    width: 100% !important;
-    height: 100% !important;
+    position: absolute !important;
+    width: 160% !important;
+    height: 160% !important;
+    top: -30% !important;
+    left: -30% !important;
     object-fit: contain !important;
     display: block !important;
   }
