@@ -2,47 +2,178 @@
 layout: default
 ---
 
-{% if page.image %}
-<div class="post-hero">
-  <img
-    src="{{ page.image }}"
-    alt="{{ page.title }}"
-    class="post-hero-image"
-    loading="eager"
-    decoding="async"
-  >
-</div>
-{% endif %}
+<style>
+  /* ============================================================
+     ARTICOLO — magazine layout (classi .ma- prefissate)
+     ============================================================ */
+  .ma-article { background: var(--bg); color: var(--dark); font-family: var(--font-sans); }
 
-<article class="site-content" itemscope itemtype="https://schema.org/BlogPosting">
+  /* Hero photo full-bleed sopra il titolo */
+  .ma-hero {
+    width: 100%; max-height: 540px; overflow: hidden;
+    background: var(--dark);
+  }
+  .ma-hero img {
+    width: 100%; height: 100%; max-height: 540px;
+    object-fit: cover; display: block;
+  }
 
-  <header class="post-header-wrap">
+  /* Header articolo */
+  .ma-header {
+    max-width: 880px; margin: 0 auto;
+    padding: 36px 32px 32px;
+    border-bottom: 3px solid var(--red);
+  }
+  .ma-header-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+  .ma-tag {
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--red); padding: 0;
+  }
+  .ma-tag::before { content: '▶ '; }
+  .ma-title {
+    margin: 0;
+    font-family: var(--font-serif); font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.08;
+    letter-spacing: -0.01em; color: var(--black);
+  }
+  .ma-subtitle {
+    font-family: var(--font-serif); font-style: italic;
+    font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.45;
+    color: var(--grey); margin: 18px 0 22px;
+  }
+  .ma-meta {
+    display: flex; flex-wrap: wrap; gap: 18px;
+    font-family: var(--font-sans); font-size: 0.82rem;
+    letter-spacing: 0.04em; color: var(--grey);
+  }
+  .ma-meta .fa { color: var(--red); margin-right: 5px; }
+  .ma-meta b { color: var(--dark); font-weight: 700; }
+
+  /* Body */
+  .ma-body {
+    max-width: 760px; margin: 0 auto;
+    padding: 40px 32px 48px;
+    font-family: var(--font-serif); font-size: 1.08rem;
+    line-height: 1.85; color: var(--dark);
+    text-align: justify; hyphens: auto; -webkit-hyphens: auto;
+  }
+  .ma-body > p:first-of-type::first-letter {
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: 4.4em; line-height: 0.85;
+    float: left; color: var(--red); margin: 8px 12px 0 0;
+  }
+  .ma-body h2 {
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: clamp(1.4rem, 2.6vw, 1.7rem); line-height: 1.2;
+    margin: 2.2em 0 0.5em; padding-bottom: 0.35em;
+    border-bottom: 2px solid var(--red); color: var(--black);
+  }
+  .ma-body h3 {
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+    margin: 1.8em 0 0.4em; color: var(--dark);
+  }
+  .ma-body a {
+    color: var(--red); text-decoration: underline;
+    text-underline-offset: 3px; text-decoration-color: rgba(212,0,53,0.4);
+  }
+  .ma-body a:hover { color: var(--red-dark); text-decoration-color: var(--red-dark); }
+  .ma-body blockquote {
+    margin: 2em 0; padding: 18px 26px 18px 30px;
+    border-left: 5px solid var(--red);
+    background: var(--red-light);
+    font-style: italic; color: var(--dark);
+    font-size: 1.08em;
+  }
+  .ma-body blockquote p { margin: 0; }
+  .ma-body img {
+    border-radius: 4px; margin: 1.5em auto;
+    max-width: 100%; height: auto;
+  }
+  .ma-body code {
+    background: var(--bg-alt); color: var(--red-dark);
+    padding: 2px 6px; font-size: 0.92em;
+    font-family: 'Consolas','Courier New', monospace;
+  }
+  .ma-body pre {
+    background: var(--dark); color: #d4d4d4;
+    padding: 20px 24px; overflow-x: auto;
+    font-size: 0.86rem; line-height: 1.6; margin: 1.5em 0;
+  }
+  .ma-body pre code { background: none; color: inherit; padding: 0; }
+  .ma-body .footnotes {
+    margin-top: 3em; padding-top: 1.5em;
+    border-top: 1px solid var(--grey-light);
+    font-size: 0.85rem; color: var(--grey);
+    font-family: var(--font-sans); line-height: 1.6;
+  }
+  .ma-body sup, .ma-body sup a { color: var(--red); font-size: 0.85em; }
+
+  /* Footer articolo */
+  .ma-footer {
+    max-width: 880px; margin: 0 auto;
+    padding: 28px 32px 40px;
+    border-top: 2px solid var(--grey-light);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+    font-family: var(--font-sans);
+  }
+  .ma-back {
+    font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--red); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .ma-back:hover { color: var(--red-dark); }
+  .ma-share { display: flex; align-items: center; gap: 14px; }
+  .ma-share-label {
+    font-size: 0.72rem; letter-spacing: 0.06em;
+    color: var(--grey); font-weight: 600;
+  }
+  .ma-share a {
+    color: var(--grey); font-size: 1.15rem;
+    transition: color .2s; text-decoration: none;
+  }
+  .ma-share a:hover { color: var(--red); }
+
+  @media (max-width: 640px) {
+    .ma-hero img { max-height: 240px; }
+    .ma-header, .ma-body, .ma-footer { padding-left: 18px; padding-right: 18px; }
+    .ma-body > p:first-of-type::first-letter { font-size: 3.6em; }
+  }
+</style>
+
+<article class="ma-article" itemscope itemtype="https://schema.org/BlogPosting">
+
+  {% if page.image %}
+  <div class="ma-hero">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="eager" decoding="async">
+  </div>
+  {% endif %}
+
+  <header class="ma-header">
     {% if page.categories %}
-    <div class="blog-card-tags" style="margin-bottom:10px;">
-      {% for cat in page.categories %}
-      <span class="blog-tag">{{ cat }}</span>
-      {% endfor %}
+    <div class="ma-header-tags">
+      {% for cat in page.categories %}<span class="ma-tag">{{ cat }}</span>{% endfor %}
     </div>
     {% endif %}
 
-    <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
+    <h1 class="ma-title" itemprop="headline">{{ page.title }}</h1>
 
     {% if page.subtitle %}
-    <p class="post-subtitle" itemprop="description">{{ page.subtitle }}</p>
+    <p class="ma-subtitle" itemprop="description">{{ page.subtitle }}</p>
     {% endif %}
 
-    <div class="post-meta">
+    <div class="ma-meta">
       {% if page.author %}
       <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-        <i class="fa fa-user-o" aria-hidden="true"></i>
-        <span itemprop="name">{{ page.author }}</span>
+        <i class="fa fa-user-o" aria-hidden="true"></i><span itemprop="name"><b>{{ page.author }}</b></span>
       </span>
       {% endif %}
       <span>
         <i class="fa fa-calendar-o" aria-hidden="true"></i>
-        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
-          {{ page.date | date: '%-d %B %Y' }}
-        </time>
+        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time>
       </span>
       {% assign words = content | number_of_words %}
       {% if words > 180 %}
@@ -54,68 +185,29 @@ layout: default
     </div>
   </header>
 
-  <div class="post-body" itemprop="articleBody">
+  <div class="ma-body" itemprop="articleBody">
     {{ content }}
   </div>
 
-  <footer style="margin-top:3.5em; padding-top:1.5em; border-top:1px solid var(--grey-light); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-    <a href="/blog" style="font-family:var(--font-sans);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+  <footer class="ma-footer">
+    <a href="/blog" class="ma-back">
       <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Tutti gli articoli
     </a>
-    <div style="display:flex;gap:14px;align-items:center;">
-      <span style="font-family:var(--font-sans);font-size:0.72rem;letter-spacing:0.05em;color:#bbb;">Condividi:</span>
+    <div class="ma-share">
+      <span class="ma-share-label">Condividi:</span>
       <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title | uri_escape }}"
-         target="_blank" rel="noopener" aria-label="Condividi su Telegram"
-         style="color:#bbb;font-size:1.15rem;transition:color .2s;" onmouseover="this.style.color='#0088cc'" onmouseout="this.style.color='#bbb'">
+         target="_blank" rel="noopener" aria-label="Condividi su Telegram" title="Condividi su Telegram">
         <i class="fa fa-telegram"></i>
       </a>
       <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
-         target="_blank" rel="noopener" aria-label="Condividi su Facebook"
-         style="color:#bbb;font-size:1.15rem;transition:color .2s;" onmouseover="this.style.color='#1877f2'" onmouseout="this.style.color='#bbb'">
+         target="_blank" rel="noopener" aria-label="Condividi su Facebook" title="Condividi su Facebook">
         <i class="fa fa-facebook"></i>
       </a>
-      <a href="#" onclick="shareInstagram('{{ page.url | absolute_url }}','{{ page.title | escape }}');return false;"
-         aria-label="Condividi su Instagram"
-         title="Condividi su Instagram (copia link)"
-         style="color:#bbb;font-size:1.15rem;transition:color .2s;" onmouseover="this.style.color='#e1306c'" onmouseout="this.style.color='#bbb'">
-        <i class="fa fa-instagram"></i>
+      <a href="#" onclick="navigator.clipboard.writeText('{{ page.url | absolute_url }}');return false;"
+         aria-label="Copia link" title="Copia link">
+        <i class="fa fa-link"></i>
       </a>
     </div>
   </footer>
 
 </article>
-
-<!-- Toast "link copiato" per Instagram -->
-<div id="insta-toast" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--dark,#1e1e1e);color:#fff;padding:10px 20px;border-radius:24px;font-family:var(--font-sans,'Dosis',sans-serif);font-size:0.82rem;letter-spacing:0.04em;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;z-index:9999;border:1px solid rgba(255,255,255,0.12);">
-  <i class="fa fa-check" style="color:#4caf50;margin-right:6px;"></i> Link copiato — incollalo su Instagram!
-</div>
-
-<script>
-function shareInstagram(url, title) {
-  if (navigator.share) {
-    navigator.share({ url: url, title: title }).catch(function(){});
-  } else {
-    var cb = navigator.clipboard;
-    if (cb) {
-      cb.writeText(url).then(function () { showInstaToast(); }).catch(function () { fallbackCopy(url); });
-    } else {
-      fallbackCopy(url);
-    }
-  }
-}
-function fallbackCopy(url) {
-  var ta = document.createElement('textarea');
-  ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
-  document.body.appendChild(ta); ta.focus(); ta.select();
-  try { document.execCommand('copy'); showInstaToast(); } catch(e) {}
-  document.body.removeChild(ta);
-}
-function showInstaToast() {
-  var t = document.getElementById('insta-toast');
-  if (!t) return;
-  t.style.opacity = '1'; t.style.transform = 'translateX(-50%) translateY(0)';
-  setTimeout(function () {
-    t.style.opacity = '0'; t.style.transform = 'translateX(-50%) translateY(12px)';
-  }, 2800);
-}
-</script>

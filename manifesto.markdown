@@ -1,7 +1,7 @@
---- 
-layout: post 
-title: "Il manifesto di SFTP Italia"  
---- 
+---
+layout: manifesto
+title: "Il nostro manifesto"
+---
 
 **Science for the people – Italia** costituisce la sezione italiana della rete internazionale **Science for
 the people**
