@@ -213,7 +213,7 @@ layout: default
       {% endif %}
       <span>
         <i class="fa fa-calendar-o" aria-hidden="true"></i>
-        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time>
+        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{% include date_it.html date=page.date %}</time>
       </span>
       {% assign words = content | number_of_words %}
       {% if words > 180 %}

@@ -227,7 +227,7 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
           {% if feat.categories.size > 0 %}
             <span class="mag-featured-cat">▶ {{ feat.categories[0] }}</span>
           {% endif %}
-          <span class="mag-featured-date">· {{ feat.date | date: '%-d %B %Y' }}</span>
+          <span class="mag-featured-date">· {% include date_it.html date=feat.date %}</span>
         </div>
         <h2 class="mag-featured-title">
           <a href="{{ feat.url | relative_url }}">{{ feat.title }}</a>
@@ -252,7 +252,7 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
                 <div class="mag-bloglist-cat">▶ {{ post.categories[0] }}</div>
               {% endif %}
               <a href="{{ post.url | relative_url }}" class="mag-bloglist-title-link">{{ post.title }}</a>
-              <div class="mag-bloglist-date">{{ post.date | date: '%-d %B %Y' }}</div>
+              <div class="mag-bloglist-date">{% include date_it.html date=post.date %}</div>
             </div>
           </article>
         {% endfor %}
