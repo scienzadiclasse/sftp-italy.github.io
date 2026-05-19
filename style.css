@@ -816,9 +816,7 @@ img {
   font-size: clamp(0.97rem, 1.5vw, 1.06rem);
   line-height: 1.85;
   color: #222;
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  text-align: left;
 }
 
 .post-body > p:first-of-type {
@@ -908,18 +906,12 @@ img {
 .post-body sup a { color: var(--red); font-size: 0.8em; }
 
 /* compatibilità: se qualcosa usa .site-content dentro un post */
-/* Justified prose in generic content pages */
 .site-content p {
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  text-align: left;
 }
 
-/* Justified prose in home sections */
 .home-section p {
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  text-align: left;
 }
 
 .site-content a {
