@@ -1,161 +1,239 @@
-<!-- Top bar magazine. ID = "site-topbar" per non collidere con il CSS legacy
-     che ha regole su #navbar a { float: right; ... } che fanno sparire i link. -->
+<!-- ============================================================
+     TOP BAR magazine — copia esatta del mockup Direction B.
+     ID e classi prefissati `sftp-` per non collidere con NIENTE.
+     ============================================================ -->
 
-<header id="site-topbar" role="banner" aria-label="Intestazione sito">
-
-  <!-- Riga 1: logo + titolo a sx, social + hamburger a dx -->
-  <div class="topbar-top">
-    <a href="/" class="topbar-brand" aria-label="Science for the People Italia — Home">
-      <span class="topbar-logo">
-        <img src="/img/SftPItalia_logo.png" alt="">
-      </span>
-      <span class="topbar-title">
-        <span class="topbar-title-line">Science for the People <span class="topbar-italia">Italia</span></span>
-        <span class="topbar-sub">Scienza di Classe</span>
-      </span>
-    </a>
-
-    <div class="topbar-right">
-      <div class="topbar-social" aria-label="Canali social">
-        <a href="https://www.youtube.com/@SFTPItalia" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-        <a href="https://www.twitch.tv/scienzadiclasse" target="_blank" rel="noopener" aria-label="Twitch" title="Twitch"><i class="fa fa-twitch" aria-hidden="true"></i></a>
-        <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100094782115818" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-        <a href="https://open.spotify.com/show/7JSij05RVCmrLL5xc0Vey7" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a>
-        <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>
-      </div>
-
-      <button
-        id="hamburger-btn"
-        class="topbar-hamburger"
-        aria-label="Apri menu"
-        aria-expanded="false"
-        aria-controls="mySidebar"
-        onclick="w3_toggle()"
-      >
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </button>
-    </div>
+<!-- Striscia nera sottile con email + social -->
+<div class="sftp-strip">
+  <a href="mailto:scienzadiclasse@gmail.com" class="sftp-strip-email">scienzadiclasse@gmail.com</a>
+  <div class="sftp-strip-social">
+    <a href="https://www.youtube.com/@SFTPItalia" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+    <a href="https://www.twitch.tv/scienzadiclasse" target="_blank" rel="noopener" aria-label="Twitch"><i class="fa fa-twitch" aria-hidden="true"></i></a>
+    <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=100094782115818" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://open.spotify.com/show/7JSij05RVCmrLL5xc0Vey7" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+    <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>
   </div>
+</div>
 
-  <!-- Riga 2: nav orizzontale (desktop) -->
-  <nav class="topbar-nav" aria-label="Navigazione principale">
+<!-- Masthead: logo + titolo a sx, nav orizzontale a dx -->
+<header id="sftp-topbar" role="banner">
+  <a href="/" class="sftp-brand" aria-label="Science for the People Italia — Home">
+    <span class="sftp-brand-logo">
+      <img src="/img/SftPItalia_logo.png" alt="">
+    </span>
+    <span class="sftp-brand-text">
+      <span class="sftp-brand-title">Science for the People <span class="sftp-brand-italia">Italia</span></span>
+      <span class="sftp-brand-sub">Scienza di Classe</span>
+    </span>
+  </a>
+
+  <nav class="sftp-nav" aria-label="Navigazione principale">
     <a href="/">Home</a>
     <a href="/blog">Blog</a>
     <a href="/manifesto">Il nostro Manifesto</a>
-    <a href="https://magazine.scienceforthepeople.org/" target="_blank" rel="noopener">SftP Magazine ↗</a>
+    <a href="https://magazine.scienceforthepeople.org/" target="_blank" rel="noopener">SftP Magazine&nbsp;↗</a>
     <a href="/#partecipa">Partecipa</a>
     <a href="/#scrivici">Scrivici</a>
   </nav>
 
+  <button
+    id="hamburger-btn"
+    class="sftp-hamburger"
+    aria-label="Apri menu"
+    aria-expanded="false"
+    aria-controls="mySidebar"
+    onclick="w3_toggle()"
+  >
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </button>
 </header>
 
 <style>
   /* ============================================================
-     TOP BAR MAGAZINE — selettori prefissati .topbar- per non
-     collidere con i CSS legacy su #navbar / #navbar a.
+     SFTP TOPBAR — selettori prefissati .sftp- + !important per
+     vincere QUALUNQUE regola legacy in style.css. Niente collisioni.
      ============================================================ */
-  #site-topbar {
-    background: #ffffff;
-    border-bottom: 4px solid var(--red, #D40035);
-    box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-    position: sticky; top: 0; z-index: 50;
-    width: 100%;
-  }
 
-  #site-topbar .topbar-top {
-    max-width: 1340px; margin: 0 auto;
-    padding: 14px 32px;
-    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  /* Striscia nera sopra */
+  .sftp-strip {
+    background: #111111 !important;
+    color: rgba(255,255,255,0.78) !important;
+    padding: 8px 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    font-family: 'Dosis', sans-serif !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
-
-  /* Brand --- !important per battere #navbar a { float: right; padding: 12px; }
-     che potrebbe colpire questi <a> anche dopo rename — manteniamo robustezza */
-  #site-topbar .topbar-brand {
-    display: flex !important; align-items: center; gap: 14px;
-    text-decoration: none !important; color: var(--black, #000) !important;
-    min-width: 0; float: none !important; padding: 0 !important;
+  .sftp-strip-email {
+    color: rgba(255,255,255,0.78) !important;
+    text-decoration: none !important;
+    float: none !important; padding: 0 !important;
   }
-  #site-topbar .topbar-logo {
-    width: 52px; height: 52px; flex-shrink: 0;
-    border-radius: 50%; overflow: hidden; background: #fff;
-    border: 2.5px solid var(--red, #D40035);
-    display: flex; align-items: center; justify-content: center;
+  .sftp-strip-email:hover { color: #fff !important; }
+  .sftp-strip-social {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
   }
-  #site-topbar .topbar-logo img { width: 86%; height: 86%; object-fit: contain; display: block; }
-  #site-topbar .topbar-title { display: flex; flex-direction: column; line-height: 1.05; min-width: 0; }
-  #site-topbar .topbar-title-line {
-    font-family: var(--font-sans, 'Dosis', sans-serif);
-    font-weight: 700; font-size: 1.35rem; letter-spacing: 0.005em; color: var(--black, #000);
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  }
-  #site-topbar .topbar-italia { color: var(--red, #D40035); }
-  #site-topbar .topbar-sub {
-    font-family: var(--font-sans, 'Dosis', sans-serif);
-    font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--grey, #5a5a5a); font-weight: 600; margin-top: 4px;
-  }
-
-  #site-topbar .topbar-right { display: flex; align-items: center; gap: 6px; }
-  #site-topbar .topbar-social { display: flex; align-items: center; gap: 2px; }
-  #site-topbar .topbar-social a {
-    color: var(--grey, #5a5a5a) !important; padding: 8px 10px !important; font-size: 1rem;
-    text-decoration: none !important; border-radius: 4px;
-    transition: color .2s, background .2s;
-    display: inline-flex !important; align-items: center; justify-content: center;
-    line-height: 1; float: none !important;
-  }
-  #site-topbar .topbar-social a:hover {
-    color: var(--red, #D40035) !important; background: var(--bg-alt, #f7f5f5) !important;
-  }
-  #site-topbar .topbar-hamburger {
-    background: none; border: none; cursor: pointer; padding: 8px 10px;
-    color: var(--dark, #111); font-size: 1.2rem;
-    border-radius: 4px; margin-left: 4px;
-    display: none;
-  }
-  #site-topbar .topbar-hamburger:hover { background: var(--bg-alt, #f7f5f5); }
-
-  #site-topbar .topbar-nav {
-    background: var(--dark, #111111);
-    display: flex; align-items: stretch; justify-content: center; gap: 0;
-    width: 100%; overflow: hidden;
-  }
-  #site-topbar .topbar-nav a {
-    color: rgba(255,255,255,0.85) !important; text-decoration: none !important;
-    font-family: var(--font-sans, 'Dosis', sans-serif);
-    font-weight: 700; font-size: 0.78rem;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    padding: 14px 22px !important;
-    transition: color .2s, background .2s;
-    border-bottom: 3px solid transparent;
+  .sftp-strip-social a {
+    color: rgba(255,255,255,0.78) !important;
+    text-decoration: none !important;
+    font-size: 0.85rem !important;
+    line-height: 1 !important;
+    padding: 0 !important;
     float: none !important;
-    display: inline-flex; align-items: center;
+    display: inline-flex !important;
+    align-items: center !important;
+    transition: color .2s !important;
   }
-  #site-topbar .topbar-nav a:hover {
-    color: #fff !important;
-    background: rgba(255,255,255,0.06) !important;
-    border-bottom-color: var(--red, #D40035);
+  .sftp-strip-social a:hover { color: #D40035 !important; background: transparent !important; }
+
+  /* Masthead bianca */
+  #sftp-topbar {
+    background: #ffffff !important;
+    border-bottom: 4px solid #D40035 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 24px !important;
+    padding: 18px 32px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 50 !important;
+    overflow: visible !important;
   }
 
-  /* --- Mobile: nav orizzontale collassa, hamburger compare --- */
-  @media (max-width: 768px) {
-    #site-topbar .topbar-top { padding: 10px 16px; }
-    #site-topbar .topbar-logo { width: 44px; height: 44px; }
-    #site-topbar .topbar-title-line { font-size: 1.05rem; }
-    #site-topbar .topbar-sub { font-size: 0.58rem; letter-spacing: 0.18em; }
-    #site-topbar .topbar-social a { padding: 6px 6px !important; font-size: 0.95rem; }
-    #site-topbar .topbar-social a:nth-child(n+4) { display: none; }
-    #site-topbar .topbar-hamburger { display: inline-flex; }
-    #site-topbar .topbar-nav { display: none; }
+  /* Brand */
+  #sftp-topbar .sftp-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    text-decoration: none !important;
+    color: #000 !important;
+    flex-shrink: 0 !important;
+    float: none !important;
+    padding: 0 !important;
   }
-  @media (max-width: 420px) {
-    #site-topbar .topbar-social a:nth-child(n+3) { display: none; }
+  #sftp-topbar .sftp-brand-logo {
+    width: 56px !important;
+    height: 56px !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    background: #fff !important;
+    border: 2.5px solid #D40035 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  #sftp-topbar .sftp-brand-logo img {
+    width: 86% !important;
+    height: 86% !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+  #sftp-topbar .sftp-brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1 !important;
+    min-width: 0 !important;
+  }
+  #sftp-topbar .sftp-brand-title {
+    font-family: 'Dosis', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.55rem !important;
+    color: #000 !important;
+    line-height: 1.05 !important;
+    letter-spacing: 0.005em !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  #sftp-topbar .sftp-brand-italia { color: #D40035 !important; }
+  #sftp-topbar .sftp-brand-sub {
+    font-family: 'Dosis', sans-serif !important;
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+    color: #5a5a5a !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    margin-top: 6px !important;
   }
 
-  /* --- Compensa il padding-top di .site-main per la nuova top bar --- */
-  @media (min-width: 993px) {
-    .w3-main.site-main, .site-main { padding-top: 0 !important; }
+  /* Nav orizzontale a destra */
+  #sftp-topbar .sftp-nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+  }
+  #sftp-topbar .sftp-nav a {
+    color: #000 !important;
+    text-decoration: none !important;
+    font-family: 'Dosis', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    padding: 8px 14px !important;
+    border-bottom: 2px solid transparent !important;
+    transition: color .2s, border-color .2s, background .2s !important;
+    float: none !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    background: transparent !important;
+  }
+  #sftp-topbar .sftp-nav a:hover {
+    color: #D40035 !important;
+    border-bottom-color: #D40035 !important;
+    background: transparent !important;
+  }
+
+  /* Hamburger: nascosto su desktop, mostrato su mobile */
+  #sftp-topbar .sftp-hamburger {
+    display: none !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 8px 10px !important;
+    color: #111 !important;
+    font-size: 1.3rem !important;
+  }
+  #sftp-topbar .sftp-hamburger:hover { background: #f7f5f5 !important; }
+
+  /* --- Reset di regole legacy che potrebbero ancora colpire --- */
+  #sftp-topbar a, .sftp-strip a {
+    float: none !important;
+    background-color: transparent !important;
+  }
+
+  /* --- Compensa eventuale padding-top legacy --- */
+  .w3-main.site-main, .site-main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* --- Mobile (≤ 900px): nav collassa, mostra hamburger --- */
+  @media (max-width: 900px) {
+    .sftp-strip { padding: 6px 14px !important; font-size: 0.7rem !important; }
+    .sftp-strip-email { display: none !important; }
+    .sftp-strip-social { width: 100% !important; justify-content: center !important; gap: 16px !important; }
+
+    #sftp-topbar { padding: 12px 16px !important; gap: 12px !important; }
+    #sftp-topbar .sftp-brand-logo { width: 44px !important; height: 44px !important; }
+    #sftp-topbar .sftp-brand-title { font-size: 1.1rem !important; }
+    #sftp-topbar .sftp-brand-sub { font-size: 0.6rem !important; letter-spacing: 0.18em !important; margin-top: 3px !important; }
+    #sftp-topbar .sftp-nav { display: none !important; }
+    #sftp-topbar .sftp-hamburger { display: inline-flex !important; }
   }
 </style>
 

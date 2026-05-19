@@ -7,183 +7,185 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
 ---
 
 <style>
-  /* ============================================================
-     HOME — MAGAZINE GRID
-     Scoped sotto .mag- per non collidere con W3.CSS o stili globali.
-     Usa le custom property già in style.css (--red, --dark, ecc.).
-     ============================================================ */
+  /* HOME — magazine grid (.mag- prefisso) */
+  .mag-home { background: #fff; color: #111; font-family: 'Dosis', sans-serif; }
 
-  .mag-home { background: var(--bg); color: var(--black); font-family: var(--font-sans); }
-
-  /* --- Featured hero (most recent post) + stacked list --- */
+  /* Featured + lista blog */
   .mag-feed {
     max-width: 1340px; margin: 0 auto;
-    padding: 48px 48px 56px;
-    display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; align-items: start;
+    padding: 48px 32px 56px;
+    display: grid; grid-template-columns: 1.6fr 1fr;
+    gap: 56px; align-items: start;
   }
   .mag-featured-image {
     width: 100%; height: 420px;
-    background: var(--dark);
-    overflow: hidden;
-    display: block;
+    background: #111; overflow: hidden;
   }
-  .mag-featured-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .mag-featured-image img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
   .mag-featured-meta {
     margin-top: 18px;
     display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   }
   .mag-featured-badge {
-    background: var(--red); color: #fff;
-    font-family: var(--font-sans); font-weight: 700;
+    background: #D40035; color: #fff;
+    font-family: 'Dosis', sans-serif; font-weight: 700;
     font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
     padding: 5px 10px;
   }
   .mag-featured-cat {
-    font-family: var(--font-sans); font-weight: 700;
+    font-family: 'Dosis', sans-serif; font-weight: 700;
     font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--red);
+    color: #D40035;
   }
   .mag-featured-date {
-    font-family: var(--font-sans); font-size: 0.78rem;
-    color: var(--grey); letter-spacing: 0.04em;
+    font-family: 'Dosis', sans-serif; font-size: 0.78rem;
+    color: #5a5a5a; letter-spacing: 0.04em;
   }
   .mag-featured-title {
-    font-family: var(--font-serif);
-    font-weight: 700; font-size: clamp(1.6rem, 3.2vw, 3rem);
-    line-height: 1.08; letter-spacing: -0.01em;
-    margin: 14px 0 12px; color: var(--black);
+    font-family: 'Lora', serif; font-weight: 700;
+    font-size: clamp(1.7rem, 3.4vw, 3rem); line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 14px 0 12px; color: #000;
   }
-  .mag-featured-title a { color: inherit; text-decoration: none; transition: color .2s; }
-  .mag-featured-title a:hover { color: var(--red); }
+  .mag-featured-title a { color: inherit; text-decoration: none; }
+  .mag-featured-title a:hover { color: #D40035; }
   .mag-featured-dek {
-    font-family: var(--font-serif); font-style: italic;
-    font-size: 1.05rem; line-height: 1.55; color: var(--grey);
-    margin: 0; max-width: 640px;
+    font-family: 'Lora', serif; font-style: italic;
+    font-size: 1.05rem; line-height: 1.55;
+    color: #5a5a5a; margin: 0; max-width: 640px;
   }
 
-  /* --- Blog list (sidebar destra della home) --- */
+  /* Blog list a destra */
   .mag-bloglist-head {
     display: flex; justify-content: space-between; align-items: baseline;
-    padding-bottom: 10px; border-bottom: 2px solid var(--black);
+    padding-bottom: 10px; border-bottom: 2px solid #000;
     margin-bottom: 8px;
   }
   .mag-bloglist-title {
-    font-family: var(--font-sans); font-weight: 700;
+    font-family: 'Dosis', sans-serif; font-weight: 700;
     font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--black);
+    color: #000;
   }
   .mag-bloglist-more {
-    font-family: var(--font-sans); font-weight: 700;
+    font-family: 'Dosis', sans-serif; font-weight: 700;
     font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--red); text-decoration: none;
+    color: #D40035; text-decoration: none;
   }
   .mag-bloglist-item {
-    padding: 18px 0; border-bottom: 1px solid var(--grey-light);
+    padding: 18px 0; border-bottom: 1px solid #e8e8e8;
     display: grid; grid-template-columns: 58px 1fr; gap: 22px;
     align-items: start;
   }
   .mag-bloglist-num {
-    font-family: var(--font-sans); font-weight: 700;
-    font-size: 2.2rem; color: var(--red); line-height: 1;
+    font-family: 'Dosis', sans-serif; font-weight: 700;
+    font-size: 2.2rem; color: #D40035; line-height: 1;
     text-align: right;
   }
   .mag-bloglist-cat {
-    font-family: var(--font-sans); font-weight: 700;
+    font-family: 'Dosis', sans-serif; font-weight: 700;
     font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--red);
+    color: #D40035;
   }
   .mag-bloglist-title-link {
-    font-family: var(--font-serif); font-weight: 700;
+    font-family: 'Lora', serif; font-weight: 700;
     font-size: 1.15rem; line-height: 1.25;
-    margin: 4px 0 0; display: block; color: var(--black); text-decoration: none;
+    margin: 4px 0 0; display: block; color: #000; text-decoration: none;
   }
-  .mag-bloglist-title-link:hover { color: var(--red); }
+  .mag-bloglist-title-link:hover { color: #D40035; }
   .mag-bloglist-date {
-    font-family: var(--font-sans); font-size: 0.7rem;
-    color: var(--grey); letter-spacing: 0.04em; margin-top: 8px;
+    font-family: 'Dosis', sans-serif; font-size: 0.7rem;
+    color: #5a5a5a; letter-spacing: 0.04em; margin-top: 8px;
   }
 
-  /* --- Chi siamo --- */
+  /* Chi siamo */
   .mag-chi-siamo {
-    padding: 56px 48px;
-    border-top: 1px solid var(--grey-light);
+    padding: 56px 32px;
+    border-top: 1px solid #e8e8e8;
   }
   .mag-chi-siamo-inner {
     max-width: 1340px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 2fr; gap: 56px; align-items: start;
   }
   .mag-chi-siamo h2 {
-    margin: 0;
-    font-family: var(--font-sans); font-weight: 700;
+    margin: 0 !important;
+    font-family: 'Dosis', sans-serif !important;
+    font-weight: 700;
     font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1;
-    letter-spacing: -0.01em; color: var(--red);
-    display: inline-block; padding-bottom: 8px;
-    border-bottom: 3px solid var(--red);
+    letter-spacing: -0.01em;
+    color: #D40035 !important;
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #D40035;
     position: sticky; top: 140px;
   }
   .mag-chi-siamo-body {
-    font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.8;
-    color: var(--dark); max-width: 760px;
+    font-family: 'Lora', serif; font-size: 1.05rem; line-height: 1.8;
+    color: #222; max-width: 760px;
   }
   .mag-chi-siamo-body p {
     margin: 0 0 22px; text-align: justify; hyphens: auto; -webkit-hyphens: auto;
   }
   .mag-chi-siamo-claim {
     margin-top: 28px; padding: 24px 30px;
-    background: var(--black); color: #fff;
-    font-family: var(--font-sans); font-weight: 700;
+    background: #000; color: #fff;
+    font-family: 'Dosis', sans-serif; font-weight: 700;
     font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.3;
-    border-left: 6px solid var(--red);
+    border-left: 6px solid #D40035;
   }
   .mag-chi-siamo-cta { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
   .mag-btn {
-    background: var(--red); color: #fff !important;
-    padding: 13px 22px; font-family: var(--font-sans);
-    font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em;
+    background: #D40035; color: #fff !important;
+    padding: 13px 22px;
+    font-family: 'Dosis', sans-serif; font-weight: 700;
+    font-size: 0.78rem; letter-spacing: 0.08em;
     text-transform: uppercase; text-decoration: none !important;
-    transition: background .2s, transform .15s;
     display: inline-flex; align-items: center; gap: 8px;
+    transition: background .2s, transform .15s;
   }
-  .mag-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+  .mag-btn:hover { background: #a8002a; transform: translateY(-1px); }
   .mag-btn--outline {
-    background: transparent; color: var(--red) !important;
-    border: 2px solid var(--red); padding: 11px 20px;
+    background: transparent; color: #D40035 !important;
+    border: 2px solid #D40035; padding: 11px 20px;
   }
-  .mag-btn--outline:hover { background: var(--red); color: #fff !important; }
+  .mag-btn--outline:hover { background: #D40035; color: #fff !important; }
 
-  /* --- Partecipa + Scrivici --- */
-  .mag-engage { background: var(--bg-alt); padding: 56px 48px; }
+  /* Partecipa + Scrivici */
+  .mag-engage { background: #f7f5f5; padding: 56px 32px; }
   .mag-engage-inner {
     max-width: 1340px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
   }
   .mag-engage h2 {
-    margin: 0;
-    font-family: var(--font-sans); font-weight: 700;
+    margin: 0 !important;
+    font-family: 'Dosis', sans-serif !important;
+    font-weight: 700;
     font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1;
-    color: var(--red); display: inline-block;
-    padding-bottom: 6px; border-bottom: 3px solid var(--red);
+    color: #D40035 !important; display: inline-block;
+    padding-bottom: 6px; border-bottom: 3px solid #D40035;
   }
   .mag-engage p {
-    font-family: var(--font-serif); font-size: 1.05rem;
-    line-height: 1.65; color: var(--dark); margin: 22px 0 0;
+    font-family: 'Lora', serif; font-size: 1.05rem;
+    line-height: 1.65; color: #222; margin: 22px 0 0;
   }
-  .mag-engage a.text-link { color: var(--red); font-weight: 700; text-decoration: none; }
+  .mag-engage a.text-link { color: #D40035; font-weight: 700; text-decoration: none; }
   .mag-engage a.text-link:hover { text-decoration: underline; }
   .mag-social-row { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
   .mag-social-icon {
     width: 52px; height: 52px; background: #fff;
-    border: 1.5px solid var(--grey-light);
+    border: 1.5px solid #e8e8e8;
     display: flex; align-items: center; justify-content: center;
-    color: var(--dark); text-decoration: none; font-size: 1.1rem;
+    color: #111; text-decoration: none; font-size: 1.1rem;
     transition: background .2s, color .2s, border-color .2s, transform .2s;
   }
   .mag-social-icon:hover {
-    background: var(--red-accent); color: #fff;
-    border-color: var(--red-accent); transform: translateY(-2px);
+    background: #FA4224; color: #fff;
+    border-color: #FA4224; transform: translateY(-2px);
   }
 
-  /* --- Responsive --- */
+  /* Responsive */
   @media (max-width: 992px) {
     .mag-feed { padding: 32px 20px 40px; grid-template-columns: 1fr; gap: 40px; }
     .mag-featured-image { height: 260px; }
@@ -193,16 +195,10 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
     .mag-engage { padding: 40px 20px; }
     .mag-engage-inner { grid-template-columns: 1fr; gap: 36px; }
   }
-  @media (max-width: 480px) {
-    .mag-featured-image { height: 200px; }
-    .mag-bloglist-item { grid-template-columns: 44px 1fr; gap: 16px; }
-    .mag-bloglist-num { font-size: 1.8rem; }
-  }
 </style>
 
 <div class="mag-home">
 
-  <!-- ====== FEATURED + BLOG LIST ====== -->
   {% assign posts = site.posts %}
   <section class="mag-feed">
     {% if posts.size > 0 %}
@@ -251,13 +247,12 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
         {% endfor %}
       </aside>
     {% else %}
-      <p style="grid-column: 1 / -1; font-family: var(--font-serif); font-style: italic; color: var(--grey); padding: 40px 0;">
+      <p style="grid-column: 1 / -1; font-family: 'Lora', serif; font-style: italic; color: #5a5a5a; padding: 40px 0;">
         Nessun articolo pubblicato.
       </p>
     {% endif %}
   </section>
 
-  <!-- ====== CHI SIAMO ====== -->
   <section id="Home" class="mag-chi-siamo">
     <div class="mag-chi-siamo-inner">
       <div><h2>CHI SIAMO?</h2></div>
@@ -273,18 +268,13 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
         </div>
 
         <div class="mag-chi-siamo-cta">
-          <a href="/manifesto" target="_blank" rel="noopener" class="mag-btn">
-            Il nostro manifesto <i class="fa fa-external-link" aria-hidden="true"></i>
-          </a>
-          <a href="https://magazine.scienceforthepeople.org/" target="_blank" rel="noopener" class="mag-btn mag-btn--outline">
-            SftP Magazine <i class="fa fa-external-link" aria-hidden="true"></i>
-          </a>
+          <a href="/manifesto" class="mag-btn">Il nostro manifesto <i class="fa fa-external-link" aria-hidden="true"></i></a>
+          <a href="https://magazine.scienceforthepeople.org/" target="_blank" rel="noopener" class="mag-btn mag-btn--outline">SftP Magazine <i class="fa fa-external-link" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== PARTECIPA + SCRIVICI ====== -->
   <section class="mag-engage">
     <div class="mag-engage-inner">
       <div id="partecipa">

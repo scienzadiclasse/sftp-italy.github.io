@@ -4,143 +4,183 @@ layout: default
 
 <style>
   /* ============================================================
-     ARTICOLO — magazine layout (classi .ma- prefissate)
+     ARTICOLO — magazine layout (.ma- prefisso, !important strategici
+     per battere .post-* / .site-content del CSS legacy).
      ============================================================ */
-  .ma-article { background: var(--bg); color: var(--dark); font-family: var(--font-sans); }
+  .ma-article { background: #ffffff; color: #111; font-family: 'Dosis', sans-serif; }
 
-  /* Hero photo full-bleed sopra il titolo */
+  /* Hero photo full-bleed */
   .ma-hero {
-    width: 100%; max-height: 540px; overflow: hidden;
-    background: var(--dark);
+    width: 100%; max-height: 520px; overflow: hidden;
+    background: #111;
   }
   .ma-hero img {
-    width: 100%; height: 100%; max-height: 540px;
+    width: 100%; height: auto; max-height: 520px;
     object-fit: cover; display: block;
   }
 
   /* Header articolo */
   .ma-header {
-    max-width: 880px; margin: 0 auto;
-    padding: 36px 32px 32px;
-    border-bottom: 3px solid var(--red);
+    max-width: 920px; margin: 0 auto;
+    padding: 48px 32px 32px;
+    border-bottom: 3px solid #D40035;
   }
-  .ma-header-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+  .ma-header-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
   .ma-tag {
-    font-family: var(--font-sans); font-weight: 700;
-    font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--red); padding: 0;
+    font-family: 'Dosis', sans-serif !important; font-weight: 700;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #D40035 !important; padding: 0; background: none !important;
   }
   .ma-tag::before { content: '▶ '; }
   .ma-title {
-    margin: 0;
-    font-family: var(--font-serif); font-weight: 700;
-    font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.08;
-    letter-spacing: -0.01em; color: var(--black);
+    margin: 0 !important;
+    font-family: 'Dosis', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.01em !important;
+    color: #000 !important;
+    text-align: left !important;
   }
   .ma-subtitle {
-    font-family: var(--font-serif); font-style: italic;
-    font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.45;
-    color: var(--grey); margin: 18px 0 22px;
+    font-family: 'Lora', serif !important;
+    font-style: italic !important;
+    font-size: clamp(1.1rem, 2vw, 1.35rem) !important;
+    line-height: 1.45 !important;
+    color: #5a5a5a !important;
+    margin: 18px 0 22px !important;
   }
   .ma-meta {
-    display: flex; flex-wrap: wrap; gap: 18px;
-    font-family: var(--font-sans); font-size: 0.82rem;
-    letter-spacing: 0.04em; color: var(--grey);
+    display: flex; flex-wrap: wrap; gap: 20px;
+    font-family: 'Dosis', sans-serif; font-size: 0.85rem;
+    letter-spacing: 0.04em; color: #5a5a5a;
   }
-  .ma-meta .fa { color: var(--red); margin-right: 5px; }
-  .ma-meta b { color: var(--dark); font-weight: 700; }
+  .ma-meta .fa { color: #D40035; margin-right: 5px; }
+  .ma-meta b { color: #111; font-weight: 700; }
 
   /* Body */
   .ma-body {
     max-width: 760px; margin: 0 auto;
-    padding: 40px 32px 48px;
-    font-family: var(--font-serif); font-size: 1.08rem;
-    line-height: 1.85; color: var(--dark);
-    text-align: justify; hyphens: auto; -webkit-hyphens: auto;
+    padding: 40px 32px 32px;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: #222;
+    text-align: justify;
+    hyphens: auto; -webkit-hyphens: auto;
   }
-  .ma-body > p:first-of-type::first-letter {
-    font-family: var(--font-sans); font-weight: 700;
-    font-size: 4.4em; line-height: 0.85;
-    float: left; color: var(--red); margin: 8px 12px 0 0;
+  .ma-body p { margin: 0 0 1.2em; }
+  .ma-body p:first-of-type { font-size: 1.06em; color: #000; }
+  .ma-body h1, .ma-body h2 {
+    font-family: 'Dosis', sans-serif !important;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 2.2em 0 0.55em !important;
+    color: #000;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid #D40035;
   }
-  .ma-body h2 {
-    font-family: var(--font-sans); font-weight: 700;
-    font-size: clamp(1.4rem, 2.6vw, 1.7rem); line-height: 1.2;
-    margin: 2.2em 0 0.5em; padding-bottom: 0.35em;
-    border-bottom: 2px solid var(--red); color: var(--black);
-  }
+  .ma-body h1 { font-size: clamp(1.5rem, 3vw, 2rem); }
+  .ma-body h2 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
   .ma-body h3 {
-    font-family: var(--font-sans); font-weight: 700;
-    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
-    margin: 1.8em 0 0.4em; color: var(--dark);
+    font-family: 'Dosis', sans-serif !important;
+    font-weight: 700;
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    margin: 1.8em 0 0.4em !important;
+    color: #222;
   }
   .ma-body a {
-    color: var(--red); text-decoration: underline;
-    text-underline-offset: 3px; text-decoration-color: rgba(212,0,53,0.4);
+    color: #D40035;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(212,0,53,0.4);
   }
-  .ma-body a:hover { color: var(--red-dark); text-decoration-color: var(--red-dark); }
+  .ma-body a:hover { color: #a8002a; text-decoration-color: #a8002a; }
   .ma-body blockquote {
-    margin: 2em 0; padding: 18px 26px 18px 30px;
-    border-left: 5px solid var(--red);
-    background: var(--red-light);
-    font-style: italic; color: var(--dark);
-    font-size: 1.08em;
+    margin: 2em 0;
+    padding: 20px 26px 20px 30px;
+    border-left: 5px solid #D40035;
+    background: #fde6ec;
+    font-style: italic;
+    color: #111;
+    font-size: 1.06em;
   }
   .ma-body blockquote p { margin: 0; }
   .ma-body img {
-    border-radius: 4px; margin: 1.5em auto;
-    max-width: 100%; height: auto;
+    border-radius: 4px;
+    margin: 1.5em auto;
+    max-width: 100%;
+    height: auto;
   }
   .ma-body code {
-    background: var(--bg-alt); color: var(--red-dark);
-    padding: 2px 6px; font-size: 0.92em;
-    font-family: 'Consolas','Courier New', monospace;
+    background: #f7f5f5;
+    color: #a8002a;
+    padding: 2px 6px;
+    font-size: 0.92em;
+    font-family: 'Consolas', monospace;
   }
   .ma-body pre {
-    background: var(--dark); color: #d4d4d4;
-    padding: 20px 24px; overflow-x: auto;
-    font-size: 0.86rem; line-height: 1.6; margin: 1.5em 0;
+    background: #111;
+    color: #d4d4d4;
+    padding: 20px 24px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 1.5em 0;
   }
   .ma-body pre code { background: none; color: inherit; padding: 0; }
-  .ma-body .footnotes {
-    margin-top: 3em; padding-top: 1.5em;
-    border-top: 1px solid var(--grey-light);
-    font-size: 0.85rem; color: var(--grey);
-    font-family: var(--font-sans); line-height: 1.6;
-  }
-  .ma-body sup, .ma-body sup a { color: var(--red); font-size: 0.85em; }
+  .ma-body strong, .ma-body b { color: #000; }
 
   /* Footer articolo */
   .ma-footer {
-    max-width: 880px; margin: 0 auto;
-    padding: 28px 32px 40px;
-    border-top: 2px solid var(--grey-light);
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 16px;
-    font-family: var(--font-sans);
+    max-width: 920px; margin: 0 auto;
+    padding: 24px 32px 48px;
+    border-top: 2px solid #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: 'Dosis', sans-serif;
   }
   .ma-back {
-    font-size: 0.78rem; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--red); text-decoration: none;
-    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #D40035;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
-  .ma-back:hover { color: var(--red-dark); }
-  .ma-share { display: flex; align-items: center; gap: 14px; }
+  .ma-back:hover { color: #a8002a; }
+  .ma-share {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
   .ma-share-label {
-    font-size: 0.72rem; letter-spacing: 0.06em;
-    color: var(--grey); font-weight: 600;
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
+    color: #5a5a5a;
+    font-weight: 600;
   }
   .ma-share a {
-    color: var(--grey); font-size: 1.15rem;
-    transition: color .2s; text-decoration: none;
+    color: #5a5a5a;
+    font-size: 1.2rem;
+    transition: color .2s;
+    text-decoration: none;
   }
-  .ma-share a:hover { color: var(--red); }
+  .ma-share a:hover { color: #D40035; }
 
+  /* Responsive */
   @media (max-width: 640px) {
-    .ma-hero img { max-height: 240px; }
-    .ma-header, .ma-body, .ma-footer { padding-left: 18px; padding-right: 18px; }
-    .ma-body > p:first-of-type::first-letter { font-size: 3.6em; }
+    .ma-hero { max-height: 280px; }
+    .ma-hero img { max-height: 280px; }
+    .ma-header { padding: 32px 18px 24px; }
+    .ma-body { padding: 28px 18px 24px; font-size: 1rem; }
+    .ma-footer { padding: 20px 18px 36px; }
   }
 </style>
 
@@ -202,10 +242,6 @@ layout: default
       <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
          target="_blank" rel="noopener" aria-label="Condividi su Facebook" title="Condividi su Facebook">
         <i class="fa fa-facebook"></i>
-      </a>
-      <a href="#" onclick="navigator.clipboard.writeText('{{ page.url | absolute_url }}');return false;"
-         aria-label="Copia link" title="Copia link">
-        <i class="fa fa-link"></i>
       </a>
     </div>
   </footer>
