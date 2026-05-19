@@ -30,44 +30,7 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 /* End extract */
 
 
-/* Style the navbar */
-#navbar {
-  overflow: hidden;
-  background-color: #EF4430;
-  opacity: 80%;
-}
-
-/* Navbar links */
-#navbar a {
-  float: right;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-}
-
-.active, .btn:hover {
-  background-color: #666;
-  color: white;
-}
-
-/* Page content */
-.content {
-  padding: 16px;
-}
-
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
-}
+/* (legacy #navbar rules removed — replaced by #sftp-topbar in navbar.html) */
 
 html,body{font-family:Verdana,sans-serif;font-size:clamp(15px, 3vw, 25px);line-height:1.5}html{overflow-x:hidden}
 h1{font-size:clamp(30px, 3vw, 40px)}h2{font-size:clamp(25px, 3vw, 33px)}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
@@ -1101,13 +1064,10 @@ img {
 
 /* --- Tablet/mobile: senza sidebar (≤992px) --- */
 @media (max-width: 992px) {
-  /* Navbar desktop nascosta su mobile (c'è l'header mobile) */
-  #navbar { display: none !important; }
-
   .w3-main.site-main,
   .site-main {
     margin-left: 0 !important;
-    padding-top: 68px; /* altezza header mobile */
+    padding-top: 0;
   }
 
   .site-content {
