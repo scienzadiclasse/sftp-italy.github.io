@@ -15,51 +15,6 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
 
   .mag-home { background: var(--bg); color: var(--black); font-family: var(--font-sans); }
 
-  /* --- Hero band con banner3.png + logo overlay (preservato dal sito originale) --- */
-  .mag-hero-band {
-    position: relative;
-    width: 100%;
-    height: clamp(260px, 38vw, 460px);
-    overflow: hidden;
-    background: var(--dark, #111);
-  }
-  .mag-hero-band-img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: center 35%;
-    display: block;
-  }
-  .mag-hero-band-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.65) 100%);
-  }
-  .mag-hero-band-content {
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center; padding: 24px;
-  }
-  .mag-hero-band-logo {
-    width: clamp(120px, 18vw, 200px); height: clamp(120px, 18vw, 200px);
-    border-radius: 50%; overflow: hidden; background: #fff;
-    border: 4px solid rgba(255,255,255,0.85);
-    box-shadow: 0 6px 28px rgba(0,0,0,0.45);
-    margin-bottom: 18px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .mag-hero-band-logo img { width: 88%; height: 88%; object-fit: contain; display: block; }
-  .mag-hero-band-title {
-    font-family: var(--font-sans);
-    font-weight: 700; font-size: clamp(1.1rem, 2.4vw, 1.8rem);
-    color: #fff; letter-spacing: 0.03em; line-height: 1.2;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
-  }
-  .mag-hero-band-title span { color: var(--red); }
-  .mag-hero-band-sub {
-    font-family: var(--font-serif); font-style: italic;
-    font-size: clamp(0.8rem, 1.6vw, 1rem);
-    color: rgba(255,255,255,0.75); margin-top: 6px; letter-spacing: 0.04em;
-  }
-
   /* --- Featured hero (most recent post) + stacked list --- */
   .mag-feed {
     max-width: 1340px; margin: 0 auto;
@@ -246,19 +201,6 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
 </style>
 
 <div class="mag-home">
-
-  <!-- ====== HERO BAND con banner3.png + logo (preservato dal sito originale) ====== -->
-  <section class="mag-hero-band" aria-label="Intestazione">
-    <img src="/img/banner3.png" alt="" class="mag-hero-band-img" loading="eager">
-    <div class="mag-hero-band-overlay"></div>
-    <div class="mag-hero-band-content">
-      <div class="mag-hero-band-logo">
-        <img src="/img/SftPItalia_logo.png" alt="Science for the People Italia">
-      </div>
-      <div class="mag-hero-band-title">Science for the People <span>Italia</span></div>
-      <div class="mag-hero-band-sub">Scienza di Classe</div>
-    </div>
-  </section>
 
   <!-- ====== FEATURED + BLOG LIST ====== -->
   {% assign posts = site.posts %}
