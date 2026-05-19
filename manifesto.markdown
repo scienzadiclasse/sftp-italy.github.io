@@ -108,4 +108,6 @@ Per una scienza democratica.
 Per una scienza dalla parte della maggioranza e non dei pochi.
 Per una Scienza di Classe.  
 
-<img src="/img/logo.jpg" alt="logo sftp italia" align="center" width="100" height="100">
+<div style="text-align:center;margin-top:2em;">
+<img src="/img/logo.jpg" alt="logo sftp italia" width="100" height="100">
+</div>
