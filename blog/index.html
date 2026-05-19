@@ -218,6 +218,7 @@ description: "Articoli su scienza, politica e società. Analisi critiche e divul
           </p>
           <div class="mag-blog-card-meta">
             <span>
+              {% if post.author %}<i class="fa fa-user-o" aria-hidden="true"></i>{{ post.author }} ·{% endif %}
               <i class="fa fa-calendar-o" aria-hidden="true"></i>
               <time datetime="{{ post.date | date_to_xmlschema }}">{% include date_it.html date=post.date %}</time>
             </span>
