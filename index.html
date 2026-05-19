@@ -152,6 +152,17 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
   }
   .mag-btn--outline:hover { background: #D40035; color: #fff !important; }
 
+  /* Podcast */
+  .mag-podcast { border-top: 1px solid #e8e8e8; padding: 56px 48px; }
+  .mag-podcast-inner { max-width: 1340px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 56px; align-items: center; }
+  .mag-podcast h2 { margin: 0; font-family: 'Dosis', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; color: #D40035; display: inline-block; padding-bottom: 8px; border-bottom: 3px solid #D40035; }
+  .mag-podcast-sub { font-family: 'Lora', serif; font-style: italic; font-size: 1rem; color: #5a5a5a; margin: 14px 0 0; }
+  .mag-podcast-player iframe { display: block; border-radius: 0; width: 100%; }
+  @media (max-width: 768px) {
+    .mag-podcast { padding: 40px 20px; }
+    .mag-podcast-inner { grid-template-columns: 1fr; gap: 28px; }
+  }
+
   /* Partecipa + Scrivici */
   .mag-engage { background: #f7f5f5; padding: 56px 32px; }
   .mag-engage-inner {
@@ -271,6 +282,26 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
           <a href="/manifesto" class="mag-btn">Il nostro manifesto <i class="fa fa-external-link" aria-hidden="true"></i></a>
           <a href="https://magazine.scienceforthepeople.org/" target="_blank" rel="noopener" class="mag-btn mag-btn--outline">SftP Magazine <i class="fa fa-external-link" aria-hidden="true"></i></a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PODCAST ====== -->
+  <section class="mag-podcast">
+    <div class="mag-podcast-inner">
+      <div>
+        <h2>Podcast</h2>
+        <p class="mag-podcast-sub">Ascolta l'ultima puntata del nostro podcast direttamente qui, oppure seguici su Spotify.</p>
+      </div>
+      <div class="mag-podcast-player">
+        <iframe
+          src="https://open.spotify.com/embed/show/7JSij05RVCmrLL5xc0Vey7?utm_source=generator&theme=0"
+          width="100%" height="232" frameBorder="0"
+          allowtransparency="true"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title="SftP Italia Podcast">
+        </iframe>
       </div>
     </div>
   </section>
