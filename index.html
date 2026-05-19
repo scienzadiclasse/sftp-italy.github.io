@@ -7,57 +7,230 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
 ---
 
 <style>
-  /* HOME — MAGAZINE GRID. Scoped sotto .mag- per non collidere con W3.CSS. */
+  /* ============================================================
+     HOME — MAGAZINE GRID
+     Scoped sotto .mag- per non collidere con W3.CSS o stili globali.
+     Usa le custom property già in style.css (--red, --dark, ecc.).
+     ============================================================ */
+
   .mag-home { background: var(--bg); color: var(--black); font-family: var(--font-sans); }
-  .mag-masthead { padding: 26px 48px; border-bottom: 4px solid var(--red); display: flex; align-items: center; gap: 24px; max-width: 1340px; margin: 0 auto; }
-  .mag-masthead-logo { width: 72px; height: 72px; flex-shrink: 0; border-radius: 50%; overflow: hidden; background: #fff; border: 3px solid var(--red); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
-  .mag-masthead-logo img { width: 88%; height: 88%; object-fit: contain; display: block; }
-  .mag-masthead-title { font-family: var(--font-sans); font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1; letter-spacing: 0.005em; color: var(--black); text-decoration: none; }
-  .mag-masthead-title span { color: var(--red); }
-  .mag-masthead-sub { font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); margin-top: 6px; font-weight: 600; }
-  .mag-hero { max-width: 1340px; margin: 0 auto; padding: 40px 48px 56px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; align-items: start; }
-  .mag-featured-image { width: 100%; height: 420px; background: var(--dark); overflow: hidden; display: block; }
+
+  /* --- Hero band con banner3.png + logo overlay (preservato dal sito originale) --- */
+  .mag-hero-band {
+    position: relative;
+    width: 100%;
+    height: clamp(260px, 38vw, 460px);
+    overflow: hidden;
+    background: var(--dark, #111);
+  }
+  .mag-hero-band-img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 35%;
+    display: block;
+  }
+  .mag-hero-band-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.65) 100%);
+  }
+  .mag-hero-band-content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 24px;
+  }
+  .mag-hero-band-logo {
+    width: clamp(120px, 18vw, 200px); height: clamp(120px, 18vw, 200px);
+    border-radius: 50%; overflow: hidden; background: #fff;
+    border: 4px solid rgba(255,255,255,0.85);
+    box-shadow: 0 6px 28px rgba(0,0,0,0.45);
+    margin-bottom: 18px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .mag-hero-band-logo img { width: 88%; height: 88%; object-fit: contain; display: block; }
+  .mag-hero-band-title {
+    font-family: var(--font-sans);
+    font-weight: 700; font-size: clamp(1.1rem, 2.4vw, 1.8rem);
+    color: #fff; letter-spacing: 0.03em; line-height: 1.2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  }
+  .mag-hero-band-title span { color: var(--red); }
+  .mag-hero-band-sub {
+    font-family: var(--font-serif); font-style: italic;
+    font-size: clamp(0.8rem, 1.6vw, 1rem);
+    color: rgba(255,255,255,0.75); margin-top: 6px; letter-spacing: 0.04em;
+  }
+
+  /* --- Featured hero (most recent post) + stacked list --- */
+  .mag-feed {
+    max-width: 1340px; margin: 0 auto;
+    padding: 48px 48px 56px;
+    display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; align-items: start;
+  }
+  .mag-featured-image {
+    width: 100%; height: 420px;
+    background: var(--dark);
+    overflow: hidden;
+    display: block;
+  }
   .mag-featured-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .mag-featured-meta { margin-top: 18px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .mag-featured-badge { background: var(--red); color: #fff; font-family: var(--font-sans); font-weight: 700; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 5px 10px; }
-  .mag-featured-cat { font-family: var(--font-sans); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); }
-  .mag-featured-date { font-family: var(--font-sans); font-size: 0.78rem; color: var(--grey); letter-spacing: 0.04em; }
-  .mag-featured-title { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.6rem, 3.2vw, 3rem); line-height: 1.08; letter-spacing: -0.01em; margin: 14px 0 12px; color: var(--black); }
+  .mag-featured-meta {
+    margin-top: 18px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .mag-featured-badge {
+    background: var(--red); color: #fff;
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 5px 10px;
+  }
+  .mag-featured-cat {
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--red);
+  }
+  .mag-featured-date {
+    font-family: var(--font-sans); font-size: 0.78rem;
+    color: var(--grey); letter-spacing: 0.04em;
+  }
+  .mag-featured-title {
+    font-family: var(--font-serif);
+    font-weight: 700; font-size: clamp(1.6rem, 3.2vw, 3rem);
+    line-height: 1.08; letter-spacing: -0.01em;
+    margin: 14px 0 12px; color: var(--black);
+  }
   .mag-featured-title a { color: inherit; text-decoration: none; transition: color .2s; }
   .mag-featured-title a:hover { color: var(--red); }
-  .mag-featured-dek { font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; line-height: 1.55; color: var(--grey); margin: 0; max-width: 640px; }
-  .mag-bloglist-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 10px; border-bottom: 2px solid var(--black); margin-bottom: 8px; }
-  .mag-bloglist-title { font-family: var(--font-sans); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--black); }
-  .mag-bloglist-more { font-family: var(--font-sans); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-  .mag-bloglist-item { padding: 18px 0; border-bottom: 1px solid var(--grey-light); display: flex; gap: 14px; align-items: flex-start; }
-  .mag-bloglist-num { font-family: var(--font-sans); font-weight: 700; font-size: 2rem; color: var(--red); line-height: 1; min-width: 38px; }
-  .mag-bloglist-cat { font-family: var(--font-sans); font-weight: 700; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); }
-  .mag-bloglist-title-link { font-family: var(--font-serif); font-weight: 700; font-size: 1.15rem; line-height: 1.2; margin: 4px 0 0; display: block; color: var(--black); text-decoration: none; }
+  .mag-featured-dek {
+    font-family: var(--font-serif); font-style: italic;
+    font-size: 1.05rem; line-height: 1.55; color: var(--grey);
+    margin: 0; max-width: 640px;
+  }
+
+  /* --- Blog list (sidebar destra della home) --- */
+  .mag-bloglist-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-bottom: 10px; border-bottom: 2px solid var(--black);
+    margin-bottom: 8px;
+  }
+  .mag-bloglist-title {
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--black);
+  }
+  .mag-bloglist-more {
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--red); text-decoration: none;
+  }
+  .mag-bloglist-item {
+    padding: 18px 0; border-bottom: 1px solid var(--grey-light);
+    display: grid; grid-template-columns: 58px 1fr; gap: 22px;
+    align-items: start;
+  }
+  .mag-bloglist-num {
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: 2.2rem; color: var(--red); line-height: 1;
+    text-align: right;
+  }
+  .mag-bloglist-cat {
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--red);
+  }
+  .mag-bloglist-title-link {
+    font-family: var(--font-serif); font-weight: 700;
+    font-size: 1.15rem; line-height: 1.25;
+    margin: 4px 0 0; display: block; color: var(--black); text-decoration: none;
+  }
   .mag-bloglist-title-link:hover { color: var(--red); }
-  .mag-bloglist-date { font-family: var(--font-sans); font-size: 0.7rem; color: var(--grey); letter-spacing: 0.04em; margin-top: 6px; }
-  .mag-chi-siamo { padding: 56px 48px; border-top: 1px solid var(--grey-light); }
-  .mag-chi-siamo-inner { max-width: 1340px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 56px; align-items: start; }
-  .mag-chi-siamo h2 { margin: 0; font-family: var(--font-sans); font-weight: 700; font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1; letter-spacing: -0.01em; color: var(--red); display: inline-block; padding-bottom: 8px; border-bottom: 3px solid var(--red); position: sticky; top: 60px; }
-  .mag-chi-siamo-body { font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.8; color: var(--dark); max-width: 760px; }
-  .mag-chi-siamo-body p { margin: 0 0 22px; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
-  .mag-chi-siamo-claim { margin-top: 28px; padding: 24px 30px; background: var(--black); color: #fff; font-family: var(--font-sans); font-weight: 700; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.3; border-left: 6px solid var(--red); }
+  .mag-bloglist-date {
+    font-family: var(--font-sans); font-size: 0.7rem;
+    color: var(--grey); letter-spacing: 0.04em; margin-top: 8px;
+  }
+
+  /* --- Chi siamo --- */
+  .mag-chi-siamo {
+    padding: 56px 48px;
+    border-top: 1px solid var(--grey-light);
+  }
+  .mag-chi-siamo-inner {
+    max-width: 1340px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 2fr; gap: 56px; align-items: start;
+  }
+  .mag-chi-siamo h2 {
+    margin: 0;
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1;
+    letter-spacing: -0.01em; color: var(--red);
+    display: inline-block; padding-bottom: 8px;
+    border-bottom: 3px solid var(--red);
+    position: sticky; top: 140px;
+  }
+  .mag-chi-siamo-body {
+    font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.8;
+    color: var(--dark); max-width: 760px;
+  }
+  .mag-chi-siamo-body p {
+    margin: 0 0 22px; text-align: justify; hyphens: auto; -webkit-hyphens: auto;
+  }
+  .mag-chi-siamo-claim {
+    margin-top: 28px; padding: 24px 30px;
+    background: var(--black); color: #fff;
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.3;
+    border-left: 6px solid var(--red);
+  }
   .mag-chi-siamo-cta { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
-  .mag-btn { background: var(--red); color: #fff !important; padding: 13px 22px; font-family: var(--font-sans); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none !important; transition: background .2s, transform .15s; display: inline-flex; align-items: center; gap: 8px; }
+  .mag-btn {
+    background: var(--red); color: #fff !important;
+    padding: 13px 22px; font-family: var(--font-sans);
+    font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; text-decoration: none !important;
+    transition: background .2s, transform .15s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
   .mag-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
-  .mag-btn--outline { background: transparent; color: var(--red) !important; border: 2px solid var(--red); padding: 11px 20px; }
+  .mag-btn--outline {
+    background: transparent; color: var(--red) !important;
+    border: 2px solid var(--red); padding: 11px 20px;
+  }
   .mag-btn--outline:hover { background: var(--red); color: #fff !important; }
+
+  /* --- Partecipa + Scrivici --- */
   .mag-engage { background: var(--bg-alt); padding: 56px 48px; }
-  .mag-engage-inner { max-width: 1340px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-  .mag-engage h2 { margin: 0; font-family: var(--font-sans); font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1; color: var(--red); display: inline-block; padding-bottom: 6px; border-bottom: 3px solid var(--red); }
-  .mag-engage p { font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.65; color: var(--dark); margin: 22px 0 0; }
+  .mag-engage-inner {
+    max-width: 1340px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+  }
+  .mag-engage h2 {
+    margin: 0;
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1;
+    color: var(--red); display: inline-block;
+    padding-bottom: 6px; border-bottom: 3px solid var(--red);
+  }
+  .mag-engage p {
+    font-family: var(--font-serif); font-size: 1.05rem;
+    line-height: 1.65; color: var(--dark); margin: 22px 0 0;
+  }
   .mag-engage a.text-link { color: var(--red); font-weight: 700; text-decoration: none; }
   .mag-engage a.text-link:hover { text-decoration: underline; }
   .mag-social-row { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
-  .mag-social-icon { width: 52px; height: 52px; background: #fff; border: 1.5px solid var(--grey-light); display: flex; align-items: center; justify-content: center; color: var(--dark); text-decoration: none; font-size: 1.1rem; transition: background .2s, color .2s, border-color .2s, transform .2s; }
-  .mag-social-icon:hover { background: var(--red-accent); color: #fff; border-color: var(--red-accent); transform: translateY(-2px); }
+  .mag-social-icon {
+    width: 52px; height: 52px; background: #fff;
+    border: 1.5px solid var(--grey-light);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--dark); text-decoration: none; font-size: 1.1rem;
+    transition: background .2s, color .2s, border-color .2s, transform .2s;
+  }
+  .mag-social-icon:hover {
+    background: var(--red-accent); color: #fff;
+    border-color: var(--red-accent); transform: translateY(-2px);
+  }
+
+  /* --- Responsive --- */
   @media (max-width: 992px) {
-    .mag-masthead { padding: 20px 20px; gap: 16px; }
-    .mag-hero { padding: 28px 20px 40px; grid-template-columns: 1fr; gap: 36px; }
+    .mag-feed { padding: 32px 20px 40px; grid-template-columns: 1fr; gap: 40px; }
     .mag-featured-image { height: 260px; }
     .mag-chi-siamo { padding: 44px 20px; }
     .mag-chi-siamo-inner { grid-template-columns: 1fr; gap: 24px; }
@@ -66,41 +239,57 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
     .mag-engage-inner { grid-template-columns: 1fr; gap: 36px; }
   }
   @media (max-width: 480px) {
-    .mag-masthead-logo { width: 56px; height: 56px; }
     .mag-featured-image { height: 200px; }
+    .mag-bloglist-item { grid-template-columns: 44px 1fr; gap: 16px; }
+    .mag-bloglist-num { font-size: 1.8rem; }
   }
 </style>
 
 <div class="mag-home">
-  <header class="mag-masthead">
-    <a href="/" class="mag-masthead-logo" aria-label="Science for the People Italia — Home">
-      <img src="/img/SftPItalia_logo.png" alt="Science for the People Italia">
-    </a>
-    <div>
-      <a href="/" class="mag-masthead-title">Science for the People <span>Italia</span></a>
-      <div class="mag-masthead-sub">Scienza di Classe</div>
-    </div>
-  </header>
 
+  <!-- ====== HERO BAND con banner3.png + logo (preservato dal sito originale) ====== -->
+  <section class="mag-hero-band" aria-label="Intestazione">
+    <img src="/img/banner3.png" alt="" class="mag-hero-band-img" loading="eager">
+    <div class="mag-hero-band-overlay"></div>
+    <div class="mag-hero-band-content">
+      <div class="mag-hero-band-logo">
+        <img src="/img/SftPItalia_logo.png" alt="Science for the People Italia">
+      </div>
+      <div class="mag-hero-band-title">Science for the People <span>Italia</span></div>
+      <div class="mag-hero-band-sub">Scienza di Classe</div>
+    </div>
+  </section>
+
+  <!-- ====== FEATURED + BLOG LIST ====== -->
   {% assign posts = site.posts %}
-  <section class="mag-hero">
+  <section class="mag-feed">
     {% if posts.size > 0 %}
       {% assign feat = posts[0] %}
       <article class="mag-featured">
         <a href="{{ feat.url | relative_url }}" aria-label="{{ feat.title }}">
           <div class="mag-featured-image">
-            {% if feat.image %}<img src="{{ feat.image | relative_url }}" alt="{{ feat.title }}" loading="eager">{% endif %}
+            {% if feat.image %}
+              <img src="{{ feat.image | relative_url }}" alt="{{ feat.title }}" loading="eager">
+            {% endif %}
           </div>
         </a>
         <div class="mag-featured-meta">
           <span class="mag-featured-badge">IN EVIDENZA</span>
-          {% if feat.categories.size > 0 %}<span class="mag-featured-cat">▶ {{ feat.categories[0] }}</span>{% endif %}
+          {% if feat.categories.size > 0 %}
+            <span class="mag-featured-cat">▶ {{ feat.categories[0] }}</span>
+          {% endif %}
           <span class="mag-featured-date">· {{ feat.date | date: '%-d %B %Y' }}</span>
         </div>
-        <h2 class="mag-featured-title"><a href="{{ feat.url | relative_url }}">{{ feat.title }}</a></h2>
-        {% if feat.subtitle %}<p class="mag-featured-dek">{{ feat.subtitle }}</p>
-        {% elsif feat.excerpt %}<p class="mag-featured-dek">{{ feat.excerpt | strip_html | truncate: 200 }}</p>{% endif %}
+        <h2 class="mag-featured-title">
+          <a href="{{ feat.url | relative_url }}">{{ feat.title }}</a>
+        </h2>
+        {% if feat.subtitle %}
+          <p class="mag-featured-dek">{{ feat.subtitle }}</p>
+        {% elsif feat.excerpt %}
+          <p class="mag-featured-dek">{{ feat.excerpt | strip_html | truncate: 200 }}</p>
+        {% endif %}
       </article>
+
       <aside class="mag-bloglist">
         <div class="mag-bloglist-head">
           <span class="mag-bloglist-title">Blog</span>
@@ -110,7 +299,9 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
           <article class="mag-bloglist-item">
             <span class="mag-bloglist-num">{{ forloop.index | plus: 1 | prepend: '00' | slice: -2, 2 }}</span>
             <div>
-              {% if post.categories.size > 0 %}<div class="mag-bloglist-cat">▶ {{ post.categories[0] }}</div>{% endif %}
+              {% if post.categories.size > 0 %}
+                <div class="mag-bloglist-cat">▶ {{ post.categories[0] }}</div>
+              {% endif %}
               <a href="{{ post.url | relative_url }}" class="mag-bloglist-title-link">{{ post.title }}</a>
               <div class="mag-bloglist-date">{{ post.date | date: '%-d %B %Y' }}</div>
             </div>
@@ -118,26 +309,40 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
         {% endfor %}
       </aside>
     {% else %}
-      <p style="grid-column: 1 / -1; font-family: var(--font-serif); font-style: italic; color: var(--grey); padding: 40px 0;">Nessun articolo pubblicato.</p>
+      <p style="grid-column: 1 / -1; font-family: var(--font-serif); font-style: italic; color: var(--grey); padding: 40px 0;">
+        Nessun articolo pubblicato.
+      </p>
     {% endif %}
   </section>
 
+  <!-- ====== CHI SIAMO ====== -->
   <section id="Home" class="mag-chi-siamo">
     <div class="mag-chi-siamo-inner">
       <div><h2>CHI SIAMO?</h2></div>
       <div class="mag-chi-siamo-body">
         <p>Siamo un gruppo di lavoratrici, lavoratori, studentesse e studenti della scienza che lottano per una scienza a supporto delle oppresse e degli oppressi del mondo. Alcune persone tra noi lavorano in ambito STEMM (Science, Technology, Engineering, Mathematics, Medicine), altre si occupano di scienze sociali o filosofia, osservando più da vicino la dimensione della scienza come attività di produzione umana e la sua funzione sul piano sociale, politico ed economico.</p>
+
         <p>L'idea che ci accomuna è che la scienza non sia neutrale, bensì un terreno di lotta politica, sociale ed economica. In questo terreno non sono neutrali né il processo attraverso il quale i risultati intellettuali e tecnologici vengono prodotti, né i prodotti stessi, i quali spesso vanno a servire solo il benessere di una ristretta minoranza dell'umanità. Su questo terreno lottiamo con forza per una democratizzazione della scienza dentro e fuori il processo produttivo. Vogliamo produrre conoscenze e tecnologie etiche ed utili per le tutte e tutti, per coloro che nel mondo non hanno beneficiato del benessere e del potere. In poche parole, concepiamo il nostro ruolo e i nostri interessi in modo organico alla classe a cui apparteniamo.</p>
+
         <p>Riunitici nel 2023 nella rete &quot;Scienza di Classe&quot; abbiamo deciso di fondare &quot;Science for the People - Italia&quot; per collaborare con gli altri capitoli internazionali di Science for the People (SftP) che in altri paesi del mondo mirano a sviluppare una teoria e una pratica della scienza da e per il popolo.</p>
-        <div class="mag-chi-siamo-claim">La scienza può e deve essere una forza positiva per l'umanità e il pianeta!</div>
+
+        <div class="mag-chi-siamo-claim">
+          La scienza può e deve essere una forza positiva per l'umanità e il pianeta!
+        </div>
+
         <div class="mag-chi-siamo-cta">
-          <a href="/manifesto" target="_blank" rel="noopener" class="mag-btn">Il nostro manifesto <i class="fa fa-external-link" aria-hidden="true"></i></a>
-          <a href="https://magazine.scienceforthepeople.org/" target="_blank" rel="noopener" class="mag-btn mag-btn--outline">SftP Magazine <i class="fa fa-external-link" aria-hidden="true"></i></a>
+          <a href="/manifesto" target="_blank" rel="noopener" class="mag-btn">
+            Il nostro manifesto <i class="fa fa-external-link" aria-hidden="true"></i>
+          </a>
+          <a href="https://magazine.scienceforthepeople.org/" target="_blank" rel="noopener" class="mag-btn mag-btn--outline">
+            SftP Magazine <i class="fa fa-external-link" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ====== PARTECIPA + SCRIVICI ====== -->
   <section class="mag-engage">
     <div class="mag-engage-inner">
       <div id="partecipa">
@@ -152,10 +357,12 @@ description: "Science for the People Italia: scienza al servizio delle oppresse 
           <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" aria-label="Telegram" class="mag-social-icon"><i class="fa fa-telegram" aria-hidden="true"></i></a>
         </div>
       </div>
+
       <div id="scrivici">
         <h2>Scrivici</h2>
         <p>Puoi mandarci una mail a <a href="mailto:scienzadiclasse@gmail.com" class="text-link">scienzadiclasse@gmail.com</a> oppure contattarci sul <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" class="text-link">canale Telegram</a>.</p>
       </div>
     </div>
   </section>
+
 </div>

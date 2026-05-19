@@ -1,182 +1,160 @@
-<!-- Barra navigazione desktop: hamburger sx | brand centro | social dx -->
-<div id="navbar" role="navigation" aria-label="Menu e social">
+<!-- Top bar magazine: logo + titolo + nav orizzontale + social. -->
+<!-- Mantiene l'hamburger per la sidebar (per mobile e come scorciatoia). -->
 
-  <!-- Sinistra: hamburger -->
-  <div style="flex:1; display:flex; align-items:center;">
-    <button
-      id="desktop-menu-btn"
-      aria-label="Apri menu"
-      aria-expanded="false"
-      aria-controls="mySidebar"
-      onclick="w3_toggle()"
-    >
-      <i class="fa fa-bars" aria-hidden="true"></i>
-      <span>MENU</span>
-    </button>
+<header id="navbar" role="banner" aria-label="Intestazione sito">
+
+  <!-- Riga 1: logo + titolo a sx, hamburger + social a dx -->
+  <div class="navbar-top">
+    <a href="/" class="navbar-brand" aria-label="Science for the People Italia — Home">
+      <span class="navbar-logo">
+        <img src="/img/SftPItalia_logo.png" alt="">
+      </span>
+      <span class="navbar-title">
+        <span class="navbar-title-line">Science for the People <span class="navbar-italia">Italia</span></span>
+        <span class="navbar-sub">Scienza di Classe</span>
+      </span>
+    </a>
+
+    <div class="navbar-right">
+      <div class="navbar-social" aria-label="Canali social">
+        <a href="https://www.youtube.com/@SFTPItalia" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+        <a href="https://www.twitch.tv/scienzadiclasse" target="_blank" rel="noopener" aria-label="Twitch" title="Twitch"><i class="fa fa-twitch" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100094782115818" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="https://open.spotify.com/show/7JSij05RVCmrLL5xc0Vey7" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+        <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+      </div>
+
+      <!-- Hamburger: visibile solo su mobile, ma APRE la sidebar anche su desktop quando serve -->
+      <button
+        id="hamburger-btn"
+        class="navbar-hamburger"
+        aria-label="Apri menu"
+        aria-expanded="false"
+        aria-controls="mySidebar"
+        onclick="w3_toggle()"
+      >
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
   </div>
 
-  <!-- Centro: brand -->
-  <a href="/" style="
-    font-family:var(--font-sans,'Dosis',sans-serif);
-    font-size:0.9rem; font-weight:700; letter-spacing:0.06em;
-    color:#fff; text-decoration:none;
-    display:flex; align-items:center; gap:9px;
-  ">
-    <img src="/img/logo.jpg" alt="SftP Italia"
-         style="width:28px;height:28px;border-radius:50%;object-fit:contain;background:#fff;border:2px solid var(--red,#D40035);flex-shrink:0;">
-    SftP <span style="color:var(--red,#D40035);">Italia</span>
-  </a>
+  <!-- Riga 2: nav orizzontale (desktop) -->
+  <nav class="navbar-nav" aria-label="Navigazione principale">
+    <a href="/">Home</a>
+    <a href="/blog">Blog</a>
+    <a href="/manifesto">Il nostro Manifesto</a>
+    <a href="https://magazine.scienceforthepeople.org/" target="_blank" rel="noopener">SftP Magazine ↗</a>
+    <a href="/#partecipa">Partecipa</a>
+    <a href="/#scrivici">Scrivici</a>
+  </nav>
 
-  <!-- Destra: social icons -->
-  <div style="flex:1; display:flex; align-items:center; justify-content:flex-end;">
-    <a href="https://www.youtube.com/@SFTPItalia" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
-      <i class="fa fa-youtube" aria-hidden="true"></i>
-    </a>
-    <a href="https://www.twitch.tv/scienzadiclasse" target="_blank" rel="noopener" aria-label="Twitch" title="Twitch">
-      <i class="fa fa-twitch" aria-hidden="true"></i>
-    </a>
-    <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
-      <i class="fa fa-instagram" aria-hidden="true"></i>
-    </a>
-    <a href="https://www.facebook.com/profile.php?id=100094782115818" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
-      <i class="fa fa-facebook" aria-hidden="true"></i>
-    </a>
-    <a href="https://open.spotify.com/show/7JSij05RVCmrLL5xc0Vey7" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
-      <i class="fa fa-spotify" aria-hidden="true"></i>
-    </a>
-    <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
-      <i class="fa fa-telegram" aria-hidden="true"></i>
-    </a>
-  </div>
-</div>
-
-<!-- Header mobile fisso (nascosto su desktop) -->
-<header
-  class="w3-top w3-hide-large"
-  role="banner"
-  style="
-    height: 68px;
-    background: var(--dark, #1e1e1e);
-    border-bottom: 3px solid var(--red, #D40035);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 8px 0 4px;
-    z-index: 4;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-  "
->
-  <!-- Sinistra: hamburger + nome sito -->
-  <div style="display:flex; align-items:center; gap:2px; flex-shrink:0; min-width:0;">
-    <button
-      onclick="w3_open()"
-      aria-label="Apri menu"
-      aria-expanded="false"
-      aria-controls="mySidebar"
-      id="hamburger-btn"
-      style="
-        background: none; border: none; color: #fff;
-        font-size: 1.35rem; cursor: pointer;
-        padding: 8px; border-radius: 6px;
-        min-width: 44px; min-height: 44px;
-        display: flex; align-items: center; justify-content: center;
-        flex-shrink: 0;
-      "
-    >
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </button>
-    <a
-      href="/"
-      style="
-        font-family: var(--font-sans, 'Dosis', sans-serif);
-        font-weight: 700; font-size: 0.9rem;
-        color: #fff; letter-spacing: 0.05em;
-        text-decoration: none; white-space: nowrap;
-      "
-      aria-label="SftP Italia — Home"
-    >
-      SftP <span style="color:var(--red,#D40035);">Italia</span>
-    </a>
-  </div>
-
-  <!-- Destra: social rapidi -->
-  <div style="display:flex; align-items:center; gap:0; flex-shrink:0;">
-    <a href="https://www.youtube.com/@SFTPItalia" target="_blank" rel="noopener" aria-label="YouTube"
-       style="color:rgba(255,255,255,0.75); padding:7px 5px; font-size:1rem; min-width:36px; min-height:44px; display:flex; align-items:center; justify-content:center;">
-      <i class="fa fa-youtube" aria-hidden="true"></i>
-    </a>
-    <a href="https://www.instagram.com/scienzadiclasse/" target="_blank" rel="noopener" aria-label="Instagram"
-       style="color:rgba(255,255,255,0.75); padding:7px 5px; font-size:1rem; min-width:36px; min-height:44px; display:flex; align-items:center; justify-content:center;">
-      <i class="fa fa-instagram" aria-hidden="true"></i>
-    </a>
-    <a href="https://t.me/scienzadiclasse" target="_blank" rel="noopener" aria-label="Telegram"
-       style="color:rgba(255,255,255,0.75); padding:7px 5px; font-size:1rem; min-width:36px; min-height:44px; display:flex; align-items:center; justify-content:center;">
-      <i class="fa fa-telegram" aria-hidden="true"></i>
-    </a>
-    <a href="https://www.facebook.com/profile.php?id=100094782115818" target="_blank" rel="noopener" aria-label="Facebook"
-       style="color:rgba(255,255,255,0.75); padding:7px 5px; font-size:1rem; min-width:36px; min-height:44px; display:flex; align-items:center; justify-content:center;">
-      <i class="fa fa-facebook" aria-hidden="true"></i>
-    </a>
-    <a href="https://open.spotify.com/show/7JSij05RVCmrLL5xc0Vey7" target="_blank" rel="noopener" aria-label="Spotify"
-       style="color:rgba(255,255,255,0.75); padding:7px 5px; font-size:1rem; min-width:36px; min-height:44px; display:flex; align-items:center; justify-content:center;">
-      <i class="fa fa-spotify" aria-hidden="true"></i>
-    </a>
-  </div>
 </header>
+
+<style>
+  /* ============================================================
+     NAVBAR — top bar magazine
+     ============================================================ */
+  #navbar {
+    background: #ffffff;
+    border-bottom: 4px solid var(--red, #D40035);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+    position: sticky; top: 0; z-index: 50;
+  }
+  #navbar .navbar-top {
+    max-width: 1340px; margin: 0 auto;
+    padding: 14px 32px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  #navbar .navbar-brand {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none; color: var(--black, #000);
+    min-width: 0;
+  }
+  #navbar .navbar-logo {
+    width: 52px; height: 52px; flex-shrink: 0;
+    border-radius: 50%; overflow: hidden; background: #fff;
+    border: 2.5px solid var(--red, #D40035);
+    display: flex; align-items: center; justify-content: center;
+  }
+  #navbar .navbar-logo img { width: 86%; height: 86%; object-fit: contain; display: block; }
+  #navbar .navbar-title { display: flex; flex-direction: column; line-height: 1.05; min-width: 0; }
+  #navbar .navbar-title-line {
+    font-family: var(--font-sans, 'Dosis', sans-serif);
+    font-weight: 700; font-size: 1.35rem; letter-spacing: 0.005em; color: var(--black, #000);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  #navbar .navbar-italia { color: var(--red, #D40035); }
+  #navbar .navbar-sub {
+    font-family: var(--font-sans, 'Dosis', sans-serif);
+    font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--grey, #5a5a5a); font-weight: 600; margin-top: 4px;
+  }
+  #navbar .navbar-right { display: flex; align-items: center; gap: 4px; }
+  #navbar .navbar-social { display: flex; align-items: center; gap: 2px; }
+  #navbar .navbar-social a {
+    color: var(--grey, #5a5a5a); padding: 8px 10px; font-size: 1rem;
+    text-decoration: none; border-radius: 4px;
+    transition: color .2s, background .2s;
+    display: inline-flex; align-items: center; justify-content: center;
+    line-height: 1;
+  }
+  #navbar .navbar-social a:hover { color: var(--red, #D40035); background: var(--bg-alt, #f7f5f5); }
+  #navbar .navbar-hamburger {
+    background: none; border: none; cursor: pointer; padding: 8px 10px;
+    color: var(--dark, #111); font-size: 1.2rem;
+    border-radius: 4px; margin-left: 4px;
+    display: none; /* mostrato solo su mobile o se nav orizzontale è collassata */
+  }
+  #navbar .navbar-hamburger:hover { background: var(--bg-alt, #f7f5f5); }
+
+  #navbar .navbar-nav {
+    background: var(--dark, #111111);
+    max-width: 100%;
+  }
+  #navbar .navbar-nav {
+    display: flex; align-items: stretch; justify-content: center; gap: 0;
+  }
+  #navbar .navbar-nav a {
+    color: rgba(255,255,255,0.85); text-decoration: none;
+    font-family: var(--font-sans, 'Dosis', sans-serif);
+    font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 14px 22px;
+    transition: color .2s, background .2s;
+    border-bottom: 3px solid transparent;
+  }
+  #navbar .navbar-nav a:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.06);
+    border-bottom-color: var(--red, #D40035);
+  }
+
+  /* --- Mobile (≤ 768px): nav orizzontale collassa, mostra hamburger --- */
+  @media (max-width: 768px) {
+    #navbar .navbar-top { padding: 10px 16px; }
+    #navbar .navbar-logo { width: 44px; height: 44px; }
+    #navbar .navbar-title-line { font-size: 1.05rem; }
+    #navbar .navbar-sub { font-size: 0.58rem; letter-spacing: 0.18em; }
+    #navbar .navbar-social a { padding: 6px 6px; font-size: 0.95rem; }
+    /* su mobile, mostra solo 3 social inline e l'hamburger */
+    #navbar .navbar-social a:nth-child(n+4) { display: none; }
+    #navbar .navbar-hamburger { display: inline-flex; }
+    #navbar .navbar-nav { display: none; }
+  }
+  @media (max-width: 420px) {
+    #navbar .navbar-social a:nth-child(n+3) { display: none; }
+  }
+</style>
 
 <script>
 (function () {
-  var navbar = document.getElementById('navbar');
-  if (!navbar) return;
-
-  /* Sticky desktop navbar */
-  var sticky = navbar.offsetTop;
-  window.addEventListener('scroll', function () {
-    navbar.classList.toggle('sticky', window.pageYOffset >= sticky);
-  }, { passive: true });
-
-  /* Desktop: hover sul pulsante apre la sidebar */
-  var desktopBtn = document.getElementById('desktop-menu-btn');
-  var sidebar    = document.getElementById('mySidebar');
-  var hoverOpen  = null;
-  var hoverClose = null;
-
-  function isDesktop() { return window.innerWidth >= 993; }
-
-  if (desktopBtn) {
-    desktopBtn.addEventListener('mouseenter', function () {
-      if (!isDesktop()) return;
-      clearTimeout(hoverClose);
-      hoverOpen = setTimeout(function () {
-        w3_open(false); /* no overlay su desktop */
-        desktopBtn.setAttribute('aria-expanded', 'true');
-      }, 120);
-    });
-    desktopBtn.addEventListener('mouseleave', function () {
-      clearTimeout(hoverOpen);
-    });
-  }
-
-  if (sidebar) {
-    sidebar.addEventListener('mouseleave', function () {
-      if (!isDesktop()) return;
-      hoverClose = setTimeout(function () {
-        w3_close();
-        if (desktopBtn) desktopBtn.setAttribute('aria-expanded', 'false');
-      }, 350);
-    });
-    sidebar.addEventListener('mouseenter', function () {
-      if (!isDesktop()) return;
-      clearTimeout(hoverClose);
-    });
-  }
-
-  /* Accessibilità: hamburger mobile */
-  var mobileBtn = document.getElementById('hamburger-btn');
-  if (mobileBtn) {
-    mobileBtn.addEventListener('click', function () {
-      var expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
-      mobileBtn.setAttribute('aria-expanded', String(!expanded));
+  /* Accessibilità: aggiorna aria-expanded sull'hamburger mobile */
+  var btn = document.getElementById('hamburger-btn');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
     });
   }
 })();
