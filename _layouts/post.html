@@ -213,7 +213,7 @@ layout: default
       {% endif %}
       <span>
         <i class="fa fa-calendar-o" aria-hidden="true"></i>
-        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{% include date_it.html date=page.date %}</time>
+        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{% assign _mesi_p = "gennaio,febbraio,marzo,aprile,maggio,giugno,luglio,agosto,settembre,ottobre,novembre,dicembre" | split: "," %}{% assign _mi_p = page.date | date: "%-m" | minus: 1 %}{{ page.date | date: "%-d" }} {{ _mesi_p[_mi_p] }} {{ page.date | date: "%Y" }}</time>
       </span>
       {% assign words = content | number_of_words %}
       {% if words > 180 %}

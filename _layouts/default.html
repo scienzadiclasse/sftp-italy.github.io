@@ -58,6 +58,21 @@
     }
     /* Nasconde il vecchio header mobile fisso, sostituito dal nuovo topbar */
     body > header.w3-top { display: none !important; }
+    /* Zoom dinamico su mobile: permette pinch e tap-to-zoom */
+    body { touch-action: pan-x pan-y pinch-zoom; }
+    /* Lightbox */
+    #sftp-lightbox {
+      display: none; position: fixed; inset: 0; z-index: 99999;
+      background: rgba(0,0,0,0.92); cursor: zoom-out;
+      align-items: center; justify-content: center;
+    }
+    #sftp-lightbox.open { display: flex; }
+    #sftp-lightbox img {
+      max-width: 96vw; max-height: 96vh;
+      object-fit: contain; box-shadow: 0 4px 40px rgba(0,0,0,0.6);
+    }
+    /* Immagini cliccabili negli articoli */
+    .ma-body img, .mn-body img { cursor: zoom-in; }
   </style>
 </head>
 
@@ -82,7 +97,29 @@
 
   {% include footer.html %}
 
+  <!-- Lightbox zoom dinamico -->
+  <div id="sftp-lightbox" role="dialog" aria-modal="true" aria-label="Immagine ingrandita"
+       onclick="this.classList.remove('open')">
+    <img id="sftp-lightbox-img" src="" alt="">
+  </div>
+
   <script>
+    // Lightbox: tap/click su immagini .ma-body e .mn-body
+    document.addEventListener('DOMContentLoaded', function() {
+      var lb = document.getElementById('sftp-lightbox');
+      var lbImg = document.getElementById('sftp-lightbox-img');
+      document.querySelectorAll('.ma-body img, .mn-body img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          lbImg.src = this.src;
+          lbImg.alt = this.alt;
+          lb.classList.add('open');
+        });
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') lb.classList.remove('open');
+      });
+    });
+
     // Modal Image Gallery
     function onClick(element) {
       var modal = document.getElementById("modal01");
