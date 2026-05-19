@@ -1,6 +1,7 @@
 ---
 layout: manifesto
 title: "Il nostro manifesto"
+full_width: true
 ---
 
 **Science for the people – Italia** costituisce la sezione italiana della rete internazionale **Science for
