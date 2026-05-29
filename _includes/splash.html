@@ -121,7 +121,9 @@
     if (reduce || seen) return; // resta display:none → sito normale
     try { sessionStorage.setItem('sftp_splash_seen', '1'); } catch (e) {}
     el.classList.add('sftp-show');
-    document.documentElement.classList.add('sftp-splash-lock', 'sftp-booting');
+    // Solo "booting" (nasconde i contenuti): il blocco scroll viene applicato
+    // più avanti, con compensazione della scrollbar per evitare spostamenti.
+    document.documentElement.classList.add('sftp-booting');
   })();
 </script>
 
@@ -142,7 +144,9 @@
       reveal();                        // in parallelo: appare il sito
       setTimeout(function () {
         el.style.display = 'none';
+        // Sblocca lo scroll e rimuove la compensazione insieme: nessuno spostamento.
         document.documentElement.classList.remove('sftp-splash-lock');
+        document.documentElement.style.paddingRight = '';
       }, 720);
     }
 
@@ -186,6 +190,11 @@
 
     function run() {
       if (!el.classList.contains('sftp-show')) return;
+      // Blocca lo scroll compensando la larghezza della scrollbar: così navbar
+      // e contenuti non si spostano a sinistra quando lo scroll viene sbloccato.
+      var sbw = window.innerWidth - document.documentElement.clientWidth;
+      if (sbw > 0) document.documentElement.style.paddingRight = sbw + 'px';
+      document.documentElement.classList.add('sftp-splash-lock');
       var started = false;
       function go() { if (started) return; started = true; animate(); }
       // Aspetta che i font siano pronti: così le misure (e l'atterraggio) sono esatte.
