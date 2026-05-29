@@ -1,0 +1,188 @@
+<!-- ============================================================
+     ANIMAZIONI GLOBALI — scroll-reveal + micro-interazioni.
+     Prefisso `sftp-anim` per non collidere con nulla.
+     Tutto sotto @media (prefers-reduced-motion: no-preference):
+     chi disattiva le animazioni di sistema vede il sito statico.
+     ============================================================ -->
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+
+    /* --- Scroll reveal: stato iniziale + stato visibile --- */
+    .sftp-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s cubic-bezier(.22, 1, .36, 1),
+                  transform .7s cubic-bezier(.22, 1, .36, 1);
+      will-change: opacity, transform;
+    }
+    .sftp-reveal.sftp-in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* --- Entrata della topbar al caricamento --- */
+    #sftp-topbar {
+      animation: sftpSlideDown .6s cubic-bezier(.22, 1, .36, 1) both;
+    }
+    @keyframes sftpSlideDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* --- Underline animato sui link di navigazione --- */
+    .sftp-nav a {
+      position: relative;
+    }
+    .sftp-nav a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -3px;
+      width: 100%; height: 2px;
+      background: #D40035;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .28s cubic-bezier(.22, 1, .36, 1);
+    }
+    .sftp-nav a:hover::after,
+    .sftp-nav a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    /* --- Logo del brand: leggero "respiro" all'hover --- */
+    .sftp-brand-logo img {
+      transition: transform .35s cubic-bezier(.22, 1, .36, 1);
+    }
+    .sftp-brand:hover .sftp-brand-logo img {
+      transform: scale(1.08) rotate(-3deg);
+    }
+
+    /* --- HOME: zoom morbido sull'immagine in evidenza --- */
+    .mag-featured-image img {
+      transition: transform .6s cubic-bezier(.22, 1, .36, 1);
+    }
+    .mag-featured:hover .mag-featured-image img {
+      transform: scale(1.04);
+    }
+
+    /* --- HOME: titolo in evidenza con leggero slide all'hover --- */
+    .mag-featured-title a {
+      transition: color .2s, transform .25s cubic-bezier(.22, 1, .36, 1);
+      display: inline-block;
+    }
+    .mag-featured-title a:hover {
+      transform: translateX(4px);
+    }
+
+    /* --- HOME: numeri della lista blog --- */
+    .mag-bloglist-item .mag-bloglist-num {
+      transition: transform .3s cubic-bezier(.22, 1, .36, 1), color .2s;
+    }
+    .mag-bloglist-item:hover .mag-bloglist-num {
+      transform: scale(1.15);
+    }
+
+    /* --- HOME: icone social pulsano leggermente all'hover (oltre al lift già presente) --- */
+    .mag-social-icon i {
+      transition: transform .3s cubic-bezier(.22, 1, .36, 1);
+    }
+    .mag-social-icon:hover i {
+      transform: scale(1.2);
+    }
+
+    /* --- ARTICOLO: le immagini del corpo si ingrandiscono appena all'hover --- */
+    .ma-body img {
+      transition: transform .4s cubic-bezier(.22, 1, .36, 1);
+    }
+    .ma-body img:hover {
+      transform: scale(1.015);
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    // Rispetta le preferenze di accessibilità dell'utente.
+    if (window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Blocchi di contenuto da rivelare allo scroll, su tutte le pagine.
+      var selectors = [
+        // HOME
+        '.mag-feed > *',
+        '.mag-bloglist-item',
+        '.mag-podcast-inner > *',
+        '.mag-chi-siamo-inner > *',
+        '.mag-engage-inner > *',
+        // BLOG
+        '.mag-blog-header-inner',
+        '.mag-blog-card',
+        // ARTICOLO
+        '.ma-header',
+        '.ma-body > *',
+        '.ma-footer',
+        // MANIFESTO / pagine generiche
+        '.mn-body > *',
+        '.mn-cta-inner',
+        '.site-content > *'
+      ];
+
+      var candidates = [];
+      selectors.forEach(function (sel) {
+        document.querySelectorAll(sel).forEach(function (el) {
+          if (candidates.indexOf(el) === -1) candidates.push(el);
+        });
+      });
+
+      // Tieni solo i blocchi più interni: se un candidato ne contiene
+      // un altro, scartalo (evita doppie animazioni annidate).
+      var targets = candidates.filter(function (el) {
+        return !candidates.some(function (other) {
+          return other !== el && el.contains(other);
+        });
+      });
+
+      if (!targets.length) return;
+
+      // Effetto a cascata: ritardo progressivo tra fratelli vicini.
+      var groupCounters = new Map();
+      targets.forEach(function (el) {
+        el.classList.add('sftp-reveal');
+        var parent = el.parentElement;
+        var i = groupCounters.get(parent) || 0;
+        groupCounters.set(parent, i + 1);
+        var delay = Math.min(i * 90, 450); // cap a 450ms
+        el.style.transitionDelay = delay + 'ms';
+      });
+
+      // Se IntersectionObserver non è disponibile, mostra tutto subito.
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(function (el) {
+          el.classList.add('sftp-in');
+          el.style.transitionDelay = '0ms';
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('sftp-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -8% 0px'
+      });
+
+      targets.forEach(function (el) {
+        // Gli elementi già visibili al caricamento (es. above-the-fold)
+        // vengono comunque rivelati dall'observer al primo passaggio.
+        observer.observe(el);
+      });
+    });
+  })();
+</script>
