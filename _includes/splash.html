@@ -1,9 +1,8 @@
 <!-- ============================================================
      SPLASH D'APERTURA — logo + scritta a schermo pieno che poi
-     scivola e si rimpicciolisce fino alla sua posizione nella topbar.
+     scivola e si rimpicciolisce fino alla sua posizione nella topbar,
+     mentre il resto del sito compare in modo fluido.
      Mostrato una volta per sessione. Disattivato con prefers-reduced-motion.
-     Markup/stili rispecchiano .sftp-brand della navbar per un atterraggio
-     perfetto (FLIP: il brand grande al centro morfa su quello reale).
      ============================================================ -->
 <div id="sftp-splash" aria-hidden="true">
   <div class="sftp-splash-brand">
@@ -28,7 +27,7 @@
     align-items: center;
     justify-content: center;
     opacity: 1;
-    transition: opacity .5s ease;
+    transition: opacity .7s ease;
   }
   #sftp-splash.sftp-show { display: flex; }
   #sftp-splash.sftp-fade { opacity: 0; pointer-events: none; }
@@ -87,11 +86,31 @@
     .sftp-splash-title { font-size: 1.1rem; }
     .sftp-splash-sub { font-size: 0.6rem; letter-spacing: 0.18em; margin-top: 3px; }
   }
+
+  /* --- Comparsa coordinata del resto del sito (mentre lo splash si ritira) --- */
+  @media (prefers-reduced-motion: no-preference) {
+    .site-main {
+      transition: opacity .9s ease, transform .9s cubic-bezier(.22, 1, .36, 1);
+    }
+    #sftp-topbar .sftp-nav,
+    #sftp-topbar .sftp-hamburger {
+      transition: opacity .8s ease .18s;
+    }
+    .sftp-strip {
+      transition: opacity .7s ease;
+    }
+    /* Stato iniziale "in boot": tutto invisibile tranne il brand della topbar
+       (su cui atterra lo splash). */
+    .sftp-booting .site-main { opacity: 0; transform: translateY(22px); }
+    .sftp-booting #sftp-topbar .sftp-nav,
+    .sftp-booting #sftp-topbar .sftp-hamburger { opacity: 0; }
+    .sftp-booting .sftp-strip { opacity: 0; }
+  }
 </style>
 
 <script>
   /* Decisione immediata (prima del primo paint): mostrare o no lo splash.
-     Sta subito dopo l'elemento, così aggiungere .sftp-show non causa flash. */
+     Sta subito dopo l'elemento, così aggiungere le classi non causa flash. */
   (function () {
     var el = document.getElementById('sftp-splash');
     if (!el) return;
@@ -102,66 +121,80 @@
     if (reduce || seen) return; // resta display:none → sito normale
     try { sessionStorage.setItem('sftp_splash_seen', '1'); } catch (e) {}
     el.classList.add('sftp-show');
-    document.documentElement.classList.add('sftp-splash-lock');
+    document.documentElement.classList.add('sftp-splash-lock', 'sftp-booting');
   })();
 </script>
 
 <script>
-  /* Animazione: comparsa al centro grande → scivola nella topbar. */
+  /* Animazione: comparsa al centro grande → scivola nel suo posto nella topbar,
+     mentre il resto del sito appare in dissolvenza. */
   (function () {
     var el = document.getElementById('sftp-splash');
     if (!el) return;
 
-    function run() {
-      if (!el.classList.contains('sftp-show')) return;
+    function reveal() {
+      // Fa comparire il resto del sito.
+      document.documentElement.classList.remove('sftp-booting');
+    }
 
+    function finish() {
+      el.classList.add('sftp-fade');   // dissolve l'overlay bianco
+      reveal();                        // in parallelo: appare il sito
+      setTimeout(function () {
+        el.style.display = 'none';
+        document.documentElement.classList.remove('sftp-splash-lock');
+      }, 720);
+    }
+
+    function animate() {
       var brand = el.querySelector('.sftp-splash-brand');
       var real  = document.querySelector('#sftp-topbar .sftp-brand');
-
-      function finish() {
-        el.classList.add('sftp-fade');
-        document.documentElement.classList.remove('sftp-splash-lock');
-        setTimeout(function () { el.style.display = 'none'; }, 550);
-      }
-
       if (!brand || !real) { finish(); return; }
 
       var vw = window.innerWidth, vh = window.innerHeight;
 
-      // Rettangolo naturale del brand dello splash (senza transform).
+      // Misura del brand dello splash a riposo (senza transform).
       brand.style.transition = 'none';
       brand.style.transform = 'none';
       var R1 = brand.getBoundingClientRect();
-      // Rettangolo reale del brand nella topbar (destinazione).
-      var R2 = real.getBoundingClientRect();
 
-      // Fattore d'ingrandimento centrale (cap a 4.5, mai più piccolo del reale).
+      // Ingrandimento centrale (cap 4.5, mai più piccolo del reale).
       var k = Math.min(4.5, Math.max(1,
         Math.min((vw * 0.9) / R1.width, (vh * 0.55) / R1.height)));
-
-      // Stato "grande centrato".
       var cx = (vw - k * R1.width) / 2;
       var cy = (vh - k * R1.height) / 2;
       var bigTX = cx - R1.left, bigTY = cy - R1.top;
 
-      // Stato finale: sovrapposto esattamente al brand reale.
-      var s = R2.width / R1.width;
-      var finTX = R2.left - R1.left, finTY = R2.top - R1.top;
-
-      // Entrata: parte poco più in basso e trasparente, sale e appare.
-      brand.style.transform = 'translate(' + bigTX + 'px,' + (bigTY + 16) + 'px) scale(' + k + ')';
+      // Entrata morbida: sale leggermente e appare.
+      brand.style.transform = 'translate(' + bigTX + 'px,' + (bigTY + 22) + 'px) scale(' + k + ')';
       brand.style.opacity = '0';
       void brand.offsetWidth; // forza reflow
-      brand.style.transition = 'transform .6s cubic-bezier(.22,1,.36,1), opacity .6s ease';
+      brand.style.transition = 'transform .7s cubic-bezier(.22,1,.36,1), opacity .7s ease';
       brand.style.transform = 'translate(' + bigTX + 'px,' + bigTY + 'px) scale(' + k + ')';
       brand.style.opacity = '1';
 
-      // Pausa, poi scivola fino al suo posto nella topbar.
+      // Pausa, poi scivola fino al suo posto (rimisurando la destinazione esatta).
       setTimeout(function () {
-        brand.style.transition = 'transform .9s cubic-bezier(.62,.04,.3,1)';
+        var R2 = real.getBoundingClientRect();          // posizione reale, ora definitiva
+        var s = R2.width / R1.width;
+        var finTX = R2.left - R1.left, finTY = R2.top - R1.top;
+        brand.style.transition = 'transform 1s cubic-bezier(.6,.01,.2,1)';
         brand.style.transform = 'translate(' + finTX + 'px,' + finTY + 'px) scale(' + s + ')';
-        setTimeout(finish, 820); // a movimento concluso, dissolve l'overlay
+        setTimeout(finish, 880); // a volo quasi concluso, dissolvenza + sito che appare
       }, 950);
+    }
+
+    function run() {
+      if (!el.classList.contains('sftp-show')) return;
+      var started = false;
+      function go() { if (started) return; started = true; animate(); }
+      // Aspetta che i font siano pronti: così le misure (e l'atterraggio) sono esatte.
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(go);
+        setTimeout(go, 1200); // fallback se i font tardano troppo
+      } else {
+        go();
+      }
     }
 
     if (document.readyState === 'loading') {
