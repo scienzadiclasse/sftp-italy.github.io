@@ -110,16 +110,26 @@
 
 <script>
   /* Decisione immediata (prima del primo paint): mostrare o no lo splash.
-     Sta subito dopo l'elemento, così aggiungere le classi non causa flash. */
+     Usa localStorage (condivisa tra tutte le schede) con una finestra di
+     inattività: così lo splash compare a una nuova visita ma NON durante la
+     navigazione, nemmeno aprendo gli articoli in una nuova scheda. */
   (function () {
     var el = document.getElementById('sftp-splash');
     if (!el) return;
     var reduce = window.matchMedia &&
                  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var seen = false;
-    try { seen = sessionStorage.getItem('sftp_splash_seen') === '1'; } catch (e) {}
-    if (reduce || seen) return; // resta display:none → sito normale
-    try { sessionStorage.setItem('sftp_splash_seen', '1'); } catch (e) {}
+    if (reduce) return; // sito normale
+
+    var KEY = 'sftp_splash_ts';
+    var WINDOW = 30 * 60 * 1000; // 30 minuti di inattività = nuova visita
+    var now = Date.now();
+    var last = 0;
+    try { last = parseInt(localStorage.getItem(KEY), 10) || 0; } catch (e) {}
+    var recente = (now - last) < WINDOW;
+    // Aggiorna sempre il "timbro" di attività (finestra scorrevole).
+    try { localStorage.setItem(KEY, String(now)); } catch (e) {}
+    if (recente) return; // già visitato di recente → niente splash
+
     el.classList.add('sftp-show');
     // Solo "booting" (nasconde i contenuti): il blocco scroll viene applicato
     // più avanti, con compensazione della scrollbar per evitare spostamenti.
