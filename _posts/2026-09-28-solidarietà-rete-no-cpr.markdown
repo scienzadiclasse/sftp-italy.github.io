@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Solidarietà alla rete Mai più lager - NO CPR"
